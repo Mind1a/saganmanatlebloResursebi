@@ -1,0 +1,85 @@
+header {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/4;
+    width: 16.375rem;
+    .mainLogo {
+        background-color: $logoBackBlue;
+        height: 6rem;
+    }
+
+    .tavfurceli {
+        color: $textBlue;
+        background-color: $backgroundBlue;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+
+        img {
+            padding-right: 1rem;
+        }
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: column;
+        .lessonMainCont{
+            position: relative;
+            max-width: 12.5rem;
+            height: 3.188rem;
+            display: flex;
+            align-items: center;
+            margin: 0.75rem 0 0.75rem 0;
+            .lessonChildCont{
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 11.063rem;
+                height: 3.188rem;
+                margin: 0.75rem 0.75rem;
+                cursor: pointer;
+                .sideBarFirstIcon{
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                }
+                .moemzade-title{
+                    background-color: $textBlue;
+                    padding: 10px 7px 5px 23px;
+                    position: absolute;
+                    left: 2.563rem;
+                    border-top-right-radius: 0.625rem;
+                    width: 9.875rem;
+                    h3{
+                        font-size: 1.563rem;
+                        color: $backgroundBlue;
+                    }
+                }
+            }
+            .sideBarDownloadBtn{
+                position: absolute;
+                top: 0.956rem;
+                right: -3.438rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .settings {
+        background-color: $backgroundBlue;
+        color: $lightBlackText;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        font-size: 1.4rem;
+        margin-top: auto;
+        cursor: pointer;
+
+        img {
+            padding: 0 1rem;
+        }
+    }
+}

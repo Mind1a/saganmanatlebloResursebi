@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Nino_Mtavruli";
+    src: url(../../fonts/bpg_nino_mtavruli_bold.otf) format("openType");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "BoldNino";
+    src: url(../../fonts/bpg_nino_mkhedruli_bold.otf) format("openType");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "mainFont";
+    src: url(../../fonts/bpg-nino-mkhedruli-webfont.ttf) format("truetype");
+    font-display: swap;
+}
+
+@import "../module/variable";
+@import "../basic/reset";
+// @import "../module/mixin";
+// @import '../basic/font';
+// @import '../module/classes';
+@import "../components/header";
+@import "../components/main";
+@import '../main/media';

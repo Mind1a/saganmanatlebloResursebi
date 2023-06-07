@@ -1,0 +1,249 @@
+body {
+    font-family: 'mainFont';
+    display: grid;
+    grid-template-columns: repeat(1,0fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 3.25rem;
+    grid-row-gap: 1.813rem;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    .head {
+        background-color: $backgroundBlue;
+        font-size: 2rem;
+        color: $textBlue;
+        height: 6rem;
+        display: flex;
+        align-items: flex-end;
+        padding: 0.5rem;
+        grid-column: 2/4;
+        img {
+            padding-left: 0.5rem;
+        }
+    }
+main {
+    .body {
+        #books {
+            grid-row: 2/4;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            max-width: 132.75rem;
+            margin: 0 auto;
+            column-gap: 7.875rem;
+            row-gap: 3.563rem;
+            .card {
+                position: relative;
+                background-color: $backgroundBlue;
+                width: min(13rem, 100%);
+                margin: 2rem 0;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+
+                .cover {
+                    position: absolute;
+                }
+
+                #bookCover0,
+                #bookCover1 {
+                    margin-top: 4rem;
+                }
+
+                #bookCover2,
+                #bookCover3,
+                #bookCover4,
+                #bookCover5 {
+                    margin-top: 3.5rem;
+                }
+
+                .card-title {
+                    font-weight: 600;
+                    text-align: center;
+                    color: $textBlue;
+                    font-size: 1.5rem;
+                    padding-top: 1rem;
+                }
+
+                .downloadBtn {
+                    background-color: $backgroundBlue;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    padding: 0.5rem;
+                    border-radius: 0 0.813rem 0.813rem 0;
+                }
+            }
+        }
+
+        #aboutProject {
+            color: $textDarkBlue;
+
+            p {
+                margin: 2rem 0;
+                font-size: 1.7rem;
+                line-height: 2.5rem;
+
+                strong {
+                    font-family: 'BoldNino';
+                }
+            }
+        }
+
+        #lesson {
+            display: grid;
+            grid-template-columns: fit-content 1fr;
+            column-gap: 3rem;
+
+            h2 {
+                color: $textBlue;
+                font-size: 2rem;
+                margin: 2rem 0 1rem;
+                grid-column: 1 / 3;
+            }
+
+            img {
+                width: 8rem;
+            }
+
+            .right-block {
+                margin-top: 1rem;
+
+                strong {
+                    color: $textBlue;
+                    font-size: 2rem;
+                    padding-bottom: 2rem;
+                }
+
+                p {
+                    color: $textDarkBlue;
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                }
+
+                ol,
+                ul {
+                    li {
+                        color: $textDarkBlue;
+                        font-size: 2rem;
+                    }
+                }
+
+                ul {
+                    list-style-type: circle;
+                    margin-left: 2rem;
+
+                    li {
+                        padding-top: 2rem;
+                    }
+                }
+
+                .fa-solid {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 3rem;
+                    font-weight: 900;
+                }
+            }
+
+            .waikitxe {
+                margin-top: 1rem;
+
+                .part1 {
+                    img {
+                        grid-area: img;
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    p {
+                        color: $textDarkBlue;
+                        font-size: 2rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    p:nth-child(1) {
+                        grid-area: p1;
+                    }
+
+                    p:nth-child(2) {
+                        grid-area: p2;
+                    }
+
+                    display: grid;
+                    grid-template-areas: 'p1 p1'
+                    'p2 img';
+                }
+
+                .part2 {
+                    p {
+                        color: $textDarkBlue;
+                        font-size: 2rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    p:nth-child(1) {
+                        grid-area: p1;
+                    }
+
+                    p:nth-child(2) {
+                        grid-area: p2;
+                    }
+
+                    img:nth-child(3) {
+                        position: relative;
+                        grid-area: img1;
+                        height: 10rem;
+                        left: 70%;
+                    }
+
+                    img:nth-child(4) {
+                        grid-area: img2;
+                        height: 10rem;
+                    }
+
+                    display: grid;
+                    grid-template-areas: 'p1 p1'
+                    'img1 img2'
+                    'p2 p2';
+                }
+
+                .part3 {
+                    p {
+                        color: $textDarkBlue;
+                        font-size: 2rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    p:nth-child(1) {
+                        grid-area: p1;
+                    }
+
+                    p:nth-child(2) {
+                        grid-area: p2;
+                    }
+
+                    img:nth-child(3) {
+                        grid-area: img;
+                        width: 100%;
+                        height: fit-content;
+                    }
+
+                    display: grid;
+                    grid-template-areas: 'p1 p1'
+                    'p2 img';
+                }
+
+                .fa-solid {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 3rem;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}
+}

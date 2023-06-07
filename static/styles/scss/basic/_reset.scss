@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nino_Mtavruli";
+}
+
+.hide {
+    display: none !important;
+}
+
+.upDown {
+    transform: rotateX(180deg);
+}
+
+.showBgColor {
+    background-color: $logoBackBlue;
+}
+
+.downloadBtnFlex {
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin: 0.438rem 0 0 0.438rem;
+        cursor: pointer;
+    }
+
+    .task {
+        margin-left: 3.813rem;
+        padding: 6px 33px 6px 11px;
+        background-color: $textBlue;
+        width: 9.375rem;
+        margin-top: 0.438rem;
+        cursor: pointer;
+
+        h3 {
+            font-size: 1.125rem;
+            color: $backgroundBlue;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: $backgroundBlue;
+        }
+    }
+}
+
+.bigPegas {
+    max-width: 24.688rem;
+    width: 100%;
+}
