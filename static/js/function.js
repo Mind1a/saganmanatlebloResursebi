@@ -1,5 +1,5 @@
 import booksData from './Books.json' assert {type: 'json'};
-import { books, tavfurcelibtn, settingsbtn, aboutProject, head, nav, lessonSection, header } from "./variable.js";
+import {books, tavfurcelibtn, mainlogoBtn, settingsbtn, aboutProject, head, nav, lessonSection, header } from "./variable.js";
 
 let title = ''; // to save title of book
 
@@ -34,6 +34,17 @@ settingsbtn.addEventListener('click', () => {
 
 //click on home button will show main page and hide everything else
 tavfurcelibtn.addEventListener('click', () => {
+    header.classList.remove('showBgColor');
+    books.classList.remove('hide');
+    aboutProject.classList.add('hide');
+    tavfurcelibtn.classList.add('hide');
+    nav.classList.add('hide');
+    settingsbtn.classList.remove('hide');
+    lessonSection.classList.add('hide');
+    head.innerHTML = '';
+})
+//click on main logo will show main page and hide everything else
+mainlogoBtn.addEventListener('click', () => {
     header.classList.remove('showBgColor');
     books.classList.remove('hide');
     aboutProject.classList.add('hide');
