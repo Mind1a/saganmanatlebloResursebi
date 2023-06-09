@@ -32,17 +32,6 @@ settingsbtn.addEventListener('click', () => {
     head.innerHTML = '<h4>პროექტის შესახებ</h4>';
 })
 
-//click on home button will show main page and hide everything else
-tavfurcelibtn.addEventListener('click', () => {
-    header.classList.remove('showBgColor');
-    books.classList.remove('hide');
-    aboutProject.classList.add('hide');
-    tavfurcelibtn.classList.add('hide');
-    nav.classList.add('hide');
-    settingsbtn.classList.remove('hide');
-    lessonSection.classList.add('hide');
-    head.innerHTML = '';
-})
 //click on main logo will show main page and hide everything else
 mainlogoBtn.addEventListener('click', () => {
     header.classList.remove('showBgColor');
@@ -54,6 +43,18 @@ mainlogoBtn.addEventListener('click', () => {
     lessonSection.classList.add('hide');
     head.innerHTML = '';
 })
+//click on home button will show main page and hide everything else
+tavfurcelibtn.addEventListener('click', () => {
+    header.classList.remove('showBgColor');
+    books.classList.remove('hide');
+    aboutProject.classList.add('hide');
+    tavfurcelibtn.classList.add('hide');
+    nav.classList.add('hide');
+    settingsbtn.classList.remove('hide');
+    lessonSection.classList.add('hide');
+    head.innerHTML = '';
+})
+
 
 //shows lessons for each book on click them
 export function showLesson(lesson) {
