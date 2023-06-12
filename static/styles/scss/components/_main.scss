@@ -1,7 +1,7 @@
 body {
     font-family: 'mainFont';
     display: grid;
-    grid-template-columns: repeat(1,0fr);
+    grid-template-columns: repeat(1, 0fr);
     grid-template-rows: repeat(2, auto);
     grid-column-gap: 3.25rem;
     grid-row-gap: 1.813rem;
@@ -17,233 +17,649 @@ body {
         align-items: flex-end;
         padding: 0.5rem;
         grid-column: 2/4;
+
         img {
             padding-left: 0.5rem;
         }
     }
-main {
-    .body {
-        #books {
-            grid-row: 2/4;
-            display: grid;
-            grid-template-columns: repeat(3, auto);
-            max-width: 132.75rem;
-            margin: 0 auto;
-            column-gap: 7.875rem;
-            row-gap: 3.563rem;
-            .card {
-                position: relative;
-                background-color: $backgroundBlue;
-                width: min(13rem, 100%);
-                margin: 2rem 0;
-                padding: 1rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                cursor: pointer;
 
-                .cover {
-                    position: absolute;
-                }
+    main {
+        .body {
+            #books {
+                grid-row: 2/4;
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                max-width: 132.75rem;
+                margin: 0 auto;
+                column-gap: 7.875rem;
+                row-gap: 3.563rem;
 
-                #bookCover0,
-                #bookCover1 {
-                    margin-top: 4rem;
-                }
-
-                #bookCover2,
-                #bookCover3,
-                #bookCover4,
-                #bookCover5 {
-                    margin-top: 3.5rem;
-                }
-
-                .card-title {
-                    font-weight: 600;
-                    text-align: center;
-                    color: $textBlue;
-                    font-size: 1.5rem;
-                    padding-top: 1rem;
-                }
-
-                .downloadBtn {
+                .card {
+                    position: relative;
                     background-color: $backgroundBlue;
-                    position: absolute;
-                    top: 0;
-                    left: 100%;
-                    padding: 0.5rem;
-                    border-radius: 0 0.813rem 0.813rem 0;
+                    width: min(13rem, 100%);
+                    margin: 2rem 0;
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    cursor: pointer;
+
+                    .cover {
+                        position: absolute;
+                    }
+
+                    #bookCover0,
+                    #bookCover1 {
+                        margin-top: 4rem;
+                    }
+
+                    #bookCover2,
+                    #bookCover3,
+                    #bookCover4,
+                    #bookCover5 {
+                        margin-top: 3.5rem;
+                    }
+
+                    .card-title {
+                        font-weight: 600;
+                        text-align: center;
+                        color: $textBlue;
+                        font-size: 1.5rem;
+                        padding-top: 1rem;
+                    }
+
+                    .downloadBtn {
+                        background-color: $backgroundBlue;
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        padding: 0.5rem;
+                        border-radius: 0 0.813rem 0.813rem 0;
+                    }
                 }
             }
-        }
 
-        #aboutProject {
-            color: $textDarkBlue;
-
-            p {
-                margin: 2rem 0;
-                font-size: 1.7rem;
-                line-height: 2.5rem;
-
-                strong {
-                    font-family: 'BoldNino';
-                }
-            }
-        }
-
-        #lesson {
-            display: grid;
-            grid-template-columns: fit-content 1fr;
-            column-gap: 3rem;
-
-            h2 {
-                color: $textBlue;
-                font-size: 2rem;
-                margin: 2rem 0 1rem;
-                grid-column: 1 / 3;
-            }
-
-            img {
-                width: 8rem;
-            }
-
-            .right-block {
-                margin-top: 1rem;
-
-                strong {
-                    color: $textBlue;
-                    font-size: 2rem;
-                    padding-bottom: 2rem;
-                }
+            #aboutProject {
+                color: $textDarkBlue;
 
                 p {
-                    color: $textDarkBlue;
-                    font-size: 2rem;
-                    margin-bottom: 2rem;
-                }
+                    margin: 2rem 0;
+                    font-size: 1.7rem;
+                    line-height: 2.5rem;
 
-                ol,
-                ul {
-                    li {
-                        color: $textDarkBlue;
-                        font-size: 2rem;
+                    strong {
+                        font-family: 'BoldNino';
                     }
-                }
-
-                ul {
-                    list-style-type: circle;
-                    margin-left: 2rem;
-
-                    li {
-                        padding-top: 2rem;
-                    }
-                }
-
-                .fa-solid {
-                    width: 100%;
-                    text-align: center;
-                    font-size: 3rem;
-                    font-weight: 900;
                 }
             }
 
-            .waikitxe {
-                margin-top: 1rem;
+            #lesson {
+                display: grid;
+                grid-template-columns: fit-content 1fr;
+                justify-content: left;
+                column-gap: 3rem;
 
-                .part1 {
-                    img {
-                        grid-area: img;
+                h2 {
+                    color: $textBlue;
+                    font-size: 2rem;
+                    margin: 2rem 0 1rem;
+                    grid-column: 1 / 3;
+                }
+
+                img {
+                    width: 8rem;
+                }
+
+                .right-block {
+                    margin-top: 1rem;
+
+                    strong {
+                        color: $textBlue;
+                        font-size: 2rem;
+                        padding-bottom: 2rem;
+                    }
+
+                    p {
+                        color: $textDarkBlue;
+                        font-size: 2rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    ol,
+                    ul {
+                        li {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                        }
+                    }
+
+                    ul {
+                        list-style-type: circle;
+                        margin-left: 2rem;
+
+                        li {
+                            padding-top: 2rem;
+                        }
+                    }
+
+                    .fa-solid {
                         width: 100%;
-                        height: auto;
+                        text-align: center;
+                        font-size: 3rem;
+                        font-weight: 900;
                     }
 
-                    p {
-                        color: $textDarkBlue;
-                        font-size: 2rem;
-                        margin-bottom: 2rem;
-                    }
+                    .checkList {
+                        display: flex;
 
-                    p:nth-child(1) {
-                        grid-area: p1;
+                        input {
+                            width: 2rem;
+                            height: 2rem;
+                            margin-right: 1rem;
+                            font-size: 1.5rem;
+                            background-color: #e4eeef;
+                            border: #707070 solid 0.1rem;
+                            outline: none;
+                        }
                     }
-
-                    p:nth-child(2) {
-                        grid-area: p2;
-                    }
-
-                    display: grid;
-                    grid-template-areas: 'p1 p1'
-                    'p2 img';
                 }
 
-                .part2 {
-                    p {
-                        color: $textDarkBlue;
+                #pegasiChasvi {
+                    .daakavshire {
+                        display: flex;
+                        width: fit-content;
+                        height: fit-content;
+
+                        p {
+                            position: relative;
+                            font-size: 2rem;
+                            padding: 0.8rem 2rem 0.8rem 0.8rem;
+                            border: 1px solid $textBlue;
+                            border-radius: 0.8rem;
+                        }
+
+                        .daakavshire_left_block {
+                            p::after {
+                                content: "\2022";
+                                position: absolute;
+                                right: -1.8rem;
+                                font-size: 2em;
+                                color: $textBlue;
+                                top: 0;
+                                pointer-events: none;
+                            }
+                        }
+
+                        .daakavshire_right_block {
+                            p::before {
+                                content: "\2022";
+                                position: absolute;
+                                left: -1.8rem;
+                                font-size: 2em;
+                                color: $textBlue;
+                                top: 0;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                }
+                .leftSentences{
+                    display: flex;
+                    color: #0a2b39;
+                    font-size: 2rem;
+                    ol{
+                        max-width: 34rem;
+                        line-height: 1.5;
+                        li{
+                            margin-bottom: 1.8rem;
+                        }
+                    }
+                    .words{
+                        width: 100%;
+                        margin-left: 2.8rem;
+                        p{
+                        text-align: center;
+                        background-color: #C1D4D6;
+                        padding: 0.9rem 0.9rem;
+                        }
+                        .wordsInner{
+                            padding: 2.5rem 0.9rem;
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 6.25rem;
+                            background-color: #E4EEEF;
+                            margin-top: 0.625rem;
+                            .word{
+                                text-align: center;
+                                padding: 0.625rem;
+                                height: 3rem;
+                                background-color: white;
+                                margin:0 auto;
+                                border: solid 1px #5890AE;
+                                border-radius: 0.8rem;
+                            }
+                        }
+                    }
+                }
+                .gridRow3{
+                    grid-row: 3;
+                    p{
                         font-size: 2rem;
-                        margin-bottom: 2rem;
+                        color: $textDarkBlue;
+                    }
+                .tableContainer{
+                    display: table;
+                    max-width: 42.5rem;
+                    width: 100%;
+                    margin: 1rem auto;
+                    border: 1px solid $border;
+                    .row {
+                        display: table-row;
+                    }
+                    .cell {
+                        display: table-cell;
+                        padding: 0.625rem;
+                        vertical-align: middle;
+                        border: 1px solid $border;
+                    }
+                    .title {
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                        text-align: center;
+                        background-color: $backgroundBlue;
+                        h4{
+                            color: $textBlue;
+                            font-size: 1.5rem;
+                        }
+                    }
+                    input{
+                        @include sheavseInput;
+                        font-size: 2rem;
+                    }
+                }
+            }
+                .waikitxe[class~='პეგასი'] {
+                    margin-top: 1rem;
+
+                    .part1 {
+                        img {
+                            grid-area: img;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 img';
                     }
 
-                    p:nth-child(1) {
-                        grid-area: p1;
+                    .part2 {
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        img:nth-child(3) {
+                            position: relative;
+                            grid-area: img1;
+                            height: 10rem;
+                            left: 70%;
+                        }
+
+                        img:nth-child(4) {
+                            grid-area: img2;
+                            height: 10rem;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'img1 img2'
+                        'p2 p2';
                     }
 
-                    p:nth-child(2) {
-                        grid-area: p2;
+                    .part3 {
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        img:nth-child(3) {
+                            grid-area: img;
+                            width: 100%;
+                            height: fit-content;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 img';
                     }
 
-                    img:nth-child(3) {
-                        position: relative;
-                        grid-area: img1;
-                        height: 10rem;
-                        left: 70%;
+                    .fa-solid {
+                        width: 100%;
+                        text-align: center;
+                        font-size: 3rem;
+                        font-weight: 900;
                     }
-
-                    img:nth-child(4) {
-                        grid-area: img2;
-                        height: 10rem;
-                    }
-
-                    display: grid;
-                    grid-template-areas: 'p1 p1'
-                    'img1 img2'
-                    'p2 p2';
                 }
 
-                .part3 {
-                    p {
-                        color: $textDarkBlue;
-                        font-size: 2rem;
-                        margin-bottom: 2rem;
+                .waikitxe[class~='მოგზაური'] {
+                    margin-top: 1rem;
+
+                    .part1 {
+                        img {
+                            grid-area: img;
+                        }
+
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        p:nth-child(3) {
+                            grid-area: p3;
+                        }
+
+                        p:nth-child(4) {
+                            grid-area: p4;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 img'
+                        'p3 img'
+                        'p4 p4';
                     }
 
-                    p:nth-child(1) {
-                        grid-area: p1;
+                    .part2 {
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        p:nth-child(3) {
+                            grid-area: p3;
+                        }
+
+                        img:nth-child(4) {
+                            grid-area: img1;
+                            width: 100%;
+                        }
+
+                        img:nth-child(5) {
+                            display: none;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 p2'
+                        'img1 img1'
+                        'p3 p3';
                     }
 
-                    p:nth-child(2) {
-                        grid-area: p2;
+                    .part3 {
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        p:nth-child(3) {
+                            grid-area: p3;
+                        }
+
+                        p:nth-child(4) {
+                            grid-area: p4;
+                        }
+
+                        p:nth-child(5) {
+                            grid-area: p5;
+                        }
+
+                        img:nth-child(6) {
+                            grid-area: img;
+                            width: 100%;
+                            height: fit-content;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 img'
+                        'p3 img'
+                        'p4 img'
+                        'p5 img';
                     }
 
-                    img:nth-child(3) {
-                        grid-area: img;
+                    .fa-solid {
+                        width: 100%;
+                        text-align: center;
+                        font-size: 3rem;
+                        font-weight: 900;
+                    }
+                }
+
+                .mogzaurisheavse {
+                    position: relative;
+
+                    svg {
+                        * {
+                            stroke: $textBlue;
+                            stroke-width: 6;
+                        }
+
+                        polygon {
+                            fill: $backgroundBlue;
+                        }
+                    }
+
+                    .svgContent {
+                        position: absolute;
+                        top: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                         width: 100%;
                         height: fit-content;
+
+                        p {
+                            text-align: center;
+                            margin: 0;
+                        }
+
+                        input {
+                            @include sheavseInput;
+                        }
+
+                        #sityva {
+                            margin-top: 6rem;
+                            width: 29%;
+                        }
+
+                        #ganmarteba {
+                            margin-top: 1rem;
+                            width: 55%;
+                        }
+
+                        #winadadeba {
+                            margin-top: 2rem;
+                            width: 80%;
+                        }
                     }
 
-                    display: grid;
-                    grid-template-areas: 'p1 p1'
-                    'p2 img';
+                    .sityvebi {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+
+                        ol {
+                            li {
+                                color: $textBlue;
+                                font-weight: 600;
+                            }
+                        }
+                    }
                 }
 
-                .fa-solid {
-                    width: 100%;
-                    text-align: center;
-                    font-size: 3rem;
-                    font-weight: 900;
+                .waikitxe[class~='ნაპოლეონი'] {
+                    margin-top: 1rem;
+
+                    .part1 {
+                        display: grid;
+                        margin-bottom: 2rem;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-areas: 'p1 p1'
+                            'p2 p2'
+                            'p3 img';
+                        align-items: center;
+
+                        img {
+                            padding-left: 2rem;
+                            grid-area: img;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        p:nth-child(3) {
+                            margin-bottom: 0;
+                            margin-right: 4rem;
+                        }
+                    }
+
+                    .part2 {
+                        margin-bottom: 2rem;
+                        display: grid;
+                        grid-template-areas: 'p1'
+                            'img';
+
+                        img {
+                            grid-area: img;
+                            width: 80%;
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+                    }
+
+                    .part3 {
+                        display: grid;
+                        grid-template-columns: 1fr 240px;
+                        grid-template-areas: 'p1 p1'
+                            'p2 img';
+                        align-items: center;
+
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            padding-right: 2rem;
+                            grid-area: p2;
+                        }
+
+                        img {
+                            grid-area: img;
+                            object-fit: cover;
+                            width: 100%;
+                            height: 43rem;
+                        }
+                    }
+
+                    .fa-solid {
+                        width: 100%;
+                        text-align: center;
+                        font-size: 3rem;
+                        font-weight: 900;
+                    }
                 }
             }
         }
     }
-}
 }
