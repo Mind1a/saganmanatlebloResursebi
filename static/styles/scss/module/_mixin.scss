@@ -1,5 +1,19 @@
-// @mixin flex ($justify, $align){
-//     display: flex;
-//     justify-content: $justify;
-//     align-items: $align;
-// }
+@mixin button ($backcolor) {
+    background-color: $backcolor;
+    color: $backgroundBlue;
+    padding: 0.5rem 2rem 0.3rem;
+    border-radius: 13px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+@mixin sheavseInput (){
+    background-color: $inputBack;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+}

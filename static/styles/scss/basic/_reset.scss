@@ -27,7 +27,7 @@ h6 {
 
 .downloadBtnFlex {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     svg {
         margin: 0.438rem 0 0 0.438rem;
@@ -58,3 +58,47 @@ h6 {
     max-width: 24.688rem;
     width: 100%;
 }
+
+.correct {
+    color: green !important;
+}
+
+.wrong {
+    color: red !important;
+}
+
+#dasrulebaTavidan {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+
+    #dasruleba {
+        @include button($dasrulebaBack)
+    }
+
+    #tavidan {
+        @include button($textBlue)
+    }
+}
+.drop-zone{
+    font-size: 2rem;
+    line-height: 0;
+    padding: 20px;
+    border: solid #5890AE;
+    display: inline-block;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 13px;
+    
+}
+.correct {
+    color: green;
+  }
+  
+.incorrect {
+    color: red;
+  }
+  .test{
+    grid-row: 3;
+  }
+  
