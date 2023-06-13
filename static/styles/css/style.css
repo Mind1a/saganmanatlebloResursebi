@@ -152,6 +152,7 @@ header {
 header .mainLogo {
   background-color: #a2b6b8;
   height: 6rem;
+  cursor: pointer;
 }
 header .tavfurceli {
   color: #5890ae;
