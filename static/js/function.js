@@ -2,6 +2,7 @@ import booksData from "./Books.json" assert { type: "json" };
 import {
   books,
   tavfurcelibtn,
+  logoBtn,
   settingsbtn,
   aboutProject,
   head,
@@ -43,8 +44,9 @@ settingsbtn.addEventListener("click", () => {
   head.innerHTML = "<h4>პროექტის შესახებ</h4>";
 });
 
-//click on home button will show main page and hide everything else
-tavfurcelibtn.addEventListener("click", () => {
+// shows main page on click function
+function goMainPage()
+{
   header.classList.remove("showBgColor");
   books.classList.remove("hide");
   aboutProject.classList.add("hide");
@@ -53,7 +55,12 @@ tavfurcelibtn.addEventListener("click", () => {
   settingsbtn.classList.remove("hide");
   lessonSection.classList.add("hide");
   head.innerHTML = "";
-});
+}
+//click on home button will show main page and hide everything else
+tavfurcelibtn.addEventListener("click", goMainPage);
+
+//click on logo button will show main page and hide everything else
+logoBtn.addEventListener("click", goMainPage);
 
 //shows lessons for each book on click them
 export function showLesson(lesson) {
