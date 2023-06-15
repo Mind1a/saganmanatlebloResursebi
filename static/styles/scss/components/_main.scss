@@ -8,20 +8,50 @@ body {
     margin: 0 auto;
     min-height: 100vh;
 
-    .head {
-        background-color: $backgroundBlue;
-        font-size: 2rem;
-        color: $textBlue;
-        height: 6rem;
-        display: flex;
-        align-items: flex-end;
-        padding: 0.5rem;
-        grid-column: 2/4;
+  .head {
+    background-color: $backgroundBlue;
+    font-size: 2rem;
+    color: $textBlue;
+    height: 6rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0.5rem;
+    grid-column: 2/4;
+    padding: auto 1rem;
 
-        img {
-            padding-left: 0.5rem;
-        }
+    div {
+      display: flex;
+      align-items: center;
     }
+
+    .head-content {
+      img {
+        padding-left: 3.6875rem;
+      }
+    }
+
+    &-gzamkvlevi {
+      background-color: $logoBackBlue;
+      border-radius: 13px;
+      padding: 0.625rem;
+      cursor: pointer;
+
+      &-img {
+        width: 3.1875rem;
+        height: 3.1875rem;
+        margin-right: 1.1875rem;
+      }
+
+      &-title {
+        font-weight: bold;
+        font-family: "Nino_Mtavruli";
+        font-size: 1.5625rem;
+        color: $backgroundBlue;
+        text-align: right;
+      }
+    }
+  }
 
     main {
         .body {
@@ -166,11 +196,58 @@ body {
                     }
                 }
 
-                #pegasiChasvi {
-                    .daakavshire {
-                        display: flex;
-                        width: fit-content;
-                        height: fit-content;
+        .gzamkvlevi-header {
+          display: flex;
+          align-items: center;
+
+          h2 {
+            margin-left: 2.5rem;
+          }
+        }
+
+        .gzamkvlevi-box {
+          .gzamkvlevi-subheading-box {
+            display: flex;
+            margin: 2rem 0 1rem;
+            gap: 1rem;
+
+            .gzamkvlevi-subheading {
+              font-size: 1.5625rem;
+              font-weight: bold;
+              align-self: center;
+              color: $textBlue;
+            }
+
+            img {
+              width: 3.1875rem;
+              height: 3.1875rem;
+            }
+          }
+          .gzamkvlevi-content {
+            .gzamkvlevi-title {
+              background-color: $backgroundBlue;
+              padding: 1.0625rem;
+              margin: 0;
+            }
+
+            .gzamkvlevi-text {
+              font-size: 2rem;
+              background-color: $inputBack;
+              padding: 1.0625rem 1.0625rem 3.75rem;
+
+              span {
+                display: inline-block;
+                margin-top: 2rem;
+              }
+            }
+          }
+        }
+
+        #pegasiChasvi {
+          .daakavshire {
+            display: flex;
+            width: fit-content;
+            height: fit-content;
 
                         p {
                             position: relative;

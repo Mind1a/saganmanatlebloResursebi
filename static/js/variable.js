@@ -7,3 +7,5 @@ export const nav = document.querySelector('.navigation');
 export const lessonSection = document.getElementById('lesson');
 export const header = document.querySelector('header');
 export const logoBtn = document.querySelector('.mainLogo');
+export const gzamkvlevi = document.querySelector(".head-gzamkvlevi");
+export const headContent = document.querySelector(".head-content");
