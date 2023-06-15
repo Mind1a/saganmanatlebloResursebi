@@ -267,11 +267,41 @@ body .head {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0.5rem;
   grid-column: 2/4;
+  padding: auto 1rem;
 }
-body .head img {
-  padding-left: 0.5rem;
+body .head div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .head .head-content img {
+  padding-left: 3.6875rem;
+}
+body .head-gzamkvlevi {
+  background-color: #a2b6b8;
+  border-radius: 13px;
+  padding: 0.625rem;
+  cursor: pointer;
+}
+body .head-gzamkvlevi-img {
+  width: 3.1875rem;
+  height: 3.1875rem;
+  margin-right: 1.1875rem;
+}
+body .head-gzamkvlevi-title {
+  font-weight: bold;
+  font-family: "Nino_Mtavruli";
+  font-size: 1.5625rem;
+  color: #c1d4d6;
+  text-align: right;
 }
 body main .body #books {
   grid-row: 2/4;
@@ -408,6 +438,49 @@ body main .body #lesson .right-block .checkList input {
   background-color: #e4eeef;
   border: #707070 solid 0.1rem;
   outline: none;
+}
+body main .body #lesson .gzamkvlevi-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body main .body #lesson .gzamkvlevi-header h2 {
+  margin-left: 2.5rem;
+}
+body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0 1rem;
+  gap: 1rem;
+}
+body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box .gzamkvlevi-subheading {
+  font-size: 1.5625rem;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: #5890ae;
+}
+body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box img {
+  width: 3.1875rem;
+  height: 3.1875rem;
+}
+body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-title {
+  background-color: #c1d4d6;
+  padding: 1.0625rem;
+  margin: 0;
+}
+body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text {
+  font-size: 2rem;
+  background-color: #e4eeef;
+  padding: 1.0625rem 1.0625rem 3.75rem;
+}
+body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text span {
+  display: inline-block;
+  margin-top: 2rem;
 }
 body main .body #lesson #pegasiChasvi .daakavshire {
   display: -webkit-box;

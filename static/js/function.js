@@ -9,6 +9,8 @@ import {
   nav,
   lessonSection,
   header,
+  headContent,
+  gzamkvlevi,
 } from "./variable.js";
 
 let title = ""; // to save title of book
@@ -41,12 +43,13 @@ settingsbtn.addEventListener("click", () => {
   nav.classList.add("hide");
   settingsbtn.classList.add("hide");
   lessonSection.classList.add("hide");
-  head.innerHTML = "<h4>პროექტის შესახებ</h4>";
+  headContent.classList.remove("hide");
+  gzamkvlevi.classList.add("hide");
+  headContent.innerHTML = "<h4>პროექტის შესახებ</h4>";
 });
 
 // shows main page on click function
-function goMainPage()
-{
+function goMainPage() {
   header.classList.remove("showBgColor");
   books.classList.remove("hide");
   aboutProject.classList.add("hide");
@@ -54,7 +57,8 @@ function goMainPage()
   nav.classList.add("hide");
   settingsbtn.classList.remove("hide");
   lessonSection.classList.add("hide");
-  head.innerHTML = "";
+  gzamkvlevi.classList.add("hide");
+  headContent.classList.add("hide");
 }
 //click on home button will show main page and hide everything else
 tavfurcelibtn.addEventListener("click", goMainPage);
@@ -72,7 +76,9 @@ export function showLesson(lesson) {
   nav.classList.remove("hide");
   lessonSection.classList.remove("hide");
 
-  head.innerHTML = `<h3>${title}</h3> <img src="${booksData[title]["img"]}">`;
+  headContent.classList.remove("hide");
+  gzamkvlevi.classList.remove("hide");
+  headContent.innerHTML = `<div><h3>${title}</h3> <img src="${booksData[title]["img"]}"></div>`;
 
   showLessonSection("moemzade");
 }
@@ -82,6 +88,25 @@ export function showLessonSection(section) {
   let sections = booksData[title];
 
   switch (section) {
+    case "gzamkvlevi":
+      lessonSection.innerHTML = `<div class="gzamkvlevi-header">
+          <img src='./static/images/icons/00_mastavlebllisGzamkvlevi.svg' alt='Maswavleblis gzamkvlevi logo'/>
+          <h2>რეკომენდაცია მასწავლებლებისთვის</h2>
+        </div>`;
+      for (let aqtivoba in sections.gzamkvlevi) {
+        lessonSection.innerHTML += `
+        <div class="gzamkvlevi-box">
+        <div class="gzamkvlevi-subheading-box">
+          <img src="${sections.gzamkvlevi[aqtivoba].logo}" alt="Aqtivoba logo"/>
+          <h3 class="gzamkvlevi-subheading">აქტივობა ${sections.gzamkvlevi[aqtivoba].id}</h3>
+        </div> 
+        <div class="gzamkvlevi-content">
+          <h2 class="gzamkvlevi-title">${sections.gzamkvlevi[aqtivoba].title}</h2>
+          <p class="gzamkvlevi-text">${sections.gzamkvlevi[aqtivoba].description}</p>
+         </div>
+         </div>`;
+      }
+      break;
     case "moemzade":
       let moemzadeParags = "";
       let moemzadeQuestions = "";
