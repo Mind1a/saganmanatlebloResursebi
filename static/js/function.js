@@ -59,6 +59,7 @@ function goMainPage() {
   lessonSection.classList.add("hide");
   gzamkvlevi.classList.add("hide");
   headContent.classList.add("hide");
+  resetDaakavshire();
 }
 //click on home button will show main page and hide everything else
 tavfurcelibtn.addEventListener("click", goMainPage);
@@ -248,6 +249,7 @@ export function toggleParags() {
   }
 }
 
+
 function didiMogzauriSheavse(e) {
   let section = booksData["დიდი მოგზაური"]["sheavse"];
   let subsection = e ? e : "დააკავშირე";
@@ -255,7 +257,40 @@ function didiMogzauriSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
-      lessonSection.innerHTML = "daakavshire";
+      const leftBlock = section[subsection]["daakavshire_left_block"];
+      const rightBlock = section[subsection]["daakavshire_right_block"];
+
+      let leftBlockHtml = "";
+      leftBlock.forEach((item) => {
+        leftBlockHtml += `<p>${item}</p>`;
+      });
+
+      let rightBlockHtml = "";
+      rightBlock.forEach((item) => {
+        rightBlockHtml += `<p>${item}</p>`;
+      });
+
+      lessonSection.innerHTML = `
+            <h2>${section[subsection]["title"]}</h2>
+            <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+            <div class="right-block">
+            <div id="daakavshireWrapper">
+            <div class="daakavshire">
+                <div class="daakavshire_left_block">${leftBlockHtml}</div>
+                <canvas id="canvas"></canvas>
+                <div class="daakavshire_right_block">${rightBlockHtml}</div>
+            </div>
+            </div>
+            ${addButtons(2)}
+            </div>
+            `;
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", checkMogzauriDaakavshire);
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetDaakavshire);
+      startCanvas();
       break;
 
     case "ჩასვი":
@@ -348,7 +383,7 @@ function pegasiSheavse(e) {
             <h2>${section[subsection]["title"]}</h2>
             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
             <div class="right-block">
-            <div id="pegasiChasvi">
+            <div id="daakavshireWrapper">
             <div class="daakavshire">
                 <div class="daakavshire_left_block">${leftBlockHtml}</div>
                 <canvas id="canvas"></canvas>
@@ -363,7 +398,7 @@ function pegasiSheavse(e) {
         .addEventListener("click", checkPegasiDaakavshire);
       document
         .querySelector("#tavidan")
-        .addEventListener("click", resetPegasiDaakavshire);
+        .addEventListener("click", resetDaakavshire);
       startCanvas();
       break;
 
@@ -591,6 +626,36 @@ function resetMogzauriChasvi() {
     inpt.children[1].classList.remove("wrong");
   });
 }
+function checkMogzauriDaakavshire() {
+  const daakavshire_left_block = document.querySelector(
+    ".daakavshire_left_block"
+  );
+  const daakavshire_right_block = document.querySelector(
+    ".daakavshire_right_block"
+  );
+
+  daakavshire_left_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+  daakavshire_right_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+
+  if (Object.keys(chosen).length) {
+    for (const [key, value] of Object.entries(chosen)) {
+      if (value == correctMogzauriDaakavshireAnswers[key]) {
+        existingLines[key].StrokeColor = "green";
+        daakavshire_left_block.children[key - 1].style.color = "green";
+        daakavshire_right_block.children[value - 1].style.color = "green";
+      } else {
+        existingLines[key] ? (existingLines[key].StrokeColor = "red") : null;
+      }
+    }
+  }
+
+  ended = true;
+  draw();
+}
 
 function checkPegasiDaakavshire() {
   const daakavshire_left_block = document.querySelector(
@@ -623,7 +688,7 @@ function checkPegasiDaakavshire() {
   draw();
 }
 
-function resetPegasiDaakavshire() {
+function resetDaakavshire() {
   existingLines = [];
   chosen = {
     1: 0,
@@ -641,19 +706,27 @@ function resetPegasiDaakavshire() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+
 //canvas functions START
 let canvas = null;
+let wrapper = null;
 let bounds = null;
 let ctx = null;
 let ended = false;
 
 let correctPegasiDaakavshireAnswers =
   booksData["პეგასი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
+let correctMogzauriDaakavshireAnswers = 
+booksData["დიდი მოგზაური"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
+
+
 let chosen = {
   1: 0,
   2: 0,
   3: 0,
   4: 0,
+  5: 0,
+  6: 0
 };
 
 let startX = 0;
@@ -663,15 +736,18 @@ let mouseY = 0;
 let isDrawing = false;
 let existingLines = {};
 
+
 function startCanvas() {
+  wrapper = document.getElementById("daakavshireWrapper");
   canvas = document.getElementById("canvas");
   canvas.width = 180;
-  canvas.height = 368;
+  canvas.height = wrapper.offsetHeight
   canvas.onmousedown = onmousedown;
   canvas.onmouseup = onmouseup;
   canvas.onmousemove = onmousemove;
 
   bounds = canvas.getBoundingClientRect();
+
   ctx = canvas.getContext("2d");
 
   draw();
@@ -679,7 +755,7 @@ function startCanvas() {
 
 function draw() {
   ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, 180, 368);
+  ctx.fillRect(0, 0, 180, 555);
 
   ctx.lineWidth = 2;
 
@@ -699,25 +775,33 @@ function draw() {
     ctx.lineTo(mouseX, mouseY);
     ctx.stroke();
   }
+
 }
 
 function onmousedown(e) {
   if (e.button === 0 && e.clientX - bounds.left <= 23 && !ended) {
+    bounds = canvas.getBoundingClientRect();
     if (!isDrawing) {
       startX = e.clientX - bounds.left;
       startY = e.clientY - bounds.top;
-
       if (startY >= 20 && startY <= 35 && !chosen["1"]) {
         chosen["1"] = null;
         isDrawing = true;
       } else if (startY >= 110 && startY <= 125 && !chosen["2"]) {
-        chosen["2"] = null;
+        chosen["2"] = null
         isDrawing = true;
       } else if (startY >= 200 && startY <= 215 && !chosen["3"]) {
         chosen["3"] = null;
         isDrawing = true;
       } else if (startY >= 295 && startY <= 310 && !chosen["4"]) {
         chosen["4"] = null;
+        isDrawing = true;
+      }
+      else if (startY >= 380 && startY <= 400 && !chosen["5"]) {
+        chosen["5"] = null;
+        isDrawing = true;
+      } else if (startY >= 475 && startY <= 490 && !chosen["6"]) {
+        chosen["6"] = null;
         isDrawing = true;
       }
     }
@@ -728,13 +812,15 @@ function onmousedown(e) {
 
 function onmouseup(e) {
   if (e.button === 0) {
+     
+    bounds = canvas.getBoundingClientRect();
+    
     if (isDrawing && e.clientX - bounds.left >= 155) {
       if (mouseY >= 20 && mouseY <= 35 && !Object.values(chosen).includes(1)) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
             chosen[key] = 1;
-
-            existingLines[key] = {
+              existingLines[key] = {
               startX: startX,
               startY: startY,
               endX: mouseX,
@@ -790,6 +876,45 @@ function onmouseup(e) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
             chosen[key] = 4;
+            existingLines[key] = {
+              startX: startX,
+              startY: startY,
+              endX: mouseX,
+              endY: mouseY,
+              StrokeColor: "black",
+            };
+          }
+        }
+        isDrawing = false;
+      }
+      else if (
+        mouseY >= 380 &&
+        mouseY <= 400 &&
+        !Object.values(chosen).includes(5)
+      ) {
+        for (const [key, value] of Object.entries(chosen)) {
+          if (value == null) {
+            chosen[key] = 5;
+
+            existingLines[key] = {
+              startX: startX,
+              startY: startY,
+              endX: mouseX,
+              endY: mouseY,
+              StrokeColor: "black",
+            };
+          }
+        }
+        isDrawing = false;
+      } 
+      else if (
+        mouseY >= 475 &&
+        mouseY <= 490 &&
+        !Object.values(chosen).includes(6)
+      ) {
+        for (const [key, value] of Object.entries(chosen)) {
+          if (value == null) {
+            chosen[key] = 6;
 
             existingLines[key] = {
               startX: startX,
@@ -808,6 +933,8 @@ function onmouseup(e) {
 }
 
 function onmousemove(e) {
+  
+  bounds = canvas.getBoundingClientRect();
   mouseX = e.clientX - bounds.left;
   mouseY = e.clientY - bounds.top;
 

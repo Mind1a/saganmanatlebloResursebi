@@ -482,7 +482,7 @@ body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text spa
   display: inline-block;
   margin-top: 2rem;
 }
-body main .body #lesson #pegasiChasvi .daakavshire {
+body main .body #lesson #daakavshireWrapper .daakavshire {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -493,14 +493,14 @@ body main .body #lesson #pegasiChasvi .daakavshire {
   height: -moz-fit-content;
   height: fit-content;
 }
-body main .body #lesson #pegasiChasvi .daakavshire p {
+body main .body #lesson #daakavshireWrapper .daakavshire p {
   position: relative;
   font-size: 2rem;
   padding: 0.8rem 2rem 0.8rem 0.8rem;
   border: 1px solid #5890ae;
   border-radius: 0.8rem;
 }
-body main .body #lesson #pegasiChasvi .daakavshire .daakavshire_left_block p::after {
+body main .body #lesson #daakavshireWrapper .daakavshire .daakavshire_left_block p::after {
   content: "•";
   position: absolute;
   right: -1.8rem;
@@ -509,7 +509,7 @@ body main .body #lesson #pegasiChasvi .daakavshire .daakavshire_left_block p::af
   top: 0;
   pointer-events: none;
 }
-body main .body #lesson #pegasiChasvi .daakavshire .daakavshire_right_block p::before {
+body main .body #lesson #daakavshireWrapper .daakavshire .daakavshire_right_block p::before {
   content: "•";
   position: absolute;
   left: -1.8rem;
