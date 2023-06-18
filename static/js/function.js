@@ -310,6 +310,24 @@ function didiMogzauriSheavse(e) {
             ${addButtons(2)}
             </div>
             `;
+
+let inputs = document.querySelectorAll('.right-block input');
+
+inputs.forEach(input => {
+  input.addEventListener('input', ()=>
+  {
+    let currentInput = input;
+    inputs.forEach(otherInput =>{
+      if(otherInput != input)
+      {
+        if(currentInput.value === otherInput.value)
+        {
+          currentInput.value = NaN;
+        }
+      }
+    })
+  })
+})
       document
         .querySelector("#dasruleba")
         .addEventListener("click", checkMogzauriChasvi);
