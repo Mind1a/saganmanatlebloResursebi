@@ -14,6 +14,7 @@ import {
 } from "./variable.js";
 
 let title = ""; // to save title of book
+let checkCanvas = false; //to check whether startCanvas() funciton has called
 
 // renders books on main page
 export function ShowBooks(books, booksData) {
@@ -59,7 +60,10 @@ function goMainPage() {
   lessonSection.classList.add("hide");
   gzamkvlevi.classList.add("hide");
   headContent.classList.add("hide");
-  resetDaakavshire();
+  if(checkCanvas){
+    resetDaakavshire();
+    checkCanvas = false;
+  }
 }
 //click on home button will show main page and hide everything else
 tavfurcelibtn.addEventListener("click", goMainPage);
@@ -313,21 +317,27 @@ function didiMogzauriSheavse(e) {
 
 let inputs = document.querySelectorAll('.right-block input');
 
+// Logic to avoid same number in different inputs
 inputs.forEach(input => {
-  input.addEventListener('input', ()=>
-  {
-    let currentInput = input;
-    inputs.forEach(otherInput =>{
-      if(otherInput != input)
-      {
-        if(currentInput.value === otherInput.value)
-        {
-          currentInput.value = NaN;
-        }
-      }
-    })
-  })
-})
+  input.addEventListener("input", function() {
+      let currentInput = input;
+     let val = parseInt(input.value[0]);
+     let length = input.value.length;
+     
+     let duplicateInput = [...inputs].find(item => item !== currentInput && item.value === currentInput.value); 
+     
+     if(val < 1 || val > 4 || isNaN(val) || duplicateInput)
+     {
+       input.value = "";
+     }else if(length > 1)
+       {
+         input.value = "";
+          input.value = val;
+       }
+ }); 
+ });
+
+
       document
         .querySelector("#dasruleba")
         .addEventListener("click", checkMogzauriChasvi);
@@ -756,6 +766,7 @@ let existingLines = {};
 
 
 function startCanvas() {
+  checkCanvas = true;
   wrapper = document.getElementById("daakavshireWrapper");
   canvas = document.getElementById("canvas");
   canvas.width = 180;

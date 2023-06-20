@@ -138,6 +138,12 @@ h6 {
   grid-row: 3;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
