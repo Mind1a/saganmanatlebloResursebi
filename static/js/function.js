@@ -11,6 +11,7 @@ import {
   header,
   headContent,
   gzamkvlevi,
+  menu,
 } from "./variable.js";
 
 let title = ""; // to save title of book
@@ -60,7 +61,7 @@ function goMainPage() {
   lessonSection.classList.add("hide");
   gzamkvlevi.classList.add("hide");
   headContent.classList.add("hide");
-  if(checkCanvas){
+  if (checkCanvas) {
     resetDaakavshire();
     checkCanvas = false;
   }
@@ -97,12 +98,12 @@ export function showLessonSection(section) {
       lessonSection.innerHTML = `<div class="gzamkvlevi-header">
           <img src='./static/images/icons/00_mastavlebllisGzamkvlevi.svg' alt='Maswavleblis gzamkvlevi logo'/>
           <h2>რეკომენდაცია მასწავლებლებისთვის</h2>
-        </div>`;
+          </div>`;
       for (let aqtivoba in sections.gzamkvlevi) {
         lessonSection.innerHTML += `
         <div class="gzamkvlevi-box">
         <div class="gzamkvlevi-subheading-box">
-          <img src="${sections.gzamkvlevi[aqtivoba].logo}" alt="Aqtivoba logo"/>
+        <img src="${sections.gzamkvlevi[aqtivoba].logo}" alt="Aqtivoba logo"/>
           <h3 class="gzamkvlevi-subheading">აქტივობა ${sections.gzamkvlevi[aqtivoba].id}</h3>
         </div> 
         <div class="gzamkvlevi-content">
@@ -166,7 +167,7 @@ export function showLessonSection(section) {
       }
 
       lessonSection.innerHTML = `
-            <div class="${section} ${title}">
+      <div class="${section} ${title}">
             <div class="part1">
             ${waikitxeParags1}
             </div>
@@ -188,7 +189,7 @@ export function showLessonSection(section) {
       });
 
       lessonSection.innerHTML = `
-            <h2>${sections[section]["title"]}:</h2>
+      <h2>${sections[section]["title"]}:</h2>
             <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
             <div class="right-block">
             <ol>${upasuxeQuestions}</ol>
@@ -253,7 +254,6 @@ export function toggleParags() {
   }
 }
 
-
 function didiMogzauriSheavse(e) {
   let section = booksData["დიდი მოგზაური"]["sheavse"];
   let subsection = e ? e : "დააკავშირე";
@@ -283,7 +283,7 @@ function didiMogzauriSheavse(e) {
                 <div class="daakavshire_left_block">${leftBlockHtml}</div>
                 <canvas id="canvas"></canvas>
                 <div class="daakavshire_right_block">${rightBlockHtml}</div>
-            </div>
+                </div>
             </div>
             ${addButtons(2)}
             </div>
@@ -301,13 +301,13 @@ function didiMogzauriSheavse(e) {
       section[subsection]["p"].forEach((p) => {
         options += `
             <div class="checkList">
-                <input type="number" min=1 max=4> <p>${p}</p>
+            <input type="number" min=1 max=4> <p>${p}</p>
             </div>
             `;
       });
 
       lessonSection.innerHTML = `
-            <h2>${section[subsection]["title"]}:</h2>
+      <h2>${section[subsection]["title"]}:</h2>
             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
             <div class="right-block">
             ${options}
@@ -315,28 +315,27 @@ function didiMogzauriSheavse(e) {
             </div>
             `;
 
-let inputs = document.querySelectorAll('.right-block input');
+      let inputs = document.querySelectorAll(".right-block input");
 
-// Logic to avoid same number in different inputs
-inputs.forEach(input => {
-  input.addEventListener("input", function() {
-      let currentInput = input;
-     let val = parseInt(input.value[0]);
-     let length = input.value.length;
-     
-     let duplicateInput = [...inputs].find(item => item !== currentInput && item.value === currentInput.value); 
-     
-     if(val < 1 || val > 4 || isNaN(val) || duplicateInput)
-     {
-       input.value = "";
-     }else if(length > 1)
-       {
-         input.value = "";
-          input.value = val;
-       }
- }); 
- });
+      // Logic to avoid same number in different inputs
+      inputs.forEach((input) => {
+        input.addEventListener("input", function () {
+          let currentInput = input;
+          let val = parseInt(input.value[0]);
+          let length = input.value.length;
 
+          let duplicateInput = [...inputs].find(
+            (item) => item !== currentInput && item.value === currentInput.value
+          );
+
+          if (val < 1 || val > 4 || isNaN(val) || duplicateInput) {
+            input.value = "";
+          } else if (length > 1) {
+            input.value = "";
+            input.value = val;
+          }
+        });
+      });
 
       document
         .querySelector("#dasruleba")
@@ -348,11 +347,11 @@ inputs.forEach(input => {
 
     case "შეავსე":
       lessonSection.innerHTML = `
-            <h2>${section[subsection]["title"]}:</h2>
-            <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
-            <div class="right-block mogzaurisheavse">
-            <svg height="420" width="650">
-            <polygon points="5,410 320,5 645,410" />
+        <h2>${section[subsection]["title"]}:</h2>
+        <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+        <div class="right-block mogzaurisheavse">
+        <svg height="420" width="650">
+        <polygon points="5,410 320,5 645,410" />
             <line x1="175" y1="190" x2="465" y2="190" />
             <line x1="90" y1="300" x2="555" y2="300" />
             </svg>
@@ -408,15 +407,15 @@ function pegasiSheavse(e) {
       });
 
       lessonSection.innerHTML = `
-            <h2>${section[subsection]["title"]}</h2>
-            <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
-            <div class="right-block">
+      <h2>${section[subsection]["title"]}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="right-block">
             <div id="daakavshireWrapper">
             <div class="daakavshire">
                 <div class="daakavshire_left_block">${leftBlockHtml}</div>
                 <canvas id="canvas"></canvas>
                 <div class="daakavshire_right_block">${rightBlockHtml}</div>
-            </div>
+                </div>
             </div>
             ${addButtons(2)}
             </div>
@@ -537,7 +536,7 @@ function pegasiSheavse(e) {
                       )
                       .join("")}
                   </div>
-                `;
+                  `;
         const words = document.querySelectorAll(".word");
         words.forEach((word) => {
           word.addEventListener("dragstart", handleDragStart);
@@ -556,7 +555,7 @@ function pegasiSheavse(e) {
 
     case "შეავსე":
       lessonSection.innerHTML = `
-            <h2>${section[subsection]["title"]}</h2>
+        <h2>${section[subsection]["title"]}</h2>
             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
             <div class='gridRow3'>
             <p>${section[subsection]["p"]}</p>
@@ -734,7 +733,6 @@ function resetDaakavshire() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-
 //canvas functions START
 let canvas = null;
 let wrapper = null;
@@ -744,9 +742,8 @@ let ended = false;
 
 let correctPegasiDaakavshireAnswers =
   booksData["პეგასი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
-let correctMogzauriDaakavshireAnswers = 
-booksData["დიდი მოგზაური"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
-
+let correctMogzauriDaakavshireAnswers =
+  booksData["დიდი მოგზაური"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
 let chosen = {
   1: 0,
@@ -754,7 +751,7 @@ let chosen = {
   3: 0,
   4: 0,
   5: 0,
-  6: 0
+  6: 0,
 };
 
 let startX = 0;
@@ -764,13 +761,12 @@ let mouseY = 0;
 let isDrawing = false;
 let existingLines = {};
 
-
 function startCanvas() {
   checkCanvas = true;
   wrapper = document.getElementById("daakavshireWrapper");
   canvas = document.getElementById("canvas");
   canvas.width = 180;
-  canvas.height = wrapper.offsetHeight
+  canvas.height = wrapper.offsetHeight;
   canvas.onmousedown = onmousedown;
   canvas.onmouseup = onmouseup;
   canvas.onmousemove = onmousemove;
@@ -804,7 +800,6 @@ function draw() {
     ctx.lineTo(mouseX, mouseY);
     ctx.stroke();
   }
-
 }
 
 function onmousedown(e) {
@@ -817,7 +812,7 @@ function onmousedown(e) {
         chosen["1"] = null;
         isDrawing = true;
       } else if (startY >= 110 && startY <= 125 && !chosen["2"]) {
-        chosen["2"] = null
+        chosen["2"] = null;
         isDrawing = true;
       } else if (startY >= 200 && startY <= 215 && !chosen["3"]) {
         chosen["3"] = null;
@@ -825,8 +820,7 @@ function onmousedown(e) {
       } else if (startY >= 295 && startY <= 310 && !chosen["4"]) {
         chosen["4"] = null;
         isDrawing = true;
-      }
-      else if (startY >= 380 && startY <= 400 && !chosen["5"]) {
+      } else if (startY >= 380 && startY <= 400 && !chosen["5"]) {
         chosen["5"] = null;
         isDrawing = true;
       } else if (startY >= 475 && startY <= 490 && !chosen["6"]) {
@@ -841,15 +835,14 @@ function onmousedown(e) {
 
 function onmouseup(e) {
   if (e.button === 0) {
-     
     bounds = canvas.getBoundingClientRect();
-    
+
     if (isDrawing && e.clientX - bounds.left >= 155) {
       if (mouseY >= 20 && mouseY <= 35 && !Object.values(chosen).includes(1)) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
             chosen[key] = 1;
-              existingLines[key] = {
+            existingLines[key] = {
               startX: startX,
               startY: startY,
               endX: mouseX,
@@ -915,8 +908,7 @@ function onmouseup(e) {
           }
         }
         isDrawing = false;
-      }
-      else if (
+      } else if (
         mouseY >= 380 &&
         mouseY <= 400 &&
         !Object.values(chosen).includes(5)
@@ -935,8 +927,7 @@ function onmouseup(e) {
           }
         }
         isDrawing = false;
-      } 
-      else if (
+      } else if (
         mouseY >= 475 &&
         mouseY <= 490 &&
         !Object.values(chosen).includes(6)
@@ -962,7 +953,6 @@ function onmouseup(e) {
 }
 
 function onmousemove(e) {
-  
   bounds = canvas.getBoundingClientRect();
   mouseX = e.clientX - bounds.left;
   mouseY = e.clientY - bounds.top;
@@ -972,3 +962,17 @@ function onmousemove(e) {
   }
 }
 //canvas functions END
+
+// Displays each section of menu and 'Maswavleblis Gzamkvlevi'
+menu.addEventListener("click", (e) => {
+  let listItem = e.target.closest("li");
+  if (listItem) {
+    let id = listItem.getAttribute("id");
+    let el = document.getElementById(id);
+    el.onClick = showLessonSection(id);
+  }
+});
+
+gzamkvlevi.addEventListener("click", () => {
+  showLessonSection("gzamkvlevi");
+});
