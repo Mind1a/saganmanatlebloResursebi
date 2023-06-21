@@ -9,3 +9,4 @@ export const header = document.querySelector('header');
 export const logoBtn = document.querySelector('.mainLogo');
 export const gzamkvlevi = document.querySelector(".head-gzamkvlevi");
 export const headContent = document.querySelector(".head-content");
+export const menu = document.querySelector('.menu');
