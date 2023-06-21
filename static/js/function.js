@@ -104,7 +104,7 @@ export function showLessonSection(section) {
         <div class="gzamkvlevi-box">
         <div class="gzamkvlevi-subheading-box">
         <img src="${sections.gzamkvlevi[aqtivoba].logo}" alt="Aqtivoba logo"/>
-          <h3 class="gzamkvlevi-subheading">აქტივობა ${sections.gzamkvlevi[aqtivoba].id}</h3>
+          <h3 class="gzamkvlevi-subheading">აქტივობა #${sections.gzamkvlevi[aqtivoba].id}</h3>
         </div> 
         <div class="gzamkvlevi-content">
           <h2 class="gzamkvlevi-title">${sections.gzamkvlevi[aqtivoba].title}</h2>
