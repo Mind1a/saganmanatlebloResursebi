@@ -600,11 +600,45 @@ function pegasiSheavse(e) {
 }
 
 function napoleoniSheavse(e) {
+  let section = booksData["ნაპოლეონი"]["sheavse"];
   let subsection = e ? e : "დააკავშირე";
 
   switch (subsection) {
     case "დააკავშირე":
-      lessonSection.innerHTML = "daakavshire";
+      const leftBlock = section[subsection]["daakavshire_left_block"];
+      const rightBlock = section[subsection]["daakavshire_right_block"];
+
+      let leftBlockHtml = "";
+      leftBlock.forEach((item) => {
+        leftBlockHtml += `<p>${item}</p>`;
+      });
+
+      let rightBlockHtml = "";
+      rightBlock.forEach((item) => {
+        rightBlockHtml += `<p>${item}</p>`;
+      });
+
+      lessonSection.innerHTML = `
+            <h2>${section[subsection]["title"]}</h2>
+            <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+            <div class="right-block">
+            <div id="daakavshireWrapper">
+            <div class="daakavshire">
+                <div class="daakavshire_left_block">${leftBlockHtml}</div>
+                <canvas id="canvas"></canvas>
+                <div class="daakavshire_right_block">${rightBlockHtml}</div>
+                </div>
+            </div>
+            ${addButtons(2)}
+            </div>
+            `;
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", checkNapoleoniDaakavshire);
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetDaakavshire);
+      startCanvas();
       break;
 
     case "ჩასვი":
@@ -653,6 +687,38 @@ function resetMogzauriChasvi() {
     inpt.children[1].classList.remove("wrong");
   });
 }
+
+function checkPegasiDaakavshire() {
+  const daakavshire_left_block = document.querySelector(
+    ".daakavshire_left_block"
+  );
+  const daakavshire_right_block = document.querySelector(
+    ".daakavshire_right_block"
+  );
+
+  daakavshire_left_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+  daakavshire_right_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+
+  if (Object.keys(chosen).length) {
+    for (const [key, value] of Object.entries(chosen)) {
+      if (value == correctPegasiDaakavshireAnswers[key]) {
+        existingLines[key].StrokeColor = "green";
+        daakavshire_left_block.children[key - 1].style.color = "green";
+        daakavshire_right_block.children[value - 1].style.color = "green";
+      } else {
+        existingLines[key] ? (existingLines[key].StrokeColor = "red") : null;
+      }
+    }
+  }
+
+  ended = true;
+  draw();
+}
+
 function checkMogzauriDaakavshire() {
   const daakavshire_left_block = document.querySelector(
     ".daakavshire_left_block"
@@ -684,7 +750,7 @@ function checkMogzauriDaakavshire() {
   draw();
 }
 
-function checkPegasiDaakavshire() {
+function checkNapoleoniDaakavshire() {
   const daakavshire_left_block = document.querySelector(
     ".daakavshire_left_block"
   );
@@ -701,7 +767,7 @@ function checkPegasiDaakavshire() {
 
   if (Object.keys(chosen).length) {
     for (const [key, value] of Object.entries(chosen)) {
-      if (value == correctPegasiDaakavshireAnswers[key]) {
+      if (value == correctNapoleoniDaakavshireAnswers[key]) {
         existingLines[key].StrokeColor = "green";
         daakavshire_left_block.children[key - 1].style.color = "green";
         daakavshire_right_block.children[value - 1].style.color = "green";
@@ -740,10 +806,15 @@ let bounds = null;
 let ctx = null;
 let ended = false;
 
+// Correct answers for Daakavshire assignment
 let correctPegasiDaakavshireAnswers =
   booksData["პეგასი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
+
 let correctMogzauriDaakavshireAnswers =
   booksData["დიდი მოგზაური"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
+
+let correctNapoleoniDaakavshireAnswers = 
+  booksData["ნაპოლეონი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
 let chosen = {
   1: 0,
