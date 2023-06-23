@@ -3,9 +3,11 @@ header {
     flex-direction: column;
     grid-row: 1/4;
     width: 16.375rem;
+
     .mainLogo {
         background-color: $logoBackBlue;
         height: 6rem;
+        cursor: pointer;
     }
 
     .tavfurceli {
@@ -22,17 +24,19 @@ header {
         }
     }
 
-    .navigation{
+    .navigation {
         display: flex;
         flex-direction: column;
-        .lessonMainCont{
+
+        .lessonMainCont {
             position: relative;
             max-width: 12.5rem;
             height: 3.188rem;
             display: flex;
             align-items: center;
             margin: 0.75rem 0 0.75rem 0;
-            .lessonChildCont{
+
+            .lessonChildCont {
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -40,26 +44,30 @@ header {
                 height: 3.188rem;
                 margin: 0.75rem 0.75rem;
                 cursor: pointer;
-                .sideBarFirstIcon{
+
+                .sideBarFirstIcon {
                     position: absolute;
                     z-index: 1;
                     top: 0;
                     left: 0;
                 }
-                .moemzade-title{
+
+                .moemzade-title {
                     background-color: $textBlue;
                     padding: 10px 7px 5px 23px;
                     position: absolute;
                     left: 2.563rem;
                     border-top-right-radius: 0.625rem;
                     width: 9.875rem;
-                    h3{
+
+                    h3 {
                         font-size: 1.563rem;
                         color: $backgroundBlue;
                     }
                 }
             }
-            .sideBarDownloadBtn{
+
+            .sideBarDownloadBtn {
                 position: absolute;
                 top: 0.956rem;
                 right: -3.438rem;
