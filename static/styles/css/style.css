@@ -688,6 +688,21 @@ body main .body #lesson .waikitxe[class~=პეგასი] .fa-solid {
   font-size: 3rem;
   font-weight: 900;
 }
+body main .body #lesson .upasuxe-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body main .body #lesson .upasuxe ol {
+  margin-left: 3.25rem;
+}
+body main .body #lesson .upasuxe li {
+  margin-bottom: 2rem;
+  padding-left: 0.8125rem;
+}
 body main .body #lesson .waikitxe[class~=მოგზაური] {
   margin-top: 1rem;
 }

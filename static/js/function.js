@@ -189,11 +189,15 @@ export function showLessonSection(section) {
       });
 
       lessonSection.innerHTML = `
-      <h2>${sections[section]["title"]}:</h2>
-            <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
-            <div class="right-block">
-            <ol>${upasuxeQuestions}</ol>
-            </div>
+      <div class="upasuxe">
+        <div class="upasuxe-header">
+        <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
+        <h2>${sections[section]["title"]}:</h2>
+        </div>
+        <div class="right-block">
+          <ol>${upasuxeQuestions}</ol>
+        </div>
+      </div>
             `;
       break;
 
