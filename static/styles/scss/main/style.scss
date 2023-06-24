@@ -16,6 +16,12 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "BookNino";
+    src: url(../../fonts/bpg_nino_mkhedruli_book.otf) format("openType");
+    font-display: swap;
+}
+
 @import "../module/variable";
 @import "../module/mixin";
 @import "../basic/reset";
