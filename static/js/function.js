@@ -646,7 +646,45 @@ function napoleoniSheavse(e) {
       break;
 
     case "შეავსე":
-      lessonSection.innerHTML = "sheavse";
+
+      const sqemaBlock = section[subsection]["sqemaLines"];
+
+      let sqemaLeftHtml = ``;
+      let sqemaRightHtml = ``;
+
+      sqemaBlock.forEach(item => {
+        sqemaLeftHtml += `
+        <p class="sqemaLine" >${item}</p>
+        `
+      })
+      sqemaBlock.forEach(item => {
+        sqemaRightHtml += `
+        <input type="text" placeholder="განმარტება">
+        `
+      })
+      
+      lessonSection.innerHTML = `
+      <h2>${section[subsection]["title"]}:</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="napoleoniSeavse"> 
+      <div class="sqemaWrapper">
+      <div class="sqemaLeft" >
+      ${sqemaLeftHtml}
+      </div>
+      <div class="sqemaRight" >
+      ${sqemaRightHtml}
+      </div>
+      </div>
+        ${addButtons(1)}
+      </div>
+      `
+      const button = document.querySelector("#tavidan");
+      button.addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".sqemaRight input");
+        inputs.forEach(function (input) {
+          input.value = "";
+        });
+      });
       break;
   }
 }
