@@ -453,6 +453,22 @@ body {
                     }
                 }
 
+                .upasuxe {
+                  &-header {
+                    display: flex;
+                    align-items: center;
+                  }
+        
+                  ol {
+                    margin-left: 3.25rem;
+                  }
+        
+                  li {
+                    margin-bottom: 2rem;
+                    padding-left: 0.8125rem;
+                  }
+                }
+
                 .waikitxe[class~='მოგზაური'] {
                     margin-top: 1rem;
 
