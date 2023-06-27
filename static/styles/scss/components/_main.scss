@@ -144,6 +144,8 @@ body {
 
                 .right-block {
                     margin-top: 1rem;
+                    
+
 
                     strong {
                         color: $textBlue;
@@ -252,6 +254,7 @@ body {
         .gzamkvlevi-header {
           display: flex;
           align-items: center;
+          grid-column: 1/3;
 
           h2 {
             margin-left: 2.5rem;
@@ -259,6 +262,8 @@ body {
         }
 
         .gzamkvlevi-box {
+          grid-column: 1/3;
+
           .gzamkvlevi-subheading-box {
             display: flex;
             margin: 2rem 0 1rem;
@@ -413,6 +418,8 @@ body {
             }
                 .waikitxe[class~='პეგასი'] {
                     margin-top: 1rem;
+                    grid-column: 1/3;
+
 
                     .part1 {
                         img {
@@ -508,6 +515,8 @@ body {
                 }
 
                 .upasuxe {
+                    grid-column: 1/3;
+
                   &-header {
                     display: flex;
                     align-items: center;
@@ -525,6 +534,7 @@ body {
 
                 .waikitxe[class~='მოგზაური'] {
                     margin-top: 1rem;
+                    grid-column: 1/3;
 
                     .part1 {
                         img {
@@ -708,6 +718,8 @@ body {
 
                 .waikitxe[class~='ნაპოლეონი'] {
                     margin-top: 1rem;
+                    grid-column: 1/3;
+
 
                     .part1 {
                         display: grid;

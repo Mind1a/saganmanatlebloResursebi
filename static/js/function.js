@@ -63,7 +63,7 @@ function goMainPage() {
   headContent.classList.add("hide");
   if (checkCanvas) {
     resetDaakavshire();
-    checkCanvas = false;
+    
   }
 }
 //click on home button will show main page and hide everything else
@@ -887,6 +887,8 @@ function resetDaakavshire() {
     i.style.color = "black";
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    checkCanvas = false;
+
 }
 
 //canvas functions START
