@@ -681,7 +681,7 @@ function napoleoniSheavse(e) {
       </div>
         ${addButtons(1)}
       </div>
-      `
+        `
       const button = document.querySelector("#tavidan");
       button.addEventListener("click", function () {
         const inputs = document.querySelectorAll(".sqemaRight input");
