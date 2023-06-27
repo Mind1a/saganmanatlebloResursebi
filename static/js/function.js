@@ -646,7 +646,48 @@ function napoleoniSheavse(e) {
       break;
 
     case "ჩასვი":
-      lessonSection.innerHTML = "chasvi";
+      lessonSection.innerHTML = `
+      <h2>${section[subsection]["title"]}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="chasvi">
+        <div class="chasvi-wrapper">
+          <div class="chasvi-box">
+            <h3>ვითარება</h3>
+            <div class="input-box">
+              <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+            </div>
+          </div>
+          <div class="chasvi-box">
+            <h3>ადგილი</h3>
+            <div class="input-box">
+              <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="chasvi-box">
+          <h3>პერსონაჟი</h3>
+          <div class="input-box">
+            <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
+        </div>
+        <div class="chasvi-box">
+          <h3>პრობლემა</h3>
+          <div class="input-box">
+            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
+        </div>
+        <div class="chasvi-box">
+          <h3>პრობლემის გადაწყვეტა</h3>
+          <div class="input-box">
+            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
+        </div>
+        ${addButtons(1)}
+      </div>
+        `;
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetNapoleoniChasvi);
       break;
 
       case "შეავსე":
@@ -729,6 +770,12 @@ function resetMogzauriChasvi() {
     inpt.children[1].classList.remove("correct");
     inpt.children[1].classList.remove("wrong");
   });
+}
+
+function resetNapoleoniChasvi() {
+  document.querySelectorAll(".sheavseInput").forEach(input => {
+    input.value = "";
+  })
 }
 
 function checkPegasiDaakavshire() {
@@ -856,7 +903,7 @@ let correctPegasiDaakavshireAnswers =
 let correctMogzauriDaakavshireAnswers =
   booksData["დიდი მოგზაური"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
-let correctNapoleoniDaakavshireAnswers = 
+let correctNapoleoniDaakavshireAnswers =
   booksData["ნაპოლეონი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
 let chosen = {
