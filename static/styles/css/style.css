@@ -532,6 +532,7 @@ body main .body #lesson .gzamkvlevi-header {
 }
 body main .body #lesson .gzamkvlevi-header h2 {
   margin-left: 2.5rem;
+  font-size: 2.125rem;
 }
 body main .body #lesson .gzamkvlevi-box {
   grid-column: 1/3;
@@ -557,11 +558,14 @@ body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box img {
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-title {
   background-color: #c1d4d6;
   padding: 1.0625rem;
+  font-size: 2.125rem;
   margin: 0;
 }
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text {
-  font-size: 2rem;
+  font-size: 2.625rem;
   background-color: #e4eeef;
+  color: #0a2b39;
+  line-height: 1.2;
   padding: 1.0625rem 1.0625rem 3.75rem;
 }
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text span {
