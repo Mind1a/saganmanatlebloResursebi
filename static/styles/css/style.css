@@ -14,6 +14,11 @@
   src: url(../../fonts/bpg-nino-mkhedruli-webfont.ttf) format("truetype");
   font-display: swap;
 }
+@font-face {
+  font-family: "BookNino";
+  src: url(../../fonts/bpg_nino_mkhedruli_book.otf) format("openType");
+  font-display: swap;
+}
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -136,6 +141,7 @@ h6 {
 
 .test {
   grid-row: 3;
+  grid-column: 1/3;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -382,8 +388,7 @@ body main .body #aboutProject p strong {
 }
 body main .body #lesson {
   display: grid;
-  grid-template-columns: -webkit-fit-content 1fr;
-  grid-template-columns: fit-content 1fr;
+  grid-template-columns: fit-content(150px) auto;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
@@ -445,6 +450,77 @@ body main .body #lesson .right-block .checkList input {
   border: #707070 solid 0.1rem;
   outline: none;
 }
+body main .body #lesson .chasvi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4rem;
+}
+body main .body #lesson .chasvi-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body main .body #lesson .chasvi-box h3 {
+  font-size: 2.125rem;
+  color: #5890ae;
+  background-color: #c1d4d6;
+  border: 1px solid #707070;
+  text-align: center;
+  padding: 1.125rem;
+}
+body main .body #lesson .chasvi-box .input-box {
+  border: 1px solid #707070;
+  padding: 1.125rem;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput {
+  width: 100%;
+  font-size: 2rem;
+  background-color: #e4eeef;
+  border: none;
+  padding: 1.125rem 1.375rem;
+  width: 100%;
+  resize: none;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput:focus {
+  outline: none;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput.small {
+  height: 5.1875rem;
+  white-space: nowrap;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput.big {
+  height: 16.5rem;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput::-webkit-input-placeholder {
+  font-size: 2rem;
+  color: #0a2b39;
+  opacity: 50%;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput::-moz-placeholder {
+  font-size: 2rem;
+  color: #0a2b39;
+  opacity: 50%;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput:-ms-input-placeholder {
+  font-size: 2rem;
+  color: #0a2b39;
+  opacity: 50%;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput::-ms-input-placeholder {
+  font-size: 2rem;
+  color: #0a2b39;
+  opacity: 50%;
+}
+body main .body #lesson .chasvi-box .input-box .sheavseInput::placeholder {
+  font-size: 2rem;
+  color: #0a2b39;
+  opacity: 50%;
+}
 body main .body #lesson .gzamkvlevi-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -452,9 +528,14 @@ body main .body #lesson .gzamkvlevi-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  grid-column: 1/3;
 }
 body main .body #lesson .gzamkvlevi-header h2 {
   margin-left: 2.5rem;
+  font-size: 2.125rem;
+}
+body main .body #lesson .gzamkvlevi-box {
+  grid-column: 1/3;
 }
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box {
   display: -webkit-box;
@@ -477,11 +558,14 @@ body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box img {
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-title {
   background-color: #c1d4d6;
   padding: 1.0625rem;
+  font-size: 2.125rem;
   margin: 0;
 }
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text {
-  font-size: 2rem;
+  font-size: 2.625rem;
   background-color: #e4eeef;
+  color: #0a2b39;
+  line-height: 1.2;
   padding: 1.0625rem 1.0625rem 3.75rem;
 }
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text span {
@@ -571,6 +655,7 @@ body main .body #lesson .leftSentences .words .wordsInner .word {
 }
 body main .body #lesson .gridRow3 {
   grid-row: 3;
+  grid-column: 1/3;
 }
 body main .body #lesson .gridRow3 p {
   font-size: 2rem;
@@ -614,6 +699,7 @@ body main .body #lesson .gridRow3 .tableContainer input {
 }
 body main .body #lesson .waikitxe[class~=პეგასი] {
   margin-top: 1rem;
+  grid-column: 1/3;
 }
 body main .body #lesson .waikitxe[class~=პეგასი] .part1 {
   display: grid;
@@ -688,8 +774,27 @@ body main .body #lesson .waikitxe[class~=პეგასი] .fa-solid {
   font-size: 3rem;
   font-weight: 900;
 }
+body main .body #lesson .upasuxe {
+  grid-column: 1/3;
+}
+body main .body #lesson .upasuxe-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body main .body #lesson .upasuxe ol {
+  margin-left: 3.25rem;
+}
+body main .body #lesson .upasuxe li {
+  margin-bottom: 2rem;
+  padding-left: 0.8125rem;
+}
 body main .body #lesson .waikitxe[class~=მოგზაური] {
   margin-top: 1rem;
+  grid-column: 1/3;
 }
 body main .body #lesson .waikitxe[class~=მოგზაური] .part1 {
   display: grid;
@@ -841,6 +946,7 @@ body main .body #lesson .mogzaurisheavse .sityvebi ol li {
 }
 body main .body #lesson .waikitxe[class~=ნაპოლეონი] {
   margin-top: 1rem;
+  grid-column: 1/3;
 }
 body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 {
   display: grid;
@@ -924,6 +1030,58 @@ body main .body #lesson .waikitxe[class~=ნაპოლეონი] .fa-solid 
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
+}
+body main .body #lesson .napoleoniSeavse .sqemaWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10rem;
+}
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft {
+  margin-top: 1rem;
+}
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  font-family: "BookNino";
+  letter-spacing: 0;
+  color: #0a2b39;
+  text-align: left;
+  width: 17rem;
+  margin-bottom: 2.2rem;
+}
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight input {
+  background-color: #e4eeef;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-family: "BookNino";
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0;
+  opacity: 0.5;
+  color: #0a2b39;
+  max-width: 415px;
 }
 
 @media (max-width: 2700px) and (min-width: 1920px) {

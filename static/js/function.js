@@ -63,7 +63,7 @@ function goMainPage() {
   headContent.classList.add("hide");
   if (checkCanvas) {
     resetDaakavshire();
-    checkCanvas = false;
+    
   }
 }
 //click on home button will show main page and hide everything else
@@ -189,11 +189,15 @@ export function showLessonSection(section) {
       });
 
       lessonSection.innerHTML = `
-      <h2>${sections[section]["title"]}:</h2>
-            <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
-            <div class="right-block">
-            <ol>${upasuxeQuestions}</ol>
-            </div>
+      <div class="upasuxe">
+        <div class="upasuxe-header">
+        <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
+        <h2>${sections[section]["title"]}:</h2>
+        </div>
+        <div class="right-block">
+          <ol>${upasuxeQuestions}</ol>
+        </div>
+      </div>
             `;
       break;
 
@@ -642,14 +646,94 @@ function napoleoniSheavse(e) {
       break;
 
     case "ჩასვი":
-      lessonSection.innerHTML = "chasvi";
+      lessonSection.innerHTML = `
+      <h2>${section[subsection]["title"]}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="chasvi">
+        <div class="chasvi-wrapper">
+          <div class="chasvi-box">
+            <h3>ვითარება</h3>
+            <div class="input-box">
+              <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+            </div>
+          </div>
+          <div class="chasvi-box">
+            <h3>ადგილი</h3>
+            <div class="input-box">
+              <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="chasvi-box">
+          <h3>პერსონაჟი</h3>
+          <div class="input-box">
+            <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
+        </div>
+        <div class="chasvi-box">
+          <h3>პრობლემა</h3>
+          <div class="input-box">
+            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
+        </div>
+        <div class="chasvi-box">
+          <h3>პრობლემის გადაწყვეტა</h3>
+          <div class="input-box">
+            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
+        </div>
+        ${addButtons(1)}
+      </div>
+        `;
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetNapoleoniChasvi);
       break;
 
-    case "შეავსე":
-      lessonSection.innerHTML = "sheavse";
+      case "შეავსე":
+
+      const sqemaBlock = section[subsection]["sqemaLines"];
+
+      let sqemaLeftHtml = ``;
+      let sqemaRightHtml = ``;
+
+      sqemaBlock.forEach(item => {
+        sqemaLeftHtml += `
+        <p class="sqemaLine" >${item}</p>
+        `
+      })
+      sqemaBlock.forEach(item => {
+        sqemaRightHtml += `
+        <input type="text" placeholder="განმარტება">
+        `
+      })
+      
+      lessonSection.innerHTML = `
+      <h2>${section[subsection]["title"]}:</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="napoleoniSeavse"> 
+      <div class="sqemaWrapper">
+      <div class="sqemaLeft" >
+      ${sqemaLeftHtml}
+      </div>
+      <div class="sqemaRight" >
+      ${sqemaRightHtml}
+      </div>
+      </div>
+        ${addButtons(1)}
+      </div>
+        `
+      const button = document.querySelector("#tavidan");
+      button.addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".sqemaRight input");
+        inputs.forEach(function (input) {
+          input.value = "";
+        });
+      });
       break;
   }
-}
+  }
+
 
 function addButtons(amount) {
   if (amount == 2) {
@@ -686,6 +770,12 @@ function resetMogzauriChasvi() {
     inpt.children[1].classList.remove("correct");
     inpt.children[1].classList.remove("wrong");
   });
+}
+
+function resetNapoleoniChasvi() {
+  document.querySelectorAll(".sheavseInput").forEach(input => {
+    input.value = "";
+  })
 }
 
 function checkPegasiDaakavshire() {
@@ -797,6 +887,8 @@ function resetDaakavshire() {
     i.style.color = "black";
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    checkCanvas = false;
+
 }
 
 //canvas functions START
@@ -813,7 +905,7 @@ let correctPegasiDaakavshireAnswers =
 let correctMogzauriDaakavshireAnswers =
   booksData["დიდი მოგზაური"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
-let correctNapoleoniDaakavshireAnswers = 
+let correctNapoleoniDaakavshireAnswers =
   booksData["ნაპოლეონი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
 let chosen = {

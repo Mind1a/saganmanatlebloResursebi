@@ -127,7 +127,7 @@ body {
 
             #lesson {
                 display: grid;
-                grid-template-columns: fit-content 1fr;
+                grid-template-columns: fit-content(150px) auto;
                 justify-content: left;
                 column-gap: 3rem;
 
@@ -144,6 +144,8 @@ body {
 
                 .right-block {
                     margin-top: 1rem;
+                    
+
 
                     strong {
                         color: $textBlue;
@@ -195,17 +197,74 @@ body {
                         }
                     }
                 }
+                .chasvi {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4rem;
+                    &-wrapper {
+                      display: flex;
+                    }
+          
+                    &-box {
+                      h3 {
+                        font-size: 2.125rem;
+                        color: #5890ae;
+                        background-color: #c1d4d6;
+                        border: 1px solid #707070;
+                        text-align: center;
+                        padding: 1.125rem;
+                      }
+                      .input-box {
+                        border: 1px solid #707070;
+                        padding: 1.125rem;
+          
+                        .sheavseInput {
+                          width: 100%;
+                          font-size: 2rem;
+                          background-color: #e4eeef;
+                          border: none;
+                          padding: 1.125rem 1.375rem;
+                          width: 100%;
+                        //   overflow: hidden;
+                          resize: none;
+          
+                          &:focus {
+                            outline: none;
+                          }
+          
+                          &.small {
+                            height: 5.1875rem;
+                            white-space: nowrap;
+                          }
+          
+                          &.big {
+                            height: 16.5rem;
+                          }
+          
+                          &::placeholder {
+                            font-size: 2rem;
+                            color: #0a2b39;
+                            opacity: 50%;
+                          }
+                        }
+                      }
+                    }
+                  }
 
         .gzamkvlevi-header {
           display: flex;
           align-items: center;
+          grid-column: 1/3;
 
           h2 {
             margin-left: 2.5rem;
+            font-size: 2.125rem;
           }
         }
 
         .gzamkvlevi-box {
+          grid-column: 1/3;
+
           .gzamkvlevi-subheading-box {
             display: flex;
             margin: 2rem 0 1rem;
@@ -227,12 +286,15 @@ body {
             .gzamkvlevi-title {
               background-color: $backgroundBlue;
               padding: 1.0625rem;
+              font-size: 2.125rem;
               margin: 0;
             }
 
             .gzamkvlevi-text {
-              font-size: 2rem;
+              font-size: 2.625rem;
               background-color: $inputBack;
+              color: $textDarkBlue;
+              line-height: 1.2;
               padding: 1.0625rem 1.0625rem 3.75rem;
 
               span {
@@ -322,6 +384,7 @@ body {
                 }
                 .gridRow3{
                     grid-row: 3;
+                    grid-column: 1/3;
                     p{
                         font-size: 2rem;
                         color: $textDarkBlue;
@@ -359,6 +422,8 @@ body {
             }
                 .waikitxe[class~='პეგასი'] {
                     margin-top: 1rem;
+                    grid-column: 1/3;
+
 
                     .part1 {
                         img {
@@ -453,8 +518,27 @@ body {
                     }
                 }
 
+                .upasuxe {
+                    grid-column: 1/3;
+
+                  &-header {
+                    display: flex;
+                    align-items: center;
+                  }
+        
+                  ol {
+                    margin-left: 3.25rem;
+                  }
+        
+                  li {
+                    margin-bottom: 2rem;
+                    padding-left: 0.8125rem;
+                  }
+                }
+
                 .waikitxe[class~='მოგზაური'] {
                     margin-top: 1rem;
+                    grid-column: 1/3;
 
                     .part1 {
                         img {
@@ -638,6 +722,8 @@ body {
 
                 .waikitxe[class~='ნაპოლეონი'] {
                     margin-top: 1rem;
+                    grid-column: 1/3;
+
 
                     .part1 {
                         display: grid;
@@ -734,6 +820,51 @@ body {
                         text-align: center;
                         font-size: 3rem;
                         font-weight: 900;
+                    }
+                }
+                .napoleoniSeavse {
+
+                    .sqemaWrapper
+                    {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        gap: 10rem;
+                        .sqemaLeft
+                        {
+                            margin-top: 1rem;
+
+                            p
+                            {
+                                font-style:  normal;
+                                font-weight: normal;
+                                font-size: 32px;
+
+                                font-family: "BookNino";
+                                letter-spacing: 0;
+                                color: $textDarkBlue;
+                                text-align: left;
+                                width: 17rem;
+                                margin-bottom: 2.2rem;
+                            }
+                        }
+                        .sqemaRight
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            input
+                            {
+                                 @include sheavseInput;
+                                font-family: "BookNino";
+                                font-size: 32px;
+                                font-weight: normal;
+                                font-style: normal;
+                                letter-spacing: 0;
+                                opacity: 0.5;
+                                color: $textDarkBlue;
+                                max-width: 415px;
+                            }
+                        }
                     }
                 }
             }
