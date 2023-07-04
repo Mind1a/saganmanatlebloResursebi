@@ -461,20 +461,13 @@ body main .body #lesson .right-block .checkList input {
   border: #707070 solid 0.1rem;
   outline: none;
 }
-body main .body #lesson .chasvi {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 4rem;
-}
 body main .body #lesson .chasvi-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+body main .body #lesson .chasvi img {
+  margin: 0 auto 0 10rem;
 }
 body main .body #lesson .chasvi-box h3 {
   font-size: 2.125rem;
@@ -495,6 +488,7 @@ body main .body #lesson .chasvi-box .input-box .sheavseInput {
   border: none;
   padding: 1.125rem 1.375rem;
   width: 100%;
+  overflow: hidden;
   resize: none;
 }
 body main .body #lesson .chasvi-box .input-box .sheavseInput:focus {
@@ -505,7 +499,7 @@ body main .body #lesson .chasvi-box .input-box .sheavseInput.small {
   white-space: nowrap;
 }
 body main .body #lesson .chasvi-box .input-box .sheavseInput.big {
-  height: 16.5rem;
+  min-height: 16.5rem;
 }
 body main .body #lesson .chasvi-box .input-box .sheavseInput::-webkit-input-placeholder {
   font-size: 2rem;

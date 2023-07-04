@@ -663,33 +663,45 @@ function napoleoniSheavse(e) {
             </div>
           </div>
           <div class="chasvi-box">
-            <h3>ადგილი</h3>
-            <div class="input-box">
-              <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
-            </div>
+          <h3>ადგილი</h3>
+          <div class="input-box">
+          <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
           </div>
         </div>
+        <img src="${section[subsection]["img"]}">
         <div class="chasvi-box">
-          <h3>პერსონაჟი</h3>
+        <h3>პერსონაჟი</h3>
           <div class="input-box">
             <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
-          </div>
+            </div>
         </div>
+        <img src="${section[subsection]["img"]}">
         <div class="chasvi-box">
-          <h3>პრობლემა</h3>
-          <div class="input-box">
-            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+        <h3>პრობლემა</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput big' id="input1" placeholder='ჩაწერე პასუხი'></textarea>
           </div>
         </div>
+        <img src="${section[subsection]["img"]}">
         <div class="chasvi-box">
           <h3>პრობლემის გადაწყვეტა</h3>
           <div class="input-box">
-            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+          <textarea class='sheavseInput big' id="input2" placeholder='ჩაწერე პასუხი'></textarea>
           </div>
         </div>
         ${addButtons(1)}
       </div>
         `;
+
+      document.getElementById("input1").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document.getElementById("input2").addEventListener("input", function () {
+        autoResize(this);
+      });
+
       document
         .querySelector("#tavidan")
         .addEventListener("click", resetNapoleoniChasvi);
@@ -1325,6 +1337,12 @@ function onmousemove(e) {
   }
 }
 //canvas functions END
+
+// Makes a textarea element grow in height dynamically with the amount of text entered
+function autoResize(element) {
+  element.style.height = "auto";
+  element.style.height = element.scrollHeight + "px";
+}
 
 // Displays each section of menu and 'Maswavleblis Gzamkvlevi'
 menu.addEventListener("click", (e) => {
