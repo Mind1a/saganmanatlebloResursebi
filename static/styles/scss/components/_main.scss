@@ -199,11 +199,12 @@ body {
                     }
                 }
                 .chasvi {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4rem;
                     &-wrapper {
                       display: flex;
+
+                    }
+                    img {
+                      margin: 0 auto 0 10rem;
                     }
           
                     &-box {
@@ -226,7 +227,7 @@ body {
                           border: none;
                           padding: 1.125rem 1.375rem;
                           width: 100%;
-                        //   overflow: hidden;
+                          overflow: hidden;
                           resize: none;
           
                           &:focus {
@@ -239,7 +240,7 @@ body {
                           }
           
                           &.big {
-                            height: 16.5rem;
+                            min-height: 16.5rem;
                           }
           
                           &::placeholder {
