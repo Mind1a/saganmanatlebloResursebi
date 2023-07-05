@@ -837,6 +837,17 @@ body {
                     }
                 }
                 .napoleoniSeavse {
+                    .sub-title {
+                        font-size: 2rem;
+                        font-family: "BookNino";
+                        margin-bottom: 2.1.3125rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    .wrapper-angelozi {
+                        gap: 0 !important;
+                        justify-content: flex-start !important;
+                    }
 
                     .sqemaWrapper
                     {
@@ -861,6 +872,10 @@ body {
                                 width: 17rem;
                                 margin-bottom: 2.2rem;
                             }
+
+                            .p-angelozi {
+                                width: 21rem;
+                            }
                         }
                         .sqemaRight
                         {
@@ -877,6 +892,10 @@ body {
                                 opacity: 0.5;
                                 color: $textDarkBlue;
                                 max-width: 415px;
+                            }
+
+                            .input-angelozi {
+                                width: 25.9375rem;
                             }
                         }
                     }

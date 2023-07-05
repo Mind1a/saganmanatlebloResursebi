@@ -920,6 +920,47 @@ function angeloziSheavse(e) {
         attachDragStart();
       }
       break;
+      case "ჩასვი":
+      const sqemaBlock = section[subsection]["sqemaLines"];
+
+      let sqemaLeftHtml = ``;
+      let sqemaRightHtml = ``;
+
+      sqemaBlock.forEach((item) => {
+        sqemaLeftHtml += `
+        <p class="sqemaLine p-angelozi" >${item}</p>
+        `;
+      });
+      sqemaBlock.forEach(() => {
+        sqemaRightHtml += `
+        <input type="text" placeholder="განმარტება" class="input-angelozi">
+        `;
+      });
+
+      lessonSection.innerHTML = `
+      <h2>${section[subsection]["title"]}:</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="napoleoniSeavse"> 
+      <p class="sub-title">${section[subsection]["p"]}</p>
+      <div class="sqemaWrapper wrapper-angelozi">
+      <div class="sqemaLeft">
+      ${sqemaLeftHtml}
+      </div>
+      <div class="sqemaRight" >
+      ${sqemaRightHtml}
+      </div>
+      </div>
+        ${addButtons(1)}
+      </div>
+        `;
+      const button = document.querySelector("#tavidan");
+      button.addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".sqemaRight input");
+        inputs.forEach(function (input) {
+          input.value = "";
+        });
+      });
+      break;
     case "შეავსე":
       lessonSection.innerHTML = `
     <h2>${section[subsection]["title"]}</h2>
