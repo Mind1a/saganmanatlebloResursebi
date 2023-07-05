@@ -1045,6 +1045,18 @@ body main .body #lesson .waikitxe[class~=ნაპოლეონი] .fa-solid 
   font-size: 3rem;
   font-weight: 900;
 }
+body main .body #lesson .napoleoniSeavse .sub-title {
+  font-size: 2rem;
+  font-family: "BookNino";
+  margin-bottom: 2.1 0.3125rem;
+  margin-bottom: 1rem;
+}
+body main .body #lesson .napoleoniSeavse .wrapper-angelozi {
+  gap: 0 !important;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
 body main .body #lesson .napoleoniSeavse .sqemaWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1071,6 +1083,9 @@ body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft p {
   width: 17rem;
   margin-bottom: 2.2rem;
 }
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft .p-angelozi {
+  width: 21rem;
+}
 body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1096,6 +1111,9 @@ body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight input {
   opacity: 0.5;
   color: #0a2b39;
   max-width: 415px;
+}
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight .input-angelozi {
+  width: 25.9375rem;
 }
 body main .body #lesson .angeloziDaakavshire {
   grid-column: 1/3;
