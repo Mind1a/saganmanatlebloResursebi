@@ -63,7 +63,6 @@ function goMainPage() {
   headContent.classList.add("hide");
   if (checkCanvas) {
     resetDaakavshire();
-    
   }
 }
 //click on home button will show main page and hide everything else
@@ -211,7 +210,7 @@ export function showLessonSection(section) {
       } else if (title == "ანგელოზის ერთი დღე") {
         angeloziSheavse();
       }
-      
+
       break;
 
     case "sheqmeni":
@@ -232,7 +231,7 @@ export function showLessonSection(section) {
       } else if (title == "ნაპოლეონი") {
         napoleoniSheavse(section);
       } else if (title == "ანგელოზის ერთი დღე") {
-        angeloziSheavse();
+        angeloziSheavse(section);
       }
       break;
   }
@@ -488,7 +487,7 @@ function pegasiSheavse(e) {
       dropZones.forEach((dropZone) => {
         dropZone.addEventListener("dragover", handleDragOver);
       });
-      
+
       function handleDragOver(event) {
         event.preventDefault();
       }
@@ -707,24 +706,23 @@ function napoleoniSheavse(e) {
         .addEventListener("click", resetNapoleoniChasvi);
       break;
 
-      case "შეავსე":
-
+    case "შეავსე":
       const sqemaBlock = section[subsection]["sqemaLines"];
 
       let sqemaLeftHtml = ``;
       let sqemaRightHtml = ``;
 
-      sqemaBlock.forEach(item => {
+      sqemaBlock.forEach((item) => {
         sqemaLeftHtml += `
         <p class="sqemaLine" >${item}</p>
-        `
-      })
-      sqemaBlock.forEach(item => {
+        `;
+      });
+      sqemaBlock.forEach((item) => {
         sqemaRightHtml += `
         <input type="text" placeholder="განმარტება">
-        `
-      })
-      
+        `;
+      });
+
       lessonSection.innerHTML = `
       <h2>${section[subsection]["title"]}:</h2>
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -739,7 +737,7 @@ function napoleoniSheavse(e) {
       </div>
         ${addButtons(1)}
       </div>
-        `
+        `;
       const button = document.querySelector("#tavidan");
       button.addEventListener("click", function () {
         const inputs = document.querySelectorAll(".sqemaRight input");
@@ -751,21 +749,22 @@ function napoleoniSheavse(e) {
   }
 }
 
-function angeloziSheavse(e) 
-{
+function angeloziSheavse(e) {
   let section = booksData["ანგელოზის ერთი დღე"]["sheavse"];
   let subsection = e ? e : "დააკავშირე";
 
   switch (subsection) {
-    case "დააკავშირე" :
+    case "დააკავშირე":
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
       const correctMatches = section[subsection]["correct_matches"];
 
-        lessonSection.innerHTML = `
+      lessonSection.innerHTML = `
         <h2>${section[subsection]["title"]}</h2>
         <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
-        <p class="angelozi-daakavshire-dsc">${section[subsection]["description"]}</p>
+        <p class="angelozi-daakavshire-dsc">${
+          section[subsection]["description"]
+        }</p>
         <div class="angeloziDaakavshire"> 
         <div class="objects-container"> 
         ${generateObjects(leftBlock)}
@@ -789,110 +788,95 @@ function angeloziSheavse(e)
           </div>
         `;
 
-        function generateObjects(block)
-        {
-          let objectsDiv = ``;
-          block.forEach((obj, index) => {
-            objectsDiv +=
-            `
+      function generateObjects(block) {
+        let objectsDiv = ``;
+        block.forEach((obj, index) => {
+          objectsDiv += `
               <div class="object">
                 <img id="img-${block[index][2]}" class="draggable-img" draggable="true" src="${obj[0]}">
                 <p id="para-${block[index][2]}"  draggable="true" >${obj[1]}</p>
               </div>
-            `
-          });
-          return objectsDiv;
-        };
+            `;
+        });
+        return objectsDiv;
+      }
 
-        function droppableBox(num)
-        {
-
-          let droppableBox = ``;
-          for(let i = num; i < num + 3; i++)
-          {
-            droppableBox +=
-            `
+      function droppableBox(num) {
+        let droppableBox = ``;
+        for (let i = num; i < num + 3; i++) {
+          droppableBox += `
               <div class="droppable-box"> 
                 <div class="number">${i + 1}</div> 
                 <div class="droppable-top drop-zone-angel"> </div>
                 <div class="droppable-bottom drop-zone-angel"> </div>
               </div>
-            `
-          }
-          return droppableBox;
-        };
-        const dropZone = document.querySelectorAll(".drop-zone-angel");
+            `;
+        }
+        return droppableBox;
+      }
+      const dropZone = document.querySelectorAll(".drop-zone-angel");
 
-        attachDragStart();
-        function attachDragStart()
-        {
-          const images = document.querySelectorAll(".draggable-img");
+      attachDragStart();
+      function attachDragStart() {
+        const images = document.querySelectorAll(".draggable-img");
         const paragraps = document.querySelectorAll(".object p");
         images.forEach((image) => {
           image.addEventListener("dragstart", handleDragStart);
         });
-        paragraps.forEach((p) =>
-        {
+        paragraps.forEach((p) => {
           p.addEventListener("dragstart", handleDragStart);
         });
 
-        // 
+        //
         dropZone.forEach((dropZone) => {
           dropZone.addEventListener("dragover", handleDragOver);
         });
 
-        dropZone.forEach((dropZone) => 
-        {
+        dropZone.forEach((dropZone) => {
           dropZone.addEventListener("drop", handleDrop);
         });
+      }
 
-        }
-        
-        function handleDragStart(ev)
-        {
-          ev.dataTransfer.setData("text/plain", ev.target.id)
-        };
+      function handleDragStart(ev) {
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+      }
 
-        const imageDropZones = document.querySelectorAll(".droppable-top");
-        const paraDropZones = document.querySelectorAll(".droppable-bottom");
-       
-        function handleDragOver(ev)
-        {
-          ev.preventDefault();
-        };
+      const imageDropZones = document.querySelectorAll(".droppable-top");
+      const paraDropZones = document.querySelectorAll(".droppable-bottom");
 
-        function handleDrop(ev)
-        {
-          ev.preventDefault();
-          const data = ev.dataTransfer.getData("text/plain");
-          const source = document.getElementById(data);
+      function handleDragOver(ev) {
+        ev.preventDefault();
+      }
 
-          if(ev.target.innerHTML == " ")
-          {
-            if(data.includes("img") 
-               && ev.target.classList.contains("droppable-top"))
-            {
-              ev.target.appendChild(source);
-            }else if (data.includes("para") 
-                  && ev.target.classList.contains("droppable-bottom"))
-            {
-              ev.target.appendChild(source);
-            }
+      function handleDrop(ev) {
+        ev.preventDefault();
+        const data = ev.dataTransfer.getData("text/plain");
+        const source = document.getElementById(data);
 
-          }else
-          {
-            return;
+        if (ev.target.innerHTML == " ") {
+          if (
+            data.includes("img") &&
+            ev.target.classList.contains("droppable-top")
+          ) {
+            ev.target.appendChild(source);
+          } else if (
+            data.includes("para") &&
+            ev.target.classList.contains("droppable-bottom")
+          ) {
+            ev.target.appendChild(source);
           }
+        } else {
+          return;
         }
+      }
 
-        document
+      document
         .querySelector("#dasruleba")
         .addEventListener("click", handleCheck);
       document.querySelector("#tavidan").addEventListener("click", handleReset);
 
       const dropBoxes = document.querySelectorAll(".droppable-box");
-      function handleCheck()
-      {
+      function handleCheck() {
         dropBoxes.forEach((box, index) => {
           let top = box.querySelector(".droppable-top");
           let bottom = box.querySelector(".droppable-bottom");
@@ -903,38 +887,30 @@ function angeloziSheavse(e)
           let correctImg = correctMatches[index][0];
           let correctPara = correctMatches[index][1];
 
-          if(top.querySelector("img"))
-          {
-             imgId = top.querySelector("img").id;
-             if(correctImg == imgId)
-             {
-              top.classList.add('correctImg');
-             }else
-             {
-              top.classList.add('incorrectImg');
-             }
-          };
-          if(bottom.querySelector("p"))
-          {
-             paraId = bottom.querySelector("p").id;
-             if(correctPara == paraId)
-              {
-                bottom.querySelector('p').classList.add('correct');
-              }else
-              {
-                bottom.querySelector('p').classList.add('wrong');
-              }
-          };
-
-        })
-      };
-      function handleReset()
-      { 
-        imageDropZones.forEach((zone) => {
-          zone.innerHTML = ' ' ;
-          zone.classList.remove("correctImg", "incorrectImg")
+          if (top.querySelector("img")) {
+            imgId = top.querySelector("img").id;
+            if (correctImg == imgId) {
+              top.classList.add("correctImg");
+            } else {
+              top.classList.add("incorrectImg");
+            }
+          }
+          if (bottom.querySelector("p")) {
+            paraId = bottom.querySelector("p").id;
+            if (correctPara == paraId) {
+              bottom.querySelector("p").classList.add("correct");
+            } else {
+              bottom.querySelector("p").classList.add("wrong");
+            }
+          }
         });
-        paraDropZones.forEach((zone) => {  
+      }
+      function handleReset() {
+        imageDropZones.forEach((zone) => {
+          zone.innerHTML = " ";
+          zone.classList.remove("correctImg", "incorrectImg");
+        });
+        paraDropZones.forEach((zone) => {
           zone.innerHTML = " ";
         });
         let columns = document.querySelectorAll(".objects-container");
@@ -942,8 +918,55 @@ function angeloziSheavse(e)
         columns[1].innerHTML = generateObjects(rightBlock);
 
         attachDragStart();
-        
       }
+      break;
+    case "შეავსე":
+      lessonSection.innerHTML = `
+    <h2>${section[subsection]["title"]}</h2>
+    <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+    <div class="chasvi">
+      <p>${section[subsection]["p"]}</p>
+      <div class="chasvi-box">
+        <h3>რა მოხდა ჯერ</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput mid' id="input1" placeholder='ჩაწერე პასუხი'></textarea>
+        </div>
+      </div>
+      <img src="${section[subsection]["img"]}">
+      <div class="chasvi-box">
+        <h3>რა მოხდა შემდეგ</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput mid' id="input2" placeholder='ჩაწერე პასუხი'></textarea>
+        </div>
+      </div>
+      <img src="${section[subsection]["img"]}">
+      <div class="chasvi-box">
+        <h3>რა მოხდა ბოლოს</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput mid' id="input3" placeholder='ჩაწერე პასუხი'></textarea>
+        </div>
+      </div>
+      ${addButtons(1)}
+    </div>
+    </div>
+      `;
+
+      document.getElementById("input1").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document.getElementById("input2").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document.getElementById("input3").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetNapoleoniChasvi);
+      break;
   }
 }
 
@@ -985,9 +1008,9 @@ function resetMogzauriChasvi() {
 }
 
 function resetNapoleoniChasvi() {
-  document.querySelectorAll(".sheavseInput").forEach(input => {
+  document.querySelectorAll(".sheavseInput").forEach((input) => {
     input.value = "";
-  })
+  });
 }
 
 function checkPegasiDaakavshire() {
@@ -1099,8 +1122,7 @@ function resetDaakavshire() {
     i.style.color = "black";
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-    checkCanvas = false;
-
+  checkCanvas = false;
 }
 
 //canvas functions START
