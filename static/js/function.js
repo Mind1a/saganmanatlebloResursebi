@@ -63,7 +63,6 @@ function goMainPage() {
   headContent.classList.add("hide");
   if (checkCanvas) {
     resetDaakavshire();
-    
   }
 }
 //click on home button will show main page and hide everything else
@@ -208,7 +207,10 @@ export function showLessonSection(section) {
         didiMogzauriSheavse();
       } else if (title == "ნაპოლეონი") {
         napoleoniSheavse();
+      } else if (title == "ანგელოზის ერთი დღე") {
+        angeloziSheavse();
       }
+
       break;
 
     case "sheqmeni":
@@ -228,6 +230,8 @@ export function showLessonSection(section) {
         didiMogzauriSheavse(section);
       } else if (title == "ნაპოლეონი") {
         napoleoniSheavse(section);
+      } else if (title == "ანგელოზის ერთი დღე") {
+        angeloziSheavse(section);
       }
       break;
   }
@@ -658,56 +662,67 @@ function napoleoniSheavse(e) {
             </div>
           </div>
           <div class="chasvi-box">
-            <h3>ადგილი</h3>
-            <div class="input-box">
-              <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
-            </div>
+          <h3>ადგილი</h3>
+          <div class="input-box">
+          <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
+          </div>
           </div>
         </div>
+        <img src="${section[subsection]["img"]}">
         <div class="chasvi-box">
-          <h3>პერსონაჟი</h3>
+        <h3>პერსონაჟი</h3>
           <div class="input-box">
             <textarea class='sheavseInput small' placeholder='ჩაწერე პასუხი'></textarea>
-          </div>
+            </div>
         </div>
+        <img src="${section[subsection]["img"]}">
         <div class="chasvi-box">
-          <h3>პრობლემა</h3>
-          <div class="input-box">
-            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+        <h3>პრობლემა</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput big' id="input1" placeholder='ჩაწერე პასუხი'></textarea>
           </div>
         </div>
+        <img src="${section[subsection]["img"]}">
         <div class="chasvi-box">
           <h3>პრობლემის გადაწყვეტა</h3>
           <div class="input-box">
-            <textarea class='sheavseInput big' placeholder='ჩაწერე პასუხი'></textarea>
+          <textarea class='sheavseInput big' id="input2" placeholder='ჩაწერე პასუხი'></textarea>
           </div>
         </div>
         ${addButtons(1)}
       </div>
         `;
+
+      document.getElementById("input1").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document.getElementById("input2").addEventListener("input", function () {
+        autoResize(this);
+      });
+
       document
         .querySelector("#tavidan")
         .addEventListener("click", resetNapoleoniChasvi);
       break;
 
-      case "შეავსე":
-
+    case "შეავსე":
       const sqemaBlock = section[subsection]["sqemaLines"];
 
       let sqemaLeftHtml = ``;
       let sqemaRightHtml = ``;
 
-      sqemaBlock.forEach(item => {
+      sqemaBlock.forEach((item) => {
         sqemaLeftHtml += `
         <p class="sqemaLine" >${item}</p>
-        `
-      })
-      sqemaBlock.forEach(item => {
+        `;
+      });
+      sqemaBlock.forEach((item) => {
         sqemaRightHtml += `
         <input type="text" placeholder="განმარტება">
-        `
-      })
-      
+        `;
+      });
+
       lessonSection.innerHTML = `
       <h2>${section[subsection]["title"]}:</h2>
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -722,7 +737,7 @@ function napoleoniSheavse(e) {
       </div>
         ${addButtons(1)}
       </div>
-        `
+        `;
       const button = document.querySelector("#tavidan");
       button.addEventListener("click", function () {
         const inputs = document.querySelectorAll(".sqemaRight input");
@@ -732,8 +747,269 @@ function napoleoniSheavse(e) {
       });
       break;
   }
-  }
+}
 
+function angeloziSheavse(e) {
+  let section = booksData["ანგელოზის ერთი დღე"]["sheavse"];
+  let subsection = e ? e : "დააკავშირე";
+
+  switch (subsection) {
+    case "დააკავშირე":
+      const leftBlock = section[subsection]["daakavshire_left_block"];
+      const rightBlock = section[subsection]["daakavshire_right_block"];
+      const correctMatches = section[subsection]["correct_matches"];
+
+      lessonSection.innerHTML = `
+        <h2>${section[subsection]["title"]}</h2>
+        <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+        <p class="angelozi-daakavshire-dsc">${
+          section[subsection]["description"]
+        }</p>
+        <div class="angeloziDaakavshire"> 
+        <div class="objects-container"> 
+        ${generateObjects(leftBlock)}
+        </div>
+        <div class="droppable-container">
+          <div class="droppable-top-container"> 
+          ${droppableBox(0)}
+          </div>
+          <div class="droppable-bottom-container"> 
+          ${droppableBox(3)}
+          </div> 
+        
+        </div>
+          <div class="objects-container"> 
+        ${generateObjects(rightBlock)}
+
+          </div>
+          <div class="buttons"> 
+          ${addButtons(2)}
+          </div>
+          </div>
+        `;
+
+      function generateObjects(block) {
+        let objectsDiv = ``;
+        block.forEach((obj, index) => {
+          objectsDiv += `
+              <div class="object">
+                <img id="img-${block[index][2]}" class="draggable-img" draggable="true" src="${obj[0]}">
+                <p id="para-${block[index][2]}"  draggable="true" >${obj[1]}</p>
+              </div>
+            `;
+        });
+        return objectsDiv;
+      }
+
+      function droppableBox(num) {
+        let droppableBox = ``;
+        for (let i = num; i < num + 3; i++) {
+          droppableBox += `
+              <div class="droppable-box"> 
+                <div class="number">${i + 1}</div> 
+                <div class="droppable-top drop-zone-angel"> </div>
+                <div class="droppable-bottom drop-zone-angel"> </div>
+              </div>
+            `;
+        }
+        return droppableBox;
+      }
+      const dropZone = document.querySelectorAll(".drop-zone-angel");
+
+      attachDragStart();
+      function attachDragStart() {
+        const images = document.querySelectorAll(".draggable-img");
+        const paragraps = document.querySelectorAll(".object p");
+        images.forEach((image) => {
+          image.addEventListener("dragstart", handleDragStart);
+        });
+        paragraps.forEach((p) => {
+          p.addEventListener("dragstart", handleDragStart);
+        });
+
+        //
+        dropZone.forEach((dropZone) => {
+          dropZone.addEventListener("dragover", handleDragOver);
+        });
+
+        dropZone.forEach((dropZone) => {
+          dropZone.addEventListener("drop", handleDrop);
+        });
+      }
+
+      function handleDragStart(ev) {
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+      }
+
+      const imageDropZones = document.querySelectorAll(".droppable-top");
+      const paraDropZones = document.querySelectorAll(".droppable-bottom");
+
+      function handleDragOver(ev) {
+        ev.preventDefault();
+      }
+
+      function handleDrop(ev) {
+        ev.preventDefault();
+        const data = ev.dataTransfer.getData("text/plain");
+        const source = document.getElementById(data);
+
+        if (ev.target.innerHTML == " ") {
+          if (
+            data.includes("img") &&
+            ev.target.classList.contains("droppable-top")
+          ) {
+            ev.target.appendChild(source);
+          } else if (
+            data.includes("para") &&
+            ev.target.classList.contains("droppable-bottom")
+          ) {
+            ev.target.appendChild(source);
+          }
+        } else {
+          return;
+        }
+      }
+
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", handleCheck);
+      document.querySelector("#tavidan").addEventListener("click", handleReset);
+
+      const dropBoxes = document.querySelectorAll(".droppable-box");
+      function handleCheck() {
+        dropBoxes.forEach((box, index) => {
+          let top = box.querySelector(".droppable-top");
+          let bottom = box.querySelector(".droppable-bottom");
+
+          let imgId;
+          let paraId;
+
+          let correctImg = correctMatches[index][0];
+          let correctPara = correctMatches[index][1];
+
+          if (top.querySelector("img")) {
+            imgId = top.querySelector("img").id;
+            if (correctImg == imgId) {
+              top.classList.add("correctImg");
+            } else {
+              top.classList.add("incorrectImg");
+            }
+          }
+          if (bottom.querySelector("p")) {
+            paraId = bottom.querySelector("p").id;
+            if (correctPara == paraId) {
+              bottom.querySelector("p").classList.add("correct");
+            } else {
+              bottom.querySelector("p").classList.add("wrong");
+            }
+          }
+        });
+      }
+      function handleReset() {
+        imageDropZones.forEach((zone) => {
+          zone.innerHTML = " ";
+          zone.classList.remove("correctImg", "incorrectImg");
+        });
+        paraDropZones.forEach((zone) => {
+          zone.innerHTML = " ";
+        });
+        let columns = document.querySelectorAll(".objects-container");
+        columns[0].innerHTML = generateObjects(leftBlock);
+        columns[1].innerHTML = generateObjects(rightBlock);
+
+        attachDragStart();
+      }
+      break;
+      case "ჩასვი":
+      const sqemaBlock = section[subsection]["sqemaLines"];
+
+      let sqemaLeftHtml = ``;
+      let sqemaRightHtml = ``;
+
+      sqemaBlock.forEach((item) => {
+        sqemaLeftHtml += `
+        <p class="sqemaLine p-angelozi" >${item}</p>
+        `;
+      });
+      sqemaBlock.forEach(() => {
+        sqemaRightHtml += `
+        <input type="text" placeholder="განმარტება" class="input-angelozi">
+        `;
+      });
+
+      lessonSection.innerHTML = `
+      <h2>${section[subsection]["title"]}:</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="napoleoniSeavse"> 
+      <p class="sub-title">${section[subsection]["p"]}</p>
+      <div class="sqemaWrapper wrapper-angelozi">
+      <div class="sqemaLeft">
+      ${sqemaLeftHtml}
+      </div>
+      <div class="sqemaRight" >
+      ${sqemaRightHtml}
+      </div>
+      </div>
+        ${addButtons(1)}
+      </div>
+        `;
+      const button = document.querySelector("#tavidan");
+      button.addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".sqemaRight input");
+        inputs.forEach(function (input) {
+          input.value = "";
+        });
+      });
+      break;
+    case "შეავსე":
+      lessonSection.innerHTML = `
+    <h2>${section[subsection]["title"]}</h2>
+    <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+    <div class="chasvi">
+      <p>${section[subsection]["p"]}</p>
+      <div class="chasvi-box">
+        <h3>რა მოხდა ჯერ</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput mid' id="input1" placeholder='ჩაწერე პასუხი'></textarea>
+        </div>
+      </div>
+      <img src="${section[subsection]["img"]}">
+      <div class="chasvi-box">
+        <h3>რა მოხდა შემდეგ</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput mid' id="input2" placeholder='ჩაწერე პასუხი'></textarea>
+        </div>
+      </div>
+      <img src="${section[subsection]["img"]}">
+      <div class="chasvi-box">
+        <h3>რა მოხდა ბოლოს</h3>
+        <div class="input-box">
+          <textarea class='sheavseInput mid' id="input3" placeholder='ჩაწერე პასუხი'></textarea>
+        </div>
+      </div>
+      ${addButtons(1)}
+    </div>
+    </div>
+      `;
+
+      document.getElementById("input1").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document.getElementById("input2").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document.getElementById("input3").addEventListener("input", function () {
+        autoResize(this);
+      });
+
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetNapoleoniChasvi);
+      break;
+  }
+}
 
 function addButtons(amount) {
   if (amount == 2) {
@@ -773,9 +1049,9 @@ function resetMogzauriChasvi() {
 }
 
 function resetNapoleoniChasvi() {
-  document.querySelectorAll(".sheavseInput").forEach(input => {
+  document.querySelectorAll(".sheavseInput").forEach((input) => {
     input.value = "";
-  })
+  });
 }
 
 function checkPegasiDaakavshire() {
@@ -887,8 +1163,7 @@ function resetDaakavshire() {
     i.style.color = "black";
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-    checkCanvas = false;
-
+  checkCanvas = false;
 }
 
 //canvas functions START
@@ -1125,6 +1400,12 @@ function onmousemove(e) {
   }
 }
 //canvas functions END
+
+// Makes a textarea element grow in height dynamically with the amount of text entered
+function autoResize(element) {
+  element.style.height = "auto";
+  element.style.height = element.scrollHeight + "px";
+}
 
 // Displays each section of menu and 'Maswavleblis Gzamkvlevi'
 menu.addEventListener("click", (e) => {
