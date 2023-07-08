@@ -1052,12 +1052,23 @@ body main .body #lesson .napoleoniSeavse .sub-title {
   margin-bottom: 1rem;
 }
 body main .body #lesson .napoleoniSeavse .wrapper-angelozi {
-  gap: 0 !important;
-  -webkit-box-pack: start !important;
-      -ms-flex-pack: start !important;
-          justify-content: flex-start !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body main .body #lesson .napoleoniSeavse .wrapper-angelozi #dasrulebaTavidan {
+  -webkit-transform: translateX(-12%);
+          transform: translateX(-12%);
 }
 body main .body #lesson .napoleoniSeavse .sqemaWrapper {
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1067,7 +1078,7 @@ body main .body #lesson .napoleoniSeavse .sqemaWrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 10rem;
+  gap: 8rem;
 }
 body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft {
   margin-top: 1rem;
@@ -1109,7 +1120,7 @@ body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight input {
   font-style: normal;
   letter-spacing: 0;
   opacity: 0.5;
-  color: #0a2b39;
+  color: #000000;
   max-width: 415px;
 }
 body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight .input-angelozi {

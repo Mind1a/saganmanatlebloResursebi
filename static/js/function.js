@@ -942,14 +942,21 @@ function angeloziSheavse(e) {
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
       <div class="napoleoniSeavse"> 
       <p class="sub-title">${section[subsection]["p"]}</p>
-      <div class="sqemaWrapper wrapper-angelozi">
-      <div class="sqemaLeft">
-      ${sqemaLeftHtml}
-      </div>
-      <div class="sqemaRight" >
-      ${sqemaRightHtml}
-      </div>
-      </div>
+      <div class="wrapper-angelozi">
+
+       <div class="sqemaWrapper"> 
+
+        <div class="sqemaLeft">
+        ${sqemaLeftHtml}
+        </div>
+
+        <div class="sqemaRight" >
+        ${sqemaRightHtml}
+        </div>
+
+       </div>  
+      
+      
         ${addButtons(1)}
       </div>
         `;
