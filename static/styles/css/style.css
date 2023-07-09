@@ -270,7 +270,7 @@ body {
   font-family: "mainFont";
   display: grid;
   grid-template-columns: repeat(1, 0fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: auto 1fr auto;
   grid-column-gap: 3.25rem;
   grid-row-gap: 1.813rem;
   margin: 0 auto;
@@ -1258,7 +1258,6 @@ body main .body #lesson .angelozi-daakavshire-dsc {
     max-width: 70.625rem;
     grid-column: 2/4;
     grid-row: 2/3;
-    margin: auto;
   }
   body main .body #books {
     -webkit-column-gap: 11.625rem;
