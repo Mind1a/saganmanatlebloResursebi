@@ -2,7 +2,7 @@ body {
     font-family: 'mainFont';
     display: grid;
     grid-template-columns: repeat(1, 0fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: auto 1fr auto;
     grid-column-gap: 3.25rem;
     grid-row-gap: 1.813rem;
     margin: 0 auto;
