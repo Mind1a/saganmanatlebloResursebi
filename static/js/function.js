@@ -159,7 +159,20 @@ export function showLessonSection(section) {
       if (title == "ნაპოლეონი") {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
-      } else {
+      }
+      else if (title == "ანგელოზის ერთი დღე")
+      {
+        waikitxeParags2 +=
+        ` 
+          <div class="img-container">
+            <img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">
+            <img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">
+            <img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">
+          </div>
+         `;
+        waikitxeParags3 += `<img src="${sections[section]["images"][4]}" alt="kitxvistvis mzadeba">`;
+      } 
+       else {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags2 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">`;
