@@ -1158,6 +1158,123 @@ body {
                         text-align: left;
                         line-height: 3.5rem;
                     }
+
+                    .waikitxe[class~='წიგნი'] {
+                        margin-top: 1rem;
+                        grid-column: 1/3;
+    
+    
+                        .part1 {
+                            display: grid;
+                            margin-bottom: 2rem;
+                            grid-template-areas: 'p1 p1'
+                                'p2 img'
+                                'p3 img'
+                                'p4 img';
+                                
+                            align-items: center;
+    
+                            img {
+                                padding-left: 2rem;
+                                grid-area: img;
+                                max-width: 249px;
+                                width: 100%;
+                                height: 600px;
+                            }
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+    
+                            p:nth-child(2) {
+                                grid-area: p2;
+                            }
+    
+                            p:nth-child(3) {
+                                grid-area: p3;
+                                margin-bottom: 0;
+                                margin-right: 4rem;
+                            }
+                            p:nth-child(4) {
+                                grid-area: p4;
+                                margin-bottom: 0;
+                                margin-right: 4rem;
+                            }
+
+                        }
+    
+                        .part2 {
+                            margin-bottom: 2rem;
+                            display: grid;
+                            grid-template-areas: 'p1'
+                                'img'
+                                'p2';
+    
+                            img {
+                                grid-area: img;
+                                width: 80%;
+                                position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
+
+                            }
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                                margin-bottom: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+                            p:nth-child(2){
+                                grid-area: p2;
+                                margin-top: 1rem;
+                            }
+                        }
+    
+                        .part3 {
+                            display: grid;
+                            grid-template-columns: 1fr auto;
+                            grid-template-areas: 'p1 p1'
+                                'p2 img';
+                            align-items: center;
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+    
+                            p:nth-child(2) {
+                                padding-right: 2rem;
+                                grid-area: p2;
+                            }
+    
+                            img {
+                                grid-area: img;
+                                object-fit: cover;
+                                width: 514px;
+                                max-height: 367px;
+                            }
+                        }
+    
+                        .fa-solid {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 3rem;
+                            font-weight: 900;
+                        }
+                    }
             }
         }
     }
