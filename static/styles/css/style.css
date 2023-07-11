@@ -325,6 +325,7 @@ body .head-gzamkvlevi-title {
 }
 body main {
   width: 100%;
+  grid-column: 2/4;
 }
 body main .body #books {
   grid-row: 2/4;
@@ -415,6 +416,32 @@ body main .body #lesson h2 {
 }
 body main .body #lesson img {
   width: 8rem;
+}
+body main .body #lesson .tamara-daakavshire-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  grid-row: 2/3;
+  grid-column: 1/3;
+  margin-top: 35px;
+}
+body main .body #lesson .tamara-daakavshire-desc p {
+  font-family: BookNino;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #0a2b39;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 3rem;
+  margin-left: 2.5rem;
+}
+body main .body #lesson .tamara-daakavshire {
+  grid-row: 3;
+  grid-column: 1/3;
 }
 body main .body #lesson .right-block {
   margin-top: 1rem;

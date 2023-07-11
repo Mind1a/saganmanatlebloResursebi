@@ -206,9 +206,7 @@ export function showLessonSection(section) {
 
       lessonSection.innerHTML = `
       <div class="upasuxe">
-        <div class="upasuxe-header">
         <h2>${sections[section]["title"]}:</h2>
-        </div>
         <div class="right-block">
         <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
           <ol>${upasuxeQuestions}</ol>
@@ -220,12 +218,14 @@ export function showLessonSection(section) {
     case "sheavse":
       if (title == "პეგასი") {
         pegasiSheavse();
-      } else if (title == "დიდი მოგზაური") {
+      } else if (title === "დიდი მოგზაური") {
         didiMogzauriSheavse();
-      } else if (title == "ნაპოლეონი") {
+      } else if (title === "ნაპოლეონი") {
         napoleoniSheavse();
-      } else if (title == "ანგელოზის ერთი დღე") {
+      } else if (title === "ანგელოზის ერთი დღე") {
         angeloziSheavse();
+      } else if (title === "თამარას წიგნი" ) {
+        tamaraSheavse();
       }
 
       break;
@@ -249,6 +249,8 @@ export function showLessonSection(section) {
         napoleoniSheavse(section);
       } else if (title == "ანგელოზის ერთი დღე") {
         angeloziSheavse(section);
+      } else if (title == "თამარას წიგნი") {
+        tamaraSheavse(section);
       }
       break;
   }
@@ -1034,7 +1036,57 @@ function angeloziSheavse(e) {
       break;
   }
 }
+function tamaraSheavse(e) {
+  let section = booksData["თამარას წიგნი"]["sheavse"];
+  let subsection = e ? e : "დააკავშირე";
+  let options = "";
 
+  switch (subsection) {
+    case "დააკავშირე":
+      console.log(subsection)
+      const leftBlock = section[subsection]["daakavshire_left_block"];
+      const rightBlock = section[subsection]["daakavshire_right_block"];
+
+      let leftBlockHtml = "";
+      leftBlock.forEach((item) => {
+        leftBlockHtml += `<p>${item}</p>`;
+      });
+
+      let rightBlockHtml = "";
+      rightBlock.forEach((item) => {
+        rightBlockHtml += `<p>${item}</p>`;
+      });
+
+      lessonSection.innerHTML = `
+            <h2>${section[subsection]["title"]}</h2>
+            <div class="tamara-daakavshire-desc">
+             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+             <p>${section[subsection]["description"]}</p>
+            </div>
+            <div class="right-block tamara-daakavshire">
+            <div id="daakavshireWrapper">
+            <div class="daakavshire">
+                <div class="daakavshire_left_block">${leftBlockHtml}</div>
+                <canvas id="canvas"></canvas>
+                <div class="daakavshire_right_block">${rightBlockHtml}</div>
+                </div>
+            </div>
+            ${addButtons(2)}
+            </div>
+            `;
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", checkTamaraDaakavshire);
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetDaakavshire);
+      startCanvas();
+      break;
+      case "ჩასვი":
+        lessonSection.innerHTML = `chasvi`
+        break;
+    }
+}
 function addButtons(amount) {
   if (amount == 2) {
     return `
@@ -1170,7 +1222,38 @@ function checkNapoleoniDaakavshire() {
   ended = true;
   draw();
 }
+function checkTamaraDaakavshire() {
+  const daakavshire_left_block = document.querySelector(
+    ".daakavshire_left_block"
+  );
+  const daakavshire_right_block = document.querySelector(
+    ".daakavshire_right_block"
+  );
 
+  daakavshire_left_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+  daakavshire_right_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+
+  if (Object.keys(chosen).length) {
+    for (const [key, value] of Object.entries(chosen)) {
+      if (value == correctTamaraDaakavshireAnswers[key]) {
+        console.log("green");
+        existingLines[key].StrokeColor = "green";
+        daakavshire_left_block.children[key - 1].style.color = "green";
+        daakavshire_right_block.children[value - 1].style.color = "green";
+      } else {
+        console.log("red");
+        existingLines[key] ? (existingLines[key].StrokeColor = "red") : null;
+      }
+    }
+  }
+
+  ended = true;
+  draw();
+}
 function resetDaakavshire() {
   existingLines = [];
   chosen = {
@@ -1206,6 +1289,9 @@ let correctMogzauriDaakavshireAnswers =
 
 let correctNapoleoniDaakavshireAnswers =
   booksData["ნაპოლეონი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
+
+let correctTamaraDaakavshireAnswers =
+  booksData["თამარას წიგნი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
 let chosen = {
   1: 0,

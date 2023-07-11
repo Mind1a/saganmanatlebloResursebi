@@ -55,6 +55,7 @@ body {
 
     main {
         width: 100%;
+        grid-column: 2/4;
         .body {
             #books {
                 grid-row: 2/4;
@@ -142,7 +143,31 @@ body {
                 img {
                     width: 8rem;
                 }
-
+                .tamara-daakavshire-desc
+                {
+                    display: flex;
+                    align-items: flex-start;
+                    grid-row: 2/3;
+                    grid-column: 1/3;
+                    margin-top: 35px;
+                    p
+                    {
+                        font-family: BookNino;
+                        font-size: 2rem;
+                        font-style: normal;
+                        font-weight: normal;
+                        color: $textDarkBlue;
+                        letter-spacing: 0;
+                        text-align: left;
+                        line-height: 3rem;
+                        margin-left: 2.5rem;
+                    }
+                }
+                .tamara-daakavshire
+                {
+                    grid-row: 3;
+                    grid-column: 1/3;
+                }
                 .right-block {
                     margin-top: 1rem;
                     
