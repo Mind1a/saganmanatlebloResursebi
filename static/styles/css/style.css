@@ -603,6 +603,7 @@ body main .body #lesson .right-block p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
+  max-width: 748px;
 }
 body main .body #lesson .right-block ol li,
 body main .body #lesson .right-block ul li {
