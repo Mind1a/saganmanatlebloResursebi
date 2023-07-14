@@ -1223,6 +1223,62 @@ function tamaraSheavse(e) {
         attachDragStart();
       }
         break;
+        case "შეავსე":
+          const sheavseTitle = section[subsection]["title"];
+          const sheavseDesc = section[subsection]["description"];
+
+          lessonSection.innerHTML = 
+          `
+            <h2>${sheavseTitle}</h2>
+            <div class="tamara-sheavse-desc">
+              <img src="${section[subsection]["img"]}" class="lessonLogo" alt="sheavse logo">
+              <p>${sheavseDesc}</p>
+            </div>
+            <div class="tamara-sheavse">
+              <svg class="circle circle-left" width="654" height="563"></svg>
+              <svg class="circle circle-right" width="654" height="563"></svg>
+              <div class="graph">
+                ${genList()}
+              </div>
+              </div>
+              ${addButtons(2)}
+          `;
+
+            document
+              .querySelector("#dasruleba")
+              .addEventListener("click", handleCheckSheavse);
+            document
+              .querySelector("#tavidan")
+              .addEventListener("click", handleResetSheavse);
+          function genList()
+          {
+            let code = ``;
+            for(let i = 0; i < 3; i++)
+            {
+              code +=
+              `
+              <div class="graph-list">
+                  <input type="text" placeholder="ჩაწერე სიტყვა">
+                  <input type="text" placeholder="ჩაწერე სიტყვა">
+                  <input type="text" placeholder="ჩაწერე სიტყვა">
+                </div>
+              `;
+            }
+            return code;
+          };
+          function handleCheckSheavse()
+          {
+            return 0;
+          }
+          function handleResetSheavse()
+          {
+            const inputList = document.querySelectorAll(".graph-list input");
+            inputList.forEach((input) => {
+              input.value = "";
+              
+            })
+          }
+        break;
     }
 }
 function addButtons(amount) {
