@@ -203,6 +203,77 @@ body {
                         }
                     }
                 }
+                .tamara-sheavse
+                {
+                    position: relative;
+                    grid-column: 1/3;
+                    max-width: 915px;
+                    min-height: 563px;
+                    width: 100%;
+                    .circle
+                    {
+                        position: absolute;
+                        border: 4px solid $textDarkBlue;
+                        border-radius: 50%;
+                        opacity: 0.5;
+                        background-color: $logoBackBlue;
+                    }
+                    .circle-right
+                    {
+                        left: 261px;
+                    }
+                    .graph
+                    {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        top: 50%;
+                        
+                        transform: translateY(-50%);
+                        .graph-list
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 35px;
+                            margin-left: 40px;
+                            &:nth-child(2)
+                            {
+                                margin-left: 89px;
+                                margin-right: 55px;
+                                
+                            }
+
+                            input
+                            {
+                                max-width: 217px;
+                                font-family: bookNino;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 32px;
+                                color: $textDarkBlue;
+                                padding: 10px 22px 10px 26px;
+                                border: none;
+                                outline: none;
+                                background-color: $inputBack;
+                            }
+                            &:nth-child(1)
+                            {
+                                input:nth-child(2)
+                                {
+                                    transform: translateX(-17px);
+                                }
+                            }
+                            &:nth-child(3)
+                            {
+                                input:nth-child(2)
+                                {
+                                    transform: translateX(17px);
+                                }
+                            }
+                        }
+                    }
+                }
                 .graph-wrapper
                 {
                     display: flex;
