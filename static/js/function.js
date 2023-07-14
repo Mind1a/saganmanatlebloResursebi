@@ -159,7 +159,24 @@ export function showLessonSection(section) {
       if (title == "ნაპოლეონი") {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
-      } else {
+      }
+      else if (title == "ანგელოზის ერთი დღე")
+      {
+        waikitxeParags2 +=
+        ` 
+          <div class="img-container">
+            <img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">
+            <img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">
+            <img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">
+          </div>
+         `;
+        waikitxeParags3 += `<img src="${sections[section]["images"][4]}" alt="kitxvistvis mzadeba">`;
+      }else if(title == "თამარას წიგნი")
+      {
+        waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
+        waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
+      }
+       else {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags2 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">`;
@@ -189,11 +206,9 @@ export function showLessonSection(section) {
 
       lessonSection.innerHTML = `
       <div class="upasuxe">
-        <div class="upasuxe-header">
-        <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
         <h2>${sections[section]["title"]}:</h2>
-        </div>
         <div class="right-block">
+        <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
           <ol>${upasuxeQuestions}</ol>
         </div>
       </div>
@@ -203,12 +218,14 @@ export function showLessonSection(section) {
     case "sheavse":
       if (title == "პეგასი") {
         pegasiSheavse();
-      } else if (title == "დიდი მოგზაური") {
+      } else if (title === "დიდი მოგზაური") {
         didiMogzauriSheavse();
-      } else if (title == "ნაპოლეონი") {
+      } else if (title === "ნაპოლეონი") {
         napoleoniSheavse();
-      } else if (title == "ანგელოზის ერთი დღე") {
+      } else if (title === "ანგელოზის ერთი დღე") {
         angeloziSheavse();
+      } else if (title === "თამარას წიგნი" ) {
+        tamaraSheavse();
       }
 
       break;
@@ -232,6 +249,8 @@ export function showLessonSection(section) {
         napoleoniSheavse(section);
       } else if (title == "ანგელოზის ერთი დღე") {
         angeloziSheavse(section);
+      } else if (title == "თამარას წიგნი") {
+        tamaraSheavse(section);
       }
       break;
   }
@@ -942,14 +961,21 @@ function angeloziSheavse(e) {
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
       <div class="napoleoniSeavse"> 
       <p class="sub-title">${section[subsection]["p"]}</p>
-      <div class="sqemaWrapper wrapper-angelozi">
-      <div class="sqemaLeft">
-      ${sqemaLeftHtml}
-      </div>
-      <div class="sqemaRight" >
-      ${sqemaRightHtml}
-      </div>
-      </div>
+      <div class="wrapper-angelozi">
+
+       <div class="sqemaWrapper"> 
+
+        <div class="sqemaLeft">
+        ${sqemaLeftHtml}
+        </div>
+
+        <div class="sqemaRight" >
+        ${sqemaRightHtml}
+        </div>
+
+       </div>  
+      
+      
         ${addButtons(1)}
       </div>
         `;
@@ -1010,7 +1036,251 @@ function angeloziSheavse(e) {
       break;
   }
 }
+function tamaraSheavse(e) {
+  let section = booksData["თამარას წიგნი"]["sheavse"];
+  let subsection = e ? e : "დააკავშირე";
+  let options = "";
 
+  switch (subsection) {
+    case "დააკავშირე":
+
+      const leftBlock = section[subsection]["daakavshire_left_block"];
+      const rightBlock = section[subsection]["daakavshire_right_block"];
+
+      let leftBlockHtml = "";
+      leftBlock.forEach((item) => {
+        leftBlockHtml += `<p>${item}</p>`;
+      });
+
+      let rightBlockHtml = "";
+      rightBlock.forEach((item) => {
+        rightBlockHtml += `<p>${item}</p>`;
+      });
+
+      lessonSection.innerHTML = `
+            <h2>${section[subsection]["title"]}</h2>
+            <div class="tamara-sheavse-desc">
+             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+             <p>${section[subsection]["description"]}</p>
+            </div>
+            <div class="right-block tamara-daakavshire">
+            <div id="daakavshireWrapper">
+            <div class="daakavshire">
+                <div class="daakavshire_left_block">${leftBlockHtml}</div>
+                <canvas id="canvas"></canvas>
+                <div class="daakavshire_right_block">${rightBlockHtml}</div>
+                </div>
+            </div>
+            ${addButtons(2)}
+            </div>
+            `;
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", checkTamaraDaakavshire);
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetDaakavshire);
+      startCanvas();
+      break;
+    case "ჩასვი":
+        lessonSection.innerHTML = `
+          <h2>${section[subsection]["title"]}</h2>
+          <div class="tamara-sheavse-desc">
+            <img src="${section[subsection]["img"]}" class="lessonLogo" alt="sheavse logo">
+            <p>${section[subsection]["description"]}</p> 
+          </div>
+          <div class="t-vocabulary-box">
+            <div class="vocabulary-top">
+               ${getWords(section[subsection]["vocabulary_top"])}
+            </div>
+            <div class="vocabulary-bottom">
+               ${getWords(section[subsection]["vocabulary_bottom"])}
+            </div>
+          </div>
+          <div class="graph-wrapper">
+            <div class="column column-left">
+              ${dropZonesTamara(section[subsection]["key_words"])}
+            </div>
+            <div class="column column-right">
+              ${dropZonesTamara(section[subsection]["key_words"])}
+            </div>
+          </div>
+          ${addButtons(2)}
+        `;
+
+      //Generate vocabulary
+        function getWords(list) {
+          return list.map((word) => 
+                  `<p data-value="${word}" class="tamara-word" draggable="true">${word}</p>`).join("");
+        };
+        //Generate Graph list
+        function dropZonesTamara(words) {
+          return words
+                .map((word) =>
+                `<div>
+                  <span class="key-word">${word}</span>
+                  <span class="tamara-drop-zone">${".".repeat(41)}</span>
+                </div>
+                `).join("");
+        };
+
+        //Logic for dragging
+        attachDragStart();
+        
+        function attachDragStart() {
+          const tamaraWords = document.querySelectorAll(".tamara-word");
+          const zones = document.querySelectorAll(".tamara-drop-zone");
+
+          tamaraWords.forEach((word) => {
+            word.addEventListener("dragstart", handleDragStart);
+          });
+          zones.forEach((dropZone) => {
+            dropZone.addEventListener("dragover", handleDragOver);
+          });
+          zones.forEach((dropzone) => {
+            dropzone.addEventListener("drop", handleDrop);
+          });
+        }
+
+        function handleDragStart(e) {
+          e.dataTransfer.setData("text/plain", e.target.textContent);
+        };
+
+        function handleDragOver(e) {
+          e.preventDefault();
+        }
+
+        function handleDrop(e) {
+          e.preventDefault();
+          const data = e.dataTransfer.getData("text/plain");
+          e.target.getContext = data;
+
+          const originalWord = document.querySelector(
+            `.tamara-word[data-value="${data}"]`
+          );
+          e.target.innerHTML = '';
+          e.target.classList.add('droppedZone');
+          e.target.appendChild(originalWord);
+          
+        };
+
+        document
+        .querySelector("#dasruleba")
+        .addEventListener("click", handleCheck);
+      document.querySelector("#tavidan").addEventListener("click", handleReset);
+      
+      //Check correct answers
+      function handleCheck() {
+        const correctLeft = {
+          1: "სანდრო",
+          2: "მზრუნველი",
+          3: "დაეხმარა თამარას ოცნებების ასრულებაში"
+        };
+        const correctRight = {
+          1: "თამარა",
+          2: "გამჭრიახი",
+          3: "მოიფიქრა, როგორ უნდა შეენახა ოცნებები ყუთში"
+        };
+        const leftList = document.querySelectorAll('.column-left div .tamara-drop-zone');
+        const rightList = document.querySelectorAll('.column-right div .tamara-drop-zone');
+
+        leftList.forEach((zone, index) => {
+          if(zone.querySelector('p')){
+          const text = zone.querySelector('p');
+          if(text.textContent === correctLeft[index + 1]) {
+            text.classList.add('correct');
+          }else
+          {
+            text.classList.add('wrong')
+          }
+        }
+        });
+        
+        rightList.forEach((zone, index) => {
+          if(zone.querySelector('p')){
+          const text = zone.querySelector('p');
+          if(text.textContent === correctRight[index + 1]) {
+            text.classList.add('correct');
+          }else
+          {
+            text.classList.add('wrong');
+          }
+        }
+        })
+      };
+      //reset words and zones
+      function handleReset() {
+        const zones = document.querySelectorAll(".tamara-drop-zone");
+        zones.forEach((zone) => {
+          zone.innerHTML = `${".".repeat(41)}`;
+          zone.classList.remove('droppedZone');
+        });
+        const topWords = document.querySelector('.vocabulary-top');
+        const bottomWords = document.querySelector('.vocabulary-bottom');
+
+        topWords.innerHTML = getWords(section[subsection]["vocabulary_top"]);
+        bottomWords.innerHTML = getWords(section[subsection]["vocabulary_bottom"]);
+        attachDragStart();
+      }
+        break;
+        case "შეავსე":
+          const sheavseTitle = section[subsection]["title"];
+          const sheavseDesc = section[subsection]["description"];
+
+          lessonSection.innerHTML = 
+          `
+            <h2>${sheavseTitle}</h2>
+            <div class="tamara-sheavse-desc">
+              <img src="${section[subsection]["img"]}" class="lessonLogo" alt="sheavse logo">
+              <p>${sheavseDesc}</p>
+            </div>
+            <div class="tamara-sheavse">
+              <svg class="circle circle-left" width="654" height="563"></svg>
+              <svg class="circle circle-right" width="654" height="563"></svg>
+              <div class="graph">
+                ${genList()}
+              </div>
+              </div>
+              ${addButtons(2)}
+          `;
+
+            document
+              .querySelector("#dasruleba")
+              .addEventListener("click", handleCheckSheavse);
+            document
+              .querySelector("#tavidan")
+              .addEventListener("click", handleResetSheavse);
+          function genList()
+          {
+            let code = ``;
+            for(let i = 0; i < 3; i++)
+            {
+              code +=
+              `
+              <div class="graph-list">
+                  <input type="text" placeholder="ჩაწერე სიტყვა">
+                  <input type="text" placeholder="ჩაწერე სიტყვა">
+                  <input type="text" placeholder="ჩაწერე სიტყვა">
+                </div>
+              `;
+            }
+            return code;
+          };
+          function handleCheckSheavse()
+          {
+            return 0;
+          }
+          function handleResetSheavse()
+          {
+            const inputList = document.querySelectorAll(".graph-list input");
+            inputList.forEach((input) => {
+              input.value = "";
+              
+            })
+          }
+        break;
+    }
+}
 function addButtons(amount) {
   if (amount == 2) {
     return `
@@ -1146,7 +1416,38 @@ function checkNapoleoniDaakavshire() {
   ended = true;
   draw();
 }
+function checkTamaraDaakavshire() {
+  const daakavshire_left_block = document.querySelector(
+    ".daakavshire_left_block"
+  );
+  const daakavshire_right_block = document.querySelector(
+    ".daakavshire_right_block"
+  );
 
+  daakavshire_left_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+  daakavshire_right_block.childNodes.forEach((element) => {
+    element.style.color = "red";
+  });
+
+  if (Object.keys(chosen).length) {
+    for (const [key, value] of Object.entries(chosen)) {
+      if (value == correctTamaraDaakavshireAnswers[key]) {
+        console.log("green");
+        existingLines[key].StrokeColor = "green";
+        daakavshire_left_block.children[key - 1].style.color = "green";
+        daakavshire_right_block.children[value - 1].style.color = "green";
+      } else {
+        console.log("red");
+        existingLines[key] ? (existingLines[key].StrokeColor = "red") : null;
+      }
+    }
+  }
+
+  ended = true;
+  draw();
+}
 function resetDaakavshire() {
   existingLines = [];
   chosen = {
@@ -1182,6 +1483,9 @@ let correctMogzauriDaakavshireAnswers =
 
 let correctNapoleoniDaakavshireAnswers =
   booksData["ნაპოლეონი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
+
+let correctTamaraDaakavshireAnswers =
+  booksData["თამარას წიგნი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 
 let chosen = {
   1: 0,

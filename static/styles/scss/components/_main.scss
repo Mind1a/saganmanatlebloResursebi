@@ -2,7 +2,7 @@ body {
     font-family: 'mainFont';
     display: grid;
     grid-template-columns: repeat(1, 0fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: auto 1fr auto;
     grid-column-gap: 3.25rem;
     grid-row-gap: 1.813rem;
     margin: 0 auto;
@@ -55,6 +55,7 @@ body {
 
     main {
         width: 100%;
+        grid-column: 2/4;
         .body {
             #books {
                 grid-row: 2/4;
@@ -131,7 +132,7 @@ body {
                 grid-template-columns: fit-content(150px) auto;
                 justify-content: left;
                 column-gap: 3rem;
-
+                
                 h2 {
                     color: $textBlue;
                     font-size: 2rem;
@@ -142,7 +143,181 @@ body {
                 img {
                     width: 8rem;
                 }
+                .tamara-sheavse-desc
+                {
+                    display: flex;
+                    align-items: flex-start;
+                    grid-row: 2/3;
+                    grid-column: 1/3;
+                    margin-top: 35px;
+                    max-width: 890px;
+                    p
+                    {
+                        font-family: BookNino;
+                        font-size: 2rem;
+                        font-style: normal;
+                        font-weight: normal;
+                        color: $textDarkBlue;
+                        letter-spacing: 0;
+                        text-align: left;
+                        line-height: 3rem;
+                        margin-left: 2.5rem;
+                        max-width: 869px;
+                        width: 100%;
+                    }
+                }
+                .tamara-daakavshire
+                {
+                    grid-row: 3;
+                    grid-column: 1/3;
+                }
+                .tamara-word
+                        {
+                            font-family: bookNino;
+                            font-size: 2rem;
+                            font-weight: normal;
+                            font-style: normal;
+                            color: $textDarkBlue;
+                            border: 1px solid $textBlue;
+                            background-color: $mainWhite;
+                            border-radius: 13px;
+                            padding: 4px;
+                            cursor: pointer;
+                        }
+                .t-vocabulary-box
+                {
+                    width: 100%;
+                    background-color: $inputBack;
+                    grid-column: 1/3;
+                    padding: 22px 20px 26px 20px;
+                    max-width: 890px;
+                    height: 160px;
+                    div
+                    {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        &:nth-child(1)
+                        {
+                            margin-bottom: 31px;
+                        }
+                    }
+                }
+                .tamara-sheavse
+                {
+                    position: relative;
+                    grid-column: 1/3;
+                    max-width: 915px;
+                    min-height: 563px;
+                    width: 100%;
+                    .circle
+                    {
+                        position: absolute;
+                        border: 4px solid $textDarkBlue;
+                        border-radius: 50%;
+                        opacity: 0.5;
+                        background-color: $logoBackBlue;
+                    }
+                    .circle-right
+                    {
+                        left: 261px;
+                    }
+                    .graph
+                    {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        top: 50%;
+                        
+                        transform: translateY(-50%);
+                        .graph-list
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 35px;
+                            margin-left: 40px;
+                            &:nth-child(2)
+                            {
+                                margin-left: 89px;
+                                margin-right: 55px;
+                                
+                            }
 
+                            input
+                            {
+                                max-width: 217px;
+                                font-family: bookNino;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 32px;
+                                color: $textDarkBlue;
+                                padding: 10px 22px 10px 26px;
+                                border: none;
+                                outline: none;
+                                background-color: $inputBack;
+                            }
+                            &:nth-child(1)
+                            {
+                                input:nth-child(2)
+                                {
+                                    transform: translateX(-17px);
+                                }
+                            }
+                            &:nth-child(3)
+                            {
+                                input:nth-child(2)
+                                {
+                                    transform: translateX(17px);
+                                }
+                            }
+                        }
+                    }
+                }
+                .graph-wrapper
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    grid-column: 1/3;
+                    gap: 66px;
+                    margin-top: 42px;
+                    max-width: 869px;
+                    .column
+                    {
+                        width: 100%;
+                        div
+                        {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 50px;
+                            .key-word
+                            {
+                                font-family: bookNino;
+                                font-size: 32px;
+                                letter-spacing: 0;
+                                font-weight: normal;
+                                font-style: normal;
+                                color: $textDarkBlue;
+                            }
+                            .tamara-drop-zone
+                            {
+                                border: 1px solid $textBlue;
+                                border-radius: 13px;
+                                min-width: 255px;
+                                color: $textBlue;
+                                background-color: $inputBack;
+                                padding: 1rem 0.5rem 0 0.5rem;
+                                font-size: 1.5rem;
+                            }
+                            .droppedZone
+                            {
+                                padding: 0;
+                            }
+
+                        }
+                    }
+                }
                 .right-block {
                     margin-top: 1rem;
                     
@@ -158,6 +333,7 @@ body {
                         color: $textDarkBlue;
                         font-size: 2rem;
                         margin-bottom: 2rem;
+                        max-width: 748px;
                     }
 
                     ol,
@@ -433,7 +609,7 @@ body {
                         font-size: 2rem;
                     }
                 }
-            }
+                }
                 .waikitxe[class~='პეგასი'] {
                     margin-top: 1rem;
                     grid-column: 1/3;
@@ -535,9 +711,11 @@ body {
                 .upasuxe {
                     grid-column: 1/3;
 
-                  &-header {
+                
+                  .right-block
+                  {
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
                   }
         
                   ol {
@@ -845,16 +1023,26 @@ body {
                     }
 
                     .wrapper-angelozi {
-                        gap: 0 !important;
-                        justify-content: flex-start !important;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        #dasrulebaTavidan
+                        {
+                            transform: translateX(-12%);
+                        }
                     }
 
                     .sqemaWrapper
                     {
+                        overflow-x: hidden;
+
                         display: flex;
                         align-items: flex-start;
                         justify-content: space-between;
-                        gap: 10rem;
+                        gap: 8rem;
+                        
                         .sqemaLeft
                         {
                             margin-top: 1rem;
@@ -890,7 +1078,7 @@ body {
                                 font-style: normal;
                                 letter-spacing: 0;
                                 opacity: 0.5;
-                                color: $textDarkBlue;
+                                color: $textChasviInput;
                                 max-width: 415px;
                             }
 
@@ -898,6 +1086,114 @@ body {
                                 width: 25.9375rem;
                             }
                         }
+                    }
+                }
+                .waikitxe[class~='დღე'] {
+                    margin-top: 1rem;
+                    grid-column: 1/3;
+
+
+                    .part1 {
+                        img {
+                            grid-area: img;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 img';
+                    }
+
+                    .part2 {
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'container container';
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        .img-container
+                        {
+                            grid-area: container;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 39px;
+                            img:nth-child(1)
+                            {
+                                max-width: 265px;
+                                width: 100%;
+                                height: 87px;
+                            }
+                            img:nth-child(2)
+                            {
+                                max-width: 150px;
+                                width: 100%;
+                                height: 80px;
+                            }
+                            img:nth-child(3)
+                            {
+                                max-width: 369px;
+                                width: 100%;
+                                height: 90px;
+                            }
+
+                        }
+
+                    }
+
+                    .part3 {
+                        p {
+                            color: $textDarkBlue;
+                            font-size: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        p:nth-child(1) {
+                            grid-area: p1;
+                        }
+
+                        p:nth-child(2) {
+                            grid-area: p2;
+                        }
+
+                        img:nth-child(3) {
+                            grid-area: img;
+                            width: 100%;
+                            height: fit-content;
+                        }
+
+                        display: grid;
+                        grid-template-areas: 'p1 p1'
+                        'p2 img';
+                    }
+
+                    .fa-solid {
+                        width: 100%;
+                        text-align: center;
+                        font-size: 3rem;
+                        font-weight: 900;
                     }
                 }
                 .angeloziDaakavshire {
@@ -1038,6 +1334,123 @@ body {
                         letter-spacing: 0;
                         text-align: left;
                         line-height: 3.5rem;
+                    }
+
+                    .waikitxe[class~='წიგნი'] {
+                        margin-top: 1rem;
+                        grid-column: 1/3;
+    
+    
+                        .part1 {
+                            display: grid;
+                            margin-bottom: 2rem;
+                            grid-template-areas: 'p1 p1'
+                                'p2 img'
+                                'p3 img'
+                                'p4 img';
+                                
+                            align-items: center;
+    
+                            img {
+                                padding-left: 2rem;
+                                grid-area: img;
+                                max-width: 249px;
+                                width: 100%;
+                                height: 600px;
+                            }
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+    
+                            p:nth-child(2) {
+                                grid-area: p2;
+                            }
+    
+                            p:nth-child(3) {
+                                grid-area: p3;
+                                margin-bottom: 0;
+                                margin-right: 4rem;
+                            }
+                            p:nth-child(4) {
+                                grid-area: p4;
+                                margin-bottom: 0;
+                                margin-right: 4rem;
+                            }
+
+                        }
+    
+                        .part2 {
+                            margin-bottom: 2rem;
+                            display: grid;
+                            grid-template-areas: 'p1'
+                                'img'
+                                'p2';
+    
+                            img {
+                                grid-area: img;
+                                width: 80%;
+                                position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
+
+                            }
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                                margin-bottom: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+                            p:nth-child(2){
+                                grid-area: p2;
+                                margin-top: 1rem;
+                            }
+                        }
+    
+                        .part3 {
+                            display: grid;
+                            grid-template-columns: 1fr auto;
+                            grid-template-areas: 'p1 p1'
+                                'p2 img';
+                            align-items: center;
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+    
+                            p:nth-child(2) {
+                                padding-right: 2rem;
+                                grid-area: p2;
+                            }
+    
+                            img {
+                                grid-area: img;
+                                object-fit: cover;
+                                width: 514px;
+                                max-height: 367px;
+                            }
+                        }
+    
+                        .fa-solid {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 3rem;
+                            font-weight: 900;
+                        }
                     }
             }
         }
