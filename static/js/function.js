@@ -96,7 +96,7 @@ export function showLessonSection(section) {
     case "gzamkvlevi":
       lessonSection.innerHTML = `<div class="gzamkvlevi-header">
           <img src='./static/images/icons/00_mastavlebllisGzamkvlevi.svg' alt='Maswavleblis gzamkvlevi logo'/>
-          <h2>რეკომენდაცია მასწავლებლებისთვის</h2>
+          <h2>რეკომენდაცია მასწავლებლებისთვის:</h2>
           </div>`;
       for (let aqtivoba in sections.gzamkvlevi) {
         lessonSection.innerHTML += `
