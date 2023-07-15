@@ -1223,7 +1223,7 @@ function tamaraSheavse(e) {
         attachDragStart();
       }
         break;
-        case "შეავსე":
+    case "შეავსე":
           const sheavseTitle = section[subsection]["title"];
           const sheavseDesc = section[subsection]["description"];
 
@@ -1241,12 +1241,10 @@ function tamaraSheavse(e) {
                 ${genList()}
               </div>
               </div>
-              ${addButtons(2)}
+              ${addButtons(1)}
           `;
 
-            document
-              .querySelector("#dasruleba")
-              .addEventListener("click", handleCheckSheavse);
+
             document
               .querySelector("#tavidan")
               .addEventListener("click", handleResetSheavse);
@@ -1266,10 +1264,7 @@ function tamaraSheavse(e) {
             }
             return code;
           };
-          function handleCheckSheavse()
-          {
-            return 0;
-          }
+
           function handleResetSheavse()
           {
             const inputList = document.querySelectorAll(".graph-list input");
