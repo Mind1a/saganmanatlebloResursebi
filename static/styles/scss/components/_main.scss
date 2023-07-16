@@ -145,7 +145,6 @@ body {
                 }
                 .varskvlavi-sheavse
                 {
-
                     .check-line
                     {
                        display: flex;
@@ -187,6 +186,33 @@ body {
                          color: $textDarkBlue;
                          letter-spacing: 0;
                        }
+                    }
+
+                    .sqema-line
+                    {
+                        width: 700px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 7px;
+                        span
+                        {
+                            font-family: BookNino;
+                            font-size: 32px;
+                            font-weight: normal;
+                            font-style: normal;
+                            color: $textDarkBlue;
+                        }
+                        input
+                        {
+                            font-family: BookNino;
+                            font-size: 32px;
+                            color: $textChasviInput;
+                            padding: 10px 200px 10px 26px;
+                            background-color: $inputBack;
+                            border: none;
+                            outline: none;
+                        }
                     }
                 }
 
