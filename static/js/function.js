@@ -221,6 +221,8 @@ export function showLessonSection(section) {
         angeloziSheavse();
       } else if (title === "თამარას წიგნი" ) {
         tamaraSheavse();
+      } else if (title === "მოპარული ვარსკვლავი") {
+        varskvlaviSheavse();
       }
 
       break;
@@ -246,6 +248,8 @@ export function showLessonSection(section) {
         angeloziSheavse(section);
       } else if (title == "თამარას წიგნი") {
         tamaraSheavse(section);
+      } else if (title === "მოპარული ვარსკვლავი") {
+        varskvlaviSheavse(section);
       }
       break;
   }
@@ -1271,6 +1275,53 @@ function tamaraSheavse(e) {
         break;
     }
 }
+
+function varskvlaviSheavse(e) {
+  let section = booksData["მოპარული ვარსკვლავი"]["sheavse"];
+  let subsection = e ? e : "დააკავშირე";
+
+  switch (subsection) {
+    case "დააკავშირე" :
+    
+    const checkText = section[subsection]["daakavshire_text"];
+    const title = section[subsection]["title"];
+    const img = section["img"];
+
+
+    lessonSection.innerHTML = 
+    `
+      <h2>${title}</h2>
+      <img src="${img}" class="lessonLogo" alt="sheavse">
+      <div class="varskvlavi-sheavse" >
+        ${genCheckList()}
+      </div>
+      ${addButtons(2)}
+    `;
+
+    document
+      .querySelector("#dasruleba")
+      .addEventListener('click', checkVarskvlaviDaakavshire);
+    document
+      .querySelector("#tavidan")
+      .addEventListener('click', resetVarskvlaviSheavse);
+    function genCheckList()
+    {
+      let fullList = ``;
+      checkText.forEach((text) => {
+        fullList += `
+        <div class="check-line">
+          <input class="regular-checkbox" type="checkbox">
+          <p>${text}</p>
+        </div>
+        `;
+      });
+      return fullList;
+    };
+
+    break;
+}
+}
+
 function addButtons(amount) {
   if (amount == 2) {
     return `
@@ -1287,6 +1338,8 @@ function addButtons(amount) {
     `;
   }
 }
+
+
 
 function checkMogzauriChasvi() {
   let pasuxebi = booksData["დიდი მოგზაური"]["sheavse"]["ჩასვი"]["pasuxebi"];
@@ -1437,7 +1490,33 @@ function checkTamaraDaakavshire() {
 
   ended = true;
   draw();
-}
+};
+function checkVarskvlaviDaakavshire () {
+
+  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+
+  checkBoxList.forEach((box, index) => {
+    if(box.checked)
+    { 
+      if(correctVarskvlaviDaakavshire[index + 1])
+      {
+
+        box.classList.add('correct-back')
+      }else
+      {
+        box.classList.add('incorrect-back')
+      }
+
+    }
+})
+
+};
+function resetVarskvlaviSheavse() {
+  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+  checkBoxList.forEach((box) => {
+    box.classList.remove('correct-back', 'incorrect-back')
+  })
+} ; 
 function resetDaakavshire() {
   existingLines = [];
   chosen = {
@@ -1476,7 +1555,8 @@ let correctNapoleoniDaakavshireAnswers =
 
 let correctTamaraDaakavshireAnswers =
   booksData["თამარას წიგნი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
-
+let correctVarskvlaviDaakavshire = 
+  booksData["მოპარული ვარსკვლავი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 let chosen = {
   1: 0,
   2: 0,
