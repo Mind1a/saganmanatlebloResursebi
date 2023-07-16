@@ -472,6 +472,35 @@ body main .body #lesson .varskvlavi-sheavse .check-line p {
   color: #0a2b39;
   letter-spacing: 0;
 }
+body main .body #lesson .varskvlavi-sheavse .sqema-line {
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 7px;
+}
+body main .body #lesson .varskvlavi-sheavse .sqema-line span {
+  font-family: BookNino;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  color: #0a2b39;
+}
+body main .body #lesson .varskvlavi-sheavse .sqema-line input {
+  font-family: BookNino;
+  font-size: 32px;
+  color: #000000;
+  padding: 10px 200px 10px 26px;
+  background-color: #e4eeef;
+  border: none;
+  outline: none;
+}
 body main .body #lesson .tamara-sheavse-desc {
   display: -webkit-box;
   display: -ms-flexbox;

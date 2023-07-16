@@ -1325,6 +1325,47 @@ function varskvlaviSheavse(e) {
       .querySelector("#tavidan")
       .addEventListener('click', resetVarskvlaviSheavse);
     break;
+    case "შეავსე":
+      const sqemaList = section[subsection]["sqema_lines"];
+      
+      lessonSection.innerHTML = 
+      `
+      <h2>${section[subsection]["title"]}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="varskvlavi-sheavse">
+        ${genInputLines()}
+      </div>
+      ${addButtons(1)}
+      `;
+
+      document
+        .querySelector("#tavidan")
+        .addEventListener('click', resetVarskSheavse)
+
+      function resetVarskSheavse()
+      {
+        const inputs = document.querySelectorAll(".sqema-line input");
+        
+        inputs.forEach((line) => {
+          line.value = '';
+        })
+      }
+      function genInputLines()
+      {
+        let fullList = ``;
+        sqemaList.forEach((line) => {
+          fullList +=
+          `
+            <div class="sqema-line">
+              <span>${line}</span>
+              <input type="text" placeholder="განმარტება">
+            </div>
+          `;
+        });
+        return fullList;
+      };
+
+    break;
     }
 }
 
