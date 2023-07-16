@@ -156,7 +156,7 @@ export function showLessonSection(section) {
         waikitxeParags3 += `<p>${p}</p>`;
       });
 
-      if (title == "ნაპოლეონი") {
+      if (title == "ნაპოლეონი"  || title == "თამარას წიგნი" || title == "მოპარული ვარსკვლავი") {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
       }
@@ -171,12 +171,7 @@ export function showLessonSection(section) {
           </div>
          `;
         waikitxeParags3 += `<img src="${sections[section]["images"][4]}" alt="kitxvistvis mzadeba">`;
-      }else if(title == "თამარას წიგნი")
-      {
-        waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
-        waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
-      }
-       else {
+      }else {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags2 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">`;
