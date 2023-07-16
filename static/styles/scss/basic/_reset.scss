@@ -110,10 +110,21 @@ h6 {
     grid-column: 1/3;
   }
 .correct-back {
-    background-color: green !important;
+    // background-color: green !important;
+    border-color: green !important;
+    &::after
+    {
+        color: green !important;
+    }
 }
 .incorrect-back {
-    background-color: red !important;
+    // background-color: red !important;
+    border-color: red !important;
+    &::after
+    {
+        color: red !important;
+    }
+
 }
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {

@@ -154,11 +154,17 @@ h6 {
 }
 
 .correct-back {
-  background-color: green !important;
+  border-color: green !important;
+}
+.correct-back::after {
+  color: green !important;
 }
 
 .incorrect-back {
-  background-color: red !important;
+  border-color: red !important;
+}
+.incorrect-back::after {
+  color: red !important;
 }
 
 input[type=number]::-webkit-inner-spin-button,

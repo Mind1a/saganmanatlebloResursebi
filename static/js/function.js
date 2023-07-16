@@ -1280,11 +1280,11 @@ function varskvlaviSheavse(e) {
   let section = booksData["მოპარული ვარსკვლავი"]["sheavse"];
   let subsection = e ? e : "დააკავშირე";
 
+  const title = section[subsection]["title"];
   switch (subsection) {
     case "დააკავშირე" :
     
     const checkText = section[subsection]["daakavshire_text"];
-    const title = section[subsection]["title"];
     const img = section["img"];
 
 
@@ -1293,7 +1293,7 @@ function varskvlaviSheavse(e) {
       <h2>${title}</h2>
       <img src="${img}" class="lessonLogo" alt="sheavse">
       <div class="varskvlavi-sheavse" >
-        ${genCheckList()}
+        ${genCheckList(checkText)}
       </div>
       ${addButtons(2)}
     `;
@@ -1304,22 +1304,28 @@ function varskvlaviSheavse(e) {
     document
       .querySelector("#tavidan")
       .addEventListener('click', resetVarskvlaviSheavse);
-    function genCheckList()
-    {
-      let fullList = ``;
-      checkText.forEach((text) => {
-        fullList += `
-        <div class="check-line">
-          <input class="regular-checkbox" type="checkbox">
-          <p>${text}</p>
-        </div>
-        `;
-      });
-      return fullList;
-    };
 
     break;
-}
+    case "ჩასვი":
+    const chasviText = section[subsection]["chasvi_text"];
+
+    lessonSection.innerHTML = 
+    `
+      <h2>${title}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="varskvlavi-sheavse">
+        ${genCheckList(chasviText)}
+      </div>
+      ${addButtons(2)}
+    `;
+    document
+      .querySelector("#dasruleba")
+      .addEventListener('click', checkVarskvlaviChasvi);
+    document
+      .querySelector("#tavidan")
+      .addEventListener('click', resetVarskvlaviSheavse);
+    break;
+    }
 }
 
 function addButtons(amount) {
@@ -1339,7 +1345,19 @@ function addButtons(amount) {
   }
 }
 
-
+function genCheckList(checktext)
+    {
+      let fullList = ``;
+      checktext.forEach((text) => {
+        fullList += `
+        <div class="check-line">
+          <input class="regular-checkbox" type="checkbox">
+          <p>${text}</p>
+        </div>
+        `;
+      });
+      return fullList;
+    };
 
 function checkMogzauriChasvi() {
   let pasuxebi = booksData["დიდი მოგზაური"]["sheavse"]["ჩასვი"]["pasuxebi"];
@@ -1366,7 +1384,25 @@ function resetNapoleoniChasvi() {
     input.value = "";
   });
 }
+function checkVarskvlaviChasvi() {
+  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+  let answers = booksData["მოპარული ვარსკვლავი"]["sheavse"]["ჩასვი"]["correct_matches"];
+  checkBoxList.forEach((box, index) => {
+    if(box.checked)
+    { 
+      if(answers[index + 1])
+      {
 
+        box.classList.add('correct-back');
+
+      }else
+      {
+        box.classList.add('incorrect-back')
+      }
+
+    }
+  })
+}
 function checkPegasiDaakavshire() {
   const daakavshire_left_block = document.querySelector(
     ".daakavshire_left_block"
@@ -1494,14 +1530,15 @@ function checkTamaraDaakavshire() {
 function checkVarskvlaviDaakavshire () {
 
   const checkBoxList = document.querySelectorAll('.regular-checkbox');
-
+  
   checkBoxList.forEach((box, index) => {
     if(box.checked)
     { 
       if(correctVarskvlaviDaakavshire[index + 1])
       {
 
-        box.classList.add('correct-back')
+        box.classList.add('correct-back');
+
       }else
       {
         box.classList.add('incorrect-back')
