@@ -143,6 +143,79 @@ body {
                 img {
                     width: 8rem;
                 }
+                .varskvlavi-sheavse
+                {
+                    .check-line
+                    {
+                       display: flex;
+                       align-items: center;
+                       gap: 14px;
+                       margin-bottom: 70px;
+                       width: 100%;
+                       .regular-checkbox 
+                       {
+                        appearance: none;
+                        padding: 1rem;
+                        font-size: 32px;
+                        border:4px solid $border;
+                        background-color: $mainWhite;
+                        position: relative;
+                        &:checked
+                        {
+                            background-color: #0c91d9;
+                            &::after
+                            {
+                                content: '\2714';
+                                font-size: 32px;
+	                            position: absolute;
+	                            top: 0px;
+	                            left: 3px;
+	                            color: $mainWhite;
+                            }
+
+                        };
+
+                        
+                       };
+                       p
+                       {
+                         font-family: BookNino;
+                         font-size: 32px;
+                         font-weight: normal;
+                         font-style: normal;
+                         color: $textDarkBlue;
+                         letter-spacing: 0;
+                       }
+                    }
+
+                    .sqema-line
+                    {
+                        width: 700px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 7px;
+                        span
+                        {
+                            font-family: BookNino;
+                            font-size: 32px;
+                            font-weight: normal;
+                            font-style: normal;
+                            color: $textDarkBlue;
+                        }
+                        input
+                        {
+                            font-family: BookNino;
+                            font-size: 32px;
+                            color: $textChasviInput;
+                            padding: 10px 200px 10px 26px;
+                            background-color: $inputBack;
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+
                 .tamara-sheavse-desc
                 {
                     display: flex;
@@ -274,6 +347,7 @@ body {
                         }
                     }
                 }
+
                 .graph-wrapper
                 {
                     display: flex;
@@ -1442,6 +1516,121 @@ body {
                                 object-fit: cover;
                                 width: 514px;
                                 max-height: 367px;
+                            }
+                        }
+    
+                        .fa-solid {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 3rem;
+                            font-weight: 900;
+                        }
+                    }
+                .waikitxe[class~='ვარსკვლავი'] {
+                        margin-top: 1rem;
+                        grid-column: 1/3;
+    
+    
+                        .part1 {
+                            display: grid;
+                            margin-bottom: 2rem;
+                            grid-template-areas: 'p1 img'
+                                'p2 img';
+                            
+                            align-items: center;
+    
+                            img {
+                                grid-area: img;
+                                width: 100%;
+                                height: 600px;
+                            }
+    
+                            p {
+                                color: $textDarkBlue;
+                                font-size: 2rem;
+                                max-width: 603px;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+    
+                            p:nth-child(2) {
+                                grid-area: p2;
+                            }
+
+                        }
+    
+                        .part2 {
+                            margin-bottom: 2rem;
+                            display: grid;
+                            grid-template-areas: 'p1'
+                                'p2'
+                                'img'
+                                'p3';
+    
+                            img {
+                                grid-area: img;
+                                max-width: 286px;
+                                width: 100%;
+                                position: relative;
+                                left: 40%;
+                                transform: translateX(-50%);
+
+                            }
+    
+                            p {
+                                color: $textDarkBlue;
+                                max-width: 918px;
+                                font-size: 2rem;
+                                margin-bottom: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+                            p:nth-child(2){
+                                grid-area: p2;
+                            }
+                            p:nth-child(3){
+                                grid-area: p3;
+                                margin-top: 45px;
+                            }
+                        }
+    
+                        .part3 {
+                            display: grid;
+                            grid-template-columns: 1fr auto;
+                            grid-template-areas: 'p1 img'
+                                'p2 img'
+                                'p3 img';
+                            row-gap: 3rem;
+                            align-items: center;
+    
+                            p {
+                                color: $textDarkBlue;
+                                max-width: 557px;
+                                font-size: 2rem;
+                            }
+    
+                            p:nth-child(1) {
+                                grid-area: p1;
+                            }
+    
+                            p:nth-child(2) {
+                                // margin: ;
+                                padding-right: 2rem;
+                                grid-area: p2;
+                            }
+                            p:nth-child(3) {
+                                grid-area: p3;
+                            }
+                            img {
+                                grid-area: img;
+                                object-fit: cover;
+                                max-width: 372px;
+                                width: 100%;
+                                max-height: 600px;
                             }
                         }
     

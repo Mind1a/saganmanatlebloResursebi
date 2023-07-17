@@ -96,7 +96,7 @@ export function showLessonSection(section) {
     case "gzamkvlevi":
       lessonSection.innerHTML = `<div class="gzamkvlevi-header">
           <img src='./static/images/icons/00_mastavlebllisGzamkvlevi.svg' alt='Maswavleblis gzamkvlevi logo'/>
-          <h2>რეკომენდაცია მასწავლებლებისთვის</h2>
+          <h2>რეკომენდაცია მასწავლებლებისთვის:</h2>
           </div>`;
       for (let aqtivoba in sections.gzamkvlevi) {
         lessonSection.innerHTML += `
@@ -156,7 +156,7 @@ export function showLessonSection(section) {
         waikitxeParags3 += `<p>${p}</p>`;
       });
 
-      if (title == "ნაპოლეონი") {
+      if (title == "ნაპოლეონი"  || title == "თამარას წიგნი" || title == "მოპარული ვარსკვლავი") {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
       }
@@ -171,12 +171,7 @@ export function showLessonSection(section) {
           </div>
          `;
         waikitxeParags3 += `<img src="${sections[section]["images"][4]}" alt="kitxvistvis mzadeba">`;
-      }else if(title == "თამარას წიგნი")
-      {
-        waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
-        waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
-      }
-       else {
+      }else {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags2 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">`;
@@ -226,6 +221,8 @@ export function showLessonSection(section) {
         angeloziSheavse();
       } else if (title === "თამარას წიგნი" ) {
         tamaraSheavse();
+      } else if (title === "მოპარული ვარსკვლავი") {
+        varskvlaviSheavse();
       }
 
       break;
@@ -251,6 +248,8 @@ export function showLessonSection(section) {
         angeloziSheavse(section);
       } else if (title == "თამარას წიგნი") {
         tamaraSheavse(section);
+      } else if (title === "მოპარული ვარსკვლავი") {
+        varskvlaviSheavse(section);
       }
       break;
   }
@@ -1223,7 +1222,7 @@ function tamaraSheavse(e) {
         attachDragStart();
       }
         break;
-        case "შეავსე":
+    case "შეავსე":
           const sheavseTitle = section[subsection]["title"];
           const sheavseDesc = section[subsection]["description"];
 
@@ -1241,12 +1240,10 @@ function tamaraSheavse(e) {
                 ${genList()}
               </div>
               </div>
-              ${addButtons(2)}
+              ${addButtons(1)}
           `;
 
-            document
-              .querySelector("#dasruleba")
-              .addEventListener("click", handleCheckSheavse);
+
             document
               .querySelector("#tavidan")
               .addEventListener("click", handleResetSheavse);
@@ -1266,10 +1263,7 @@ function tamaraSheavse(e) {
             }
             return code;
           };
-          function handleCheckSheavse()
-          {
-            return 0;
-          }
+
           function handleResetSheavse()
           {
             const inputList = document.querySelectorAll(".graph-list input");
@@ -1281,6 +1275,100 @@ function tamaraSheavse(e) {
         break;
     }
 }
+
+function varskvlaviSheavse(e) {
+  let section = booksData["მოპარული ვარსკვლავი"]["sheavse"];
+  let subsection = e ? e : "დააკავშირე";
+
+  const title = section[subsection]["title"];
+  switch (subsection) {
+    case "დააკავშირე" :
+    
+    const checkText = section[subsection]["daakavshire_text"];
+    const img = section["img"];
+
+
+    lessonSection.innerHTML = 
+    `
+      <h2>${title}</h2>
+      <img src="${img}" class="lessonLogo" alt="sheavse">
+      <div class="varskvlavi-sheavse" >
+        ${genCheckList(checkText)}
+      </div>
+      ${addButtons(2)}
+    `;
+
+    document
+      .querySelector("#dasruleba")
+      .addEventListener('click', checkVarskvlaviDaakavshire);
+    document
+      .querySelector("#tavidan")
+      .addEventListener('click', resetVarskvlaviSheavse);
+
+    break;
+    case "ჩასვი":
+    const chasviText = section[subsection]["chasvi_text"];
+
+    lessonSection.innerHTML = 
+    `
+      <h2>${title}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="varskvlavi-sheavse">
+        ${genCheckList(chasviText)}
+      </div>
+      ${addButtons(2)}
+    `;
+    document
+      .querySelector("#dasruleba")
+      .addEventListener('click', checkVarskvlaviChasvi);
+    document
+      .querySelector("#tavidan")
+      .addEventListener('click', resetVarskvlaviSheavse);
+    break;
+    case "შეავსე":
+      const sqemaList = section[subsection]["sqema_lines"];
+      
+      lessonSection.innerHTML = 
+      `
+      <h2>${section[subsection]["title"]}</h2>
+      <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
+      <div class="varskvlavi-sheavse">
+        ${genInputLines()}
+      </div>
+      ${addButtons(1)}
+      `;
+
+      document
+        .querySelector("#tavidan")
+        .addEventListener('click', resetVarskSheavse)
+
+      function resetVarskSheavse()
+      {
+        const inputs = document.querySelectorAll(".sqema-line input");
+        
+        inputs.forEach((line) => {
+          line.value = '';
+        })
+      }
+      function genInputLines()
+      {
+        let fullList = ``;
+        sqemaList.forEach((line) => {
+          fullList +=
+          `
+            <div class="sqema-line">
+              <span>${line}</span>
+              <input type="text" placeholder="განმარტება">
+            </div>
+          `;
+        });
+        return fullList;
+      };
+
+    break;
+    }
+}
+
 function addButtons(amount) {
   if (amount == 2) {
     return `
@@ -1297,6 +1385,20 @@ function addButtons(amount) {
     `;
   }
 }
+
+function genCheckList(checktext)
+    {
+      let fullList = ``;
+      checktext.forEach((text) => {
+        fullList += `
+        <div class="check-line">
+          <input class="regular-checkbox" type="checkbox">
+          <p>${text}</p>
+        </div>
+        `;
+      });
+      return fullList;
+    };
 
 function checkMogzauriChasvi() {
   let pasuxebi = booksData["დიდი მოგზაური"]["sheavse"]["ჩასვი"]["pasuxebi"];
@@ -1323,7 +1425,25 @@ function resetNapoleoniChasvi() {
     input.value = "";
   });
 }
+function checkVarskvlaviChasvi() {
+  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+  let answers = booksData["მოპარული ვარსკვლავი"]["sheavse"]["ჩასვი"]["correct_matches"];
+  checkBoxList.forEach((box, index) => {
+    if(box.checked)
+    { 
+      if(answers[index + 1])
+      {
 
+        box.classList.add('correct-back');
+
+      }else
+      {
+        box.classList.add('incorrect-back')
+      }
+
+    }
+  })
+}
 function checkPegasiDaakavshire() {
   const daakavshire_left_block = document.querySelector(
     ".daakavshire_left_block"
@@ -1447,7 +1567,34 @@ function checkTamaraDaakavshire() {
 
   ended = true;
   draw();
-}
+};
+function checkVarskvlaviDaakavshire () {
+
+  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+  
+  checkBoxList.forEach((box, index) => {
+    if(box.checked)
+    { 
+      if(correctVarskvlaviDaakavshire[index + 1])
+      {
+
+        box.classList.add('correct-back');
+
+      }else
+      {
+        box.classList.add('incorrect-back')
+      }
+
+    }
+})
+
+};
+function resetVarskvlaviSheavse() {
+  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+  checkBoxList.forEach((box) => {
+    box.classList.remove('correct-back', 'incorrect-back')
+  })
+} ; 
 function resetDaakavshire() {
   existingLines = [];
   chosen = {
@@ -1486,7 +1633,8 @@ let correctNapoleoniDaakavshireAnswers =
 
 let correctTamaraDaakavshireAnswers =
   booksData["თამარას წიგნი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
-
+let correctVarskvlaviDaakavshire = 
+  booksData["მოპარული ვარსკვლავი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 let chosen = {
   1: 0,
   2: 0,
