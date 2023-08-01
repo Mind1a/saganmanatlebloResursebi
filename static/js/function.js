@@ -1183,10 +1183,16 @@ function tamaraSheavse(e) {
         const leftList = document.querySelectorAll('.column-left div .tamara-drop-zone');
         const rightList = document.querySelectorAll('.column-right div .tamara-drop-zone');
 
-        leftList.forEach((zone, index) => {
+  
+        // The cas When left column starts with character "Tamara"
+        if(leftList[0].textContent === correctRight[1])
+        {
+          console.log("Tamara-left")
+
+          leftList.forEach((zone, index) => {
           if(zone.querySelector('p')){
           const text = zone.querySelector('p');
-          if(text.textContent === correctLeft[index + 1]) {
+          if(text.textContent === correctRight[index + 1]) {
             text.classList.add('correct');
           }else
           {
@@ -1194,18 +1200,51 @@ function tamaraSheavse(e) {
           }
         }
         });
-        
+
+
         rightList.forEach((zone, index) => {
           if(zone.querySelector('p')){
           const text = zone.querySelector('p');
-          if(text.textContent === correctRight[index + 1]) {
+          if(text.textContent === correctLeft[index + 1]) {
             text.classList.add('correct');
           }else
           {
             text.classList.add('wrong');
           }
         }
-        })
+        });
+
+        } 
+        // The case when right column starts with character "Tamara"
+        else if(rightList[0].textContent === correctRight[1])
+        {
+          rightList.forEach((zone, index) => {
+          if(zone.querySelector('p')){
+          const text = zone.querySelector('p');
+          if(text.textContent === correctRight[index + 1]) {
+            text.classList.add('correct');
+          }else
+          {
+            text.classList.add('wrong')
+          }
+        }
+        });
+
+
+          leftList.forEach((zone, index) => {
+          if(zone.querySelector('p')){
+          const text = zone.querySelector('p');
+          if(text.textContent === correctLeft[index + 1]) {
+            text.classList.add('correct');
+          }else
+          {
+            text.classList.add('wrong');
+          }
+        }
+        });
+        }
+
+
       };
       //reset words and zones
       function handleReset() {
