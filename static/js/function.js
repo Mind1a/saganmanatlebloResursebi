@@ -1631,7 +1631,8 @@ function checkVarskvlaviDaakavshire () {
 function resetVarskvlaviSheavse() {
   const checkBoxList = document.querySelectorAll('.regular-checkbox');
   checkBoxList.forEach((box) => {
-    box.classList.remove('correct-back', 'incorrect-back')
+    box.classList.remove('correct-back', 'incorrect-back');
+    box.checked = false;
   })
 } ; 
 function resetDaakavshire() {
