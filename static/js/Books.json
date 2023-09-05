@@ -1,5 +1,6 @@
 {
   "პეგასი": {
+    "pdfName": "pegasebi",
     "img": "./static/images/absolute-icons/01_pegas.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -148,6 +149,7 @@
     }
   },
   "დიდი მოგზაური": {
+    "pdfName": "didiMogzauri",
     "img": "./static/images/absolute-icons/02_mogzauri.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -297,6 +299,7 @@
     }
   },
   "ნაპოლეონი": {
+    "pdfName": "napoleoni",
     "img": "./static/images/absolute-icons/03_napoleon.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -434,6 +437,7 @@
     }
   },
   "ანგელოზის ერთი დღე": {
+    "pdfName": "angel",
     "img": "./static/images/absolute-icons/04_angel.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -570,6 +574,7 @@
 
   },
   "თამარას წიგნი": {
+    "pdfName": "tamara",
     "img": "./static/images/absolute-icons/05_tamara.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -726,6 +731,7 @@
     }
   },
   "მოპარული ვარსკვლავი": {
+    "pdfName": "varskvlavi",
     "img": "./static/images/absolute-icons/06_varskvlav.svg",
     "gzamkvlevi": {
       "aqtivoba1": {

@@ -353,7 +353,15 @@ body main .body #books {
           column-gap: 7.875rem;
   row-gap: 3.563rem;
 }
-body main .body #books .card {
+body main .body #books .card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+body main .body #books .card-wrapper .card {
   position: relative;
   background-color: #c1d4d6;
   width: min(13rem, 100%);
@@ -374,33 +382,33 @@ body main .body #books .card {
           align-items: center;
   cursor: pointer;
 }
-body main .body #books .card .cover {
+body main .body #books .card-wrapper .card .cover {
   position: absolute;
 }
-body main .body #books .card #bookCover0,
-body main .body #books .card #bookCover1 {
+body main .body #books .card-wrapper .card #bookCover0,
+body main .body #books .card-wrapper .card #bookCover1 {
   margin-top: 4rem;
 }
-body main .body #books .card #bookCover2,
-body main .body #books .card #bookCover3,
-body main .body #books .card #bookCover4,
-body main .body #books .card #bookCover5 {
+body main .body #books .card-wrapper .card #bookCover2,
+body main .body #books .card-wrapper .card #bookCover3,
+body main .body #books .card-wrapper .card #bookCover4,
+body main .body #books .card-wrapper .card #bookCover5 {
   margin-top: 3.5rem;
 }
-body main .body #books .card .card-title {
+body main .body #books .card-wrapper .card .card-title {
   font-weight: 600;
   text-align: center;
   color: #5890ae;
   font-size: 1.5rem;
   padding-top: 1rem;
 }
-body main .body #books .card .downloadBtn {
+body main .body #books .card-wrapper .downloadBtn {
   background-color: #c1d4d6;
-  position: absolute;
-  top: 0;
-  left: 100%;
+  -webkit-transform: translateY(70%);
+          transform: translateY(70%);
   padding: 0.5rem;
   border-radius: 0 0.813rem 0.813rem 0;
+  cursor: pointer;
 }
 body main .body #aboutProject {
   color: #0a2b39;
