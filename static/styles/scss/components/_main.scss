@@ -66,7 +66,12 @@ body {
                 column-gap: 7.875rem;
                 row-gap: 3.563rem;
 
-                .card {
+                .card-wrapper
+                {
+                    display: flex;
+                    align-items: flex-start;
+                    
+                    .card {
                     position: relative;
                     background-color: $backgroundBlue;
                     width: min(13rem, 100%);
@@ -102,14 +107,14 @@ body {
                         padding-top: 1rem;
                     }
 
-                    .downloadBtn {
-                        background-color: $backgroundBlue;
-                        position: absolute;
-                        top: 0;
-                        left: 100%;
-                        padding: 0.5rem;
-                        border-radius: 0 0.813rem 0.813rem 0;
-                    }
+                }
+                .downloadBtn {
+                    background-color: $backgroundBlue;
+                    transform: translateY(70%);
+                    padding: 0.5rem;
+                    border-radius: 0 0.813rem 0.813rem 0;
+                    cursor: pointer;
+                }
                 }
             }
 

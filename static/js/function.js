@@ -18,23 +18,59 @@ let title = ""; // to save title of book
 let checkCanvas = false; //to check whether startCanvas() funciton has called
 
 // renders books on main page
+ export function downloadPDF(fileName) {
+            //Set the File URL.
+            let url = "./static/pdf/" + fileName+ ".pdf";
+ 
+            //Create XMLHTTP Request.
+            let req = new XMLHttpRequest();
+            req.open("GET", url, true);
+            req.responseType = "blob";
+            req.onload = function () {
+                //Convert the Byte Data to BLOB object.
+                let blob = new Blob([req.response], { type: "application/octetstream" });
+ 
+                //Check the Browser type and download the File.
+                let isIE = false || !!document.documentMode;
+                if (isIE) {
+                    window.navigator.msSaveBlob(blob, fileName);
+                } else {
+                    let url = window.URL || window.webkitURL;
+                    let link = url.createObjectURL(blob);
+                    let a = document.createElement("a");
+                    a.setAttribute("download", fileName);
+                    a.setAttribute("href", link);
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            };
+            req.send();
+        };
+
 export function ShowBooks(books, booksData) {
   for (const [index, [bookname, data]] of Object.entries(
     Object.entries(booksData)
   )) {
-    let book = document.createElement("div");
-    book.classList.add("card");
-    book.setAttribute("onclick", "showLesson(this)"); //show lessons on books click
-    book.innerHTML = `
-        <img src="./static/images/book-relative/book.svg" id="${index}" alt="${bookname}">
-        <img src="${data.img}" alt="${bookname}" class="cover" id="bookCover${index}">
-        <h3 class="card-title">${bookname}</h3>
-        <img class="downloadBtn" src="./static/images/icons/download.svg" alt="download-btn">
-        `;
+    
+    let bookWrapper = document.createElement("div");
+    // 
+    bookWrapper.classList.add("card-wrapper")
+    bookWrapper.innerHTML =
+    `
+    <div class="card" onclick="showLesson(this)">
+     <img src="./static/images/book-relative/book.svg" id="${index}" alt="${bookname}">
+     <img src="${data.img}" alt="${bookname}" class="cover" id="bookCover${index}">
+     <h3 class="card-title">${bookname}</h3>
+    </div>
+    <img class="downloadBtn book-download-btn" id="${booksData[bookname].pdfName}"  src="./static/images/icons/download.svg" alt="download-btn">
 
-    books.appendChild(book);
+    `;
+
+    books.appendChild(bookWrapper);
   }
 }
+
 
 //click on setting button will show about projects and hide everything else
 settingsbtn.addEventListener("click", () => {
