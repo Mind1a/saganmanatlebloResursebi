@@ -7,6 +7,7 @@ body {
     grid-row-gap: 1.813rem;
     margin: 0 auto;
     min-height: 100vh;
+    height: 100vh;
 
   .head {
     background-color: $backgroundBlue;
@@ -54,8 +55,22 @@ body {
   }
 
     main {
+        overflow-y: auto;
         width: 100%;
         grid-column: 2/4;
+
+        &::-webkit-scrollbar {
+            width: 0; /* Hide the scrollbar in WebKit (Safari and Chrome) */
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: transparent; /* Make the thumb transparent */
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent; /* Make the track transparent */
+        } 
+
         .body {
             #books {
                 grid-row: 2/4;
