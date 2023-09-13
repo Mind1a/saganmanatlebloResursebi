@@ -360,6 +360,7 @@
       }
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1yX1p4ziOqbWorWRVXWUZ13BkaY5ujauf/view?usp=drive_link",
       "title": "გემრიელი ისტორიები:",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -373,6 +374,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1Bw3ZswrV32GGVuAMSsmUaRsijUfN6vme/view?usp=drive_link",
       "p1": [
         "ამ ნამცხვრის სახელი ჰეროიკულად ჟღერს. თუმცა, ის, ვისაც ეს ნამცხვარი გაუსინჯავს, დამეთანხმება, რომ არც მის შესახედაობასა და არც მის გემოში არანაირი ჰეროიზმი არ შეიმჩნევა. თანაც, ამ ნამცხვარს მხოლოდ საქართველოში უწოდებენ „ნაპოლეონს“. ნაპოლეონის შექმნის ისტორიას კი ახლა გაგანდობთ.",
         "ერთხელ ომებით დაღლილმა დიდმა მხედართმთავარმა და ნახევარი სამყაროს მფლობელმა იმპერატორმა ნაპოლეონმა განიზრახა, რომ სტუმრად სწვეოდა ერთ ნაკლებად სახელგანთქმულ ფრანგ პოლიტიკოსს.",
@@ -392,6 +394,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1DISgtr1LbeLapo3Ui3cLL2I4TIf5JRJZ/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -406,6 +409,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1pnW25yBjChpnIzeBpvQrczMdMqf2L20h/view?usp=drive_link",
         "title": "აღმოაჩინე კანონზომიერება და გაანაწილე სიტყვები ცხრილში",
         "daakavshire_left_block": [
           "შესანიშნავი",
@@ -427,10 +431,12 @@
         }
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1JqjJtif6lJqIMBDusYoCoFg-Xn-49YLu/view?usp=drive_link",
         "title": "მოგზაურის რუკა:",
         "img": "./static/images/icons/arrow.svg"
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1uHyDF4vVYuRW035nMXBUtFvpHRjbuMPS/view?usp=drive_link",
         "title": "წაიკითხეთ და შეავსეთ სქემა",
         "sqemaLines": [
           "მე შევამჩნიე რომ",
@@ -443,6 +449,7 @@
       }
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1zXk4V5hLLERDN23EsbF4yaarxDvNKH9a/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "შექმენი",
       "p": [
@@ -492,6 +499,7 @@
       }    
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1NoEYIF76TVYT2FLf5rIWptNciM0vuYJ1/view?usp=drive_link",
       "title": "ანგელოზების შესახებ:",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -504,6 +512,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1eP3OlKnQH6DzCDPGeu0ECVxFTxrwOTSx/view?usp=drive_link",
       "p1": [
         "ანგელოზმა დილით ძალიან, ძალიან ადრე გაიღვიძა. ასე ადრე იმიტომ გაიღვიძა, რომ ღრუბელზე ცხოვრობს. ღრუბლები კი მზესთან ახლოს არიან, ამიტომ ღრუბლებში უფრო ადრე თენდება, მზე უფრო ადრე ამოდის, ვიდრე ჩვენთან, ადამიანებთან.",
         "მან წვიმის წყლით ხელ-პირი დაიბანა. წვიმის წყლით იმიტომ, რომ ღრუბელზე ცხოვრობს. ღრუბლები კი, როგორც ყველასთვის ცნობილია, ერთი ნახევრით წვიმის წყლისგან შედგება, მეორე ნახევრით კი - ადამიანების სევდიანი ამოსუნთქვებისაგან."
@@ -524,6 +533,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1CB6kkEVPSbofwz37Mjbnt_U4zh6MnfDi/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -537,6 +547,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე":{
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1BUFKJi2aLIDw85EAC5sFdmj_FHCiSxdu/view?usp=drive_link",
         "title": "შექმენი კომიქსი:",
         "description": "ჩასვი ილუსტრაციები ჩარჩოში თანმიმდევრულად, დააკვირდი ნუმერაციას და შეუსაბამე ტექსტები.",
         "daakavshire_left_block" :[
@@ -560,6 +571,7 @@
         ]   
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1GypAwQgImcDgWMIpqdLmucHk-uLv_jFP/view?usp=drive_link",
         "title": "შეავსე ანკეტა",
         "p": "წარმოიდგინე, რომ ანგელოზი ავსებს ანკეტას, როგორ ფიქრობ, რას ჩაწერდა?",
         "sqemaLines": [
@@ -573,12 +585,14 @@
         ]
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1qvT5KtNRSsl9nkey2U52MSENF0jU8Qe1/view?usp=drive_link",
         "title": "შეავსე სქემა:",
         "p": "შეავსე უჯრები ტექსტის მიხედვით",
         "img": "./static/images/icons/arrow.svg"
       }
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1wfXSHEIJzIBeKya3vysbs54Vf3gzJb6v/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "დაწერე",
       "p": [

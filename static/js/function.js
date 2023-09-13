@@ -33,7 +33,7 @@ export function ShowBooks(books, booksData) {
      <img src="${data.img}" alt="${bookname}" class="cover" id="bookCover${index}">
      <h3 class="card-title">${bookname}</h3>
     </div>
-    <a href=${booksData[bookname].bookPdfUrl}>
+    <a target="_blank" href=${booksData[bookname].bookPdfUrl}>
     <img class="downloadBtn"   src="./static/images/icons/download.svg" alt="download-btn">
     </a>
     `;
