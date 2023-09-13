@@ -1,6 +1,6 @@
 {
   "პეგასი": {
-    "pdfName": "pegasebi",
+    "bookPdfUrl": "https://drive.google.com/file/d/1SGFYewaUzfSnRQmchSV3eF2NZXYQDRoO/view?usp=drive_link",
     "img": "./static/images/absolute-icons/01_pegas.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -47,6 +47,7 @@
       }
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/15i26pL_IJeP84BEH_E5hO3E3DmiSz_xy/view?usp=drive_link",
       "title": "ზღაპრული და მითოლოგიური ცხოველები:",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -64,6 +65,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1O-FWGEnDeYFyYWNzhC2IJeM_JEctxp0I/view?usp=drive_link",
       "p1": [
         "პეგასები ჩვენ ირგვლივ ცხოვრობენ. ჩვენ კი მათ ვერ ვხედავთ, რადგან ისინი თავიანთი საქმეებით არიან დაკავებულნი. ეს საქმეები ანგელოზებთან და სხვადასხვა ფანტასტიკურ ცხოველებთან ერთად ცაში ფრენაა.",
         "მიწაზე მხოლოდ ხანდახან თუ ჩამოფრინდებიან, ისიც სადილობისას. პეგასებს ძალიან უყვართ ადამიანების წერილები. ოღონდ საკითხავად კი არა, სწორედ სადილად. მათთვის ყველაზე დიდი გემრიელობა ხელნაწერი ფურცლებია."
@@ -84,6 +86,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/19NEiWuyvPrzc4wWodoRkZypSc0VX4Q1g/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -98,6 +101,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1zjdb3tuVGAaYAzfMDBgzcBdbMLpWpOXG/view?usp=drive_link",
         "title": "დააკავშირე ერთმანეთთან მსგავსი მნიშვნელობის მქონე სიტყვები:",
         "daakavshire_left_block": [
           "გამორჩეულად",
@@ -119,6 +123,7 @@
         }
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1-DxAPxh7zgCt73LSw0PRhcSXaDynZ51z/view?usp=drive_link",
         "title": "ჩასვი გამოტოვებული სიტყვები:",
         "p1": [
           "პეგასებისთვის ყველაზე დიდი გემრიელობა ფურცლებია",
@@ -135,11 +140,13 @@
         }
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1SwpuZsq1xbfbC4OcbDU4dL7c05BTb9QR/view?usp=drive_link",
         "title": "წაიკითხეთ და შეავსეთ სქემა:",
         "p": "შენ უკვე იცი რა არის მითი და ზღაპარი. არჩევ მის პერსონაჟებს. შეეცადე გაიხსენო ზღაპრული პერსონაჟები და მითოლოგიური გმირები, შეავსე სქემა."
       }
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1UABL7E86OhJq19CY4puA_BKyOj6IGLd8/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "მითოლოგიური პერსონაჟი",
       "p": [
@@ -149,7 +156,7 @@
     }
   },
   "დიდი მოგზაური": {
-    "pdfName": "didiMogzauri",
+    "bookPdfUrl": "https://drive.google.com/file/d/15bqahEEgZbYKPntBVCyS8u5SCS3Ppgg0/view?usp=drive_link",
     "img": "./static/images/absolute-icons/02_mogzauri.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -196,6 +203,7 @@
       }
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1mF97d7U7jPYVXQ-RsUrcG4pmVmeGmWFr/view?usp=drive_link",
       "title": "კითხვისთვის მზადება:",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -210,6 +218,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1CZUTaO4b6hB0mlowThLTQK_Zg4Kz-vvg/view?usp=drive_link",
       "p1": [
         "ცხოვრების განმავლობაში მე, ალბათ, ბევრმა კოღომ გამიცნო.",
         "ერთხელ შესაძლებლობა მომეცა, რომ კოღოს შევხვედროდი. ტბის პირას მივსეირნობდი, როდესაც სანაპიროზე კოღო შევნიშნე: იჯდა პატარა კენჭზე და ჩაფიქრებული უყურებდა პეიზაჟს.",
@@ -236,6 +245,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1VnuG4ygHc3ZOQnRZ43zRVB5HtaQFP9D6/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -250,6 +260,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1cEybYGy1EFdI301ATFWpmcAfWKa3ybYn/view?usp=drive_link",
         "title": "აღმოაჩინე შესაბამისობა და დააკავშირე სიტყვები",
         "daakavshire_left_block": [
           "პეიზაჟი",
@@ -277,6 +288,7 @@
         }
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1hkb_wNOd7DoSvfuYnjrxVGDRAMP8zMU2/view?usp=drive_link",
         "title": "დანომრე გეგმა სწორი თანამიმდევრობით",
         "p": [
           "კოღო ნაპოვნ ტოტს ხომალდად აქცევს;",
@@ -287,10 +299,12 @@
         "pasuxebi": [1, 4, 2, 3]
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1XAb-6UU9j0MjBMK8M1vUUP1K9HP3KP-q/view?usp=drive_link",
         "title": "სიტყვის პირამიდა"
       }
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/10OSooxweuqe5CkW3PqnKpvwB5qEkBeGi/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "შექმენი",
       "p": [
@@ -299,7 +313,7 @@
     }
   },
   "ნაპოლეონი": {
-    "pdfName": "napoleoni",
+    "bookPdfUrl": "https://drive.google.com/file/d/1OC4vG7fr6A8HAOw3WYLwBux_e40X8JL0/view?usp=drive_link",
     "img": "./static/images/absolute-icons/03_napoleon.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -437,7 +451,7 @@
     }
   },
   "ანგელოზის ერთი დღე": {
-    "pdfName": "angel",
+    "bookPdfUrl": "https://drive.google.com/file/d/1_ZwIJZ5RUCAxEpSDilDQhLuPz3mSFUHN/view?usp=drive_link",
     "img": "./static/images/absolute-icons/04_angel.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -574,7 +588,7 @@
 
   },
   "თამარას წიგნი": {
-    "pdfName": "tamara",
+    "bookPdfUrl": "https://drive.google.com/file/d/1JPRoayL8Hg5MWqd1hL3g264aZrcjceR-/view?usp=drive_link",
     "img": "./static/images/absolute-icons/05_tamara.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
@@ -731,7 +745,7 @@
     }
   },
   "მოპარული ვარსკვლავი": {
-    "pdfName": "varskvlavi",
+    "bookPdfUrl": "https://drive.google.com/file/d/1wVp-kcm-bxXYSTLLk5ETVI5Jjqap4Zwd/view?usp=drive_link",
     "img": "./static/images/absolute-icons/06_varskvlav.svg",
     "gzamkvlevi": {
       "aqtivoba1": {
