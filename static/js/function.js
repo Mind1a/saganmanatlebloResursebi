@@ -17,36 +17,6 @@ import {
 let title = ""; // to save title of book
 let checkCanvas = false; //to check whether startCanvas() funciton has called
 
-// renders books on main page
- export function downloadPDF(fileName) {
-            //Set the File URL.
-            let url = "./static/pdf/" + fileName+ ".pdf";
- 
-            //Create XMLHTTP Request.
-            let req = new XMLHttpRequest();
-            req.open("GET", url, true);
-            req.responseType = "blob";
-            req.onload = function () {
-                //Convert the Byte Data to BLOB object.
-                let blob = new Blob([req.response], { type: "application/octetstream" });
- 
-                //Check the Browser type and download the File.
-                let isIE = false || !!document.documentMode;
-                if (isIE) {
-                    window.navigator.msSaveBlob(blob, fileName);
-                } else {
-                    let url = window.URL || window.webkitURL;
-                    let link = url.createObjectURL(blob);
-                    let a = document.createElement("a");
-                    a.setAttribute("download", fileName);
-                    a.setAttribute("href", link);
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                }
-            };
-            req.send();
-        };
 
 export function ShowBooks(books, booksData) {
   for (const [index, [bookname, data]] of Object.entries(
@@ -63,8 +33,9 @@ export function ShowBooks(books, booksData) {
      <img src="${data.img}" alt="${bookname}" class="cover" id="bookCover${index}">
      <h3 class="card-title">${bookname}</h3>
     </div>
-    <img class="downloadBtn book-download-btn" id="${booksData[bookname].pdfName}"  src="./static/images/icons/download.svg" alt="download-btn">
-
+    <a target="_blank" href=${booksData[bookname].bookPdfUrl}>
+    <img class="downloadBtn"   src="./static/images/icons/download.svg" alt="download-btn">
+    </a>
     `;
 
     books.appendChild(bookWrapper);
@@ -151,6 +122,9 @@ export function showLessonSection(section) {
     case "moemzade":
       let moemzadeParags = "";
       let moemzadeQuestions = "";
+      const moemzadePdfUrl = document.querySelector('.moemzade-pdf-link');
+
+      moemzadePdfUrl.href = sections.moemzade.assignmentPdfUrl;
 
       sections[section]["p"].forEach((p) => {
         if (typeof p == "string") {
@@ -179,6 +153,10 @@ export function showLessonSection(section) {
       let waikitxeParags1 = "";
       let waikitxeParags2 = "";
       let waikitxeParags3 = "";
+
+      const waikitxePdfUrl = document.querySelector('.waikitxe-pdf-link');
+
+      waikitxePdfUrl.href = sections.waikitxe.assignmentPdfUrl;
 
       sections[section]["p1"].forEach((p) => {
         waikitxeParags1 += `<p>${p}</p>`;
@@ -230,6 +208,11 @@ export function showLessonSection(section) {
       break;
 
     case "upasuxe":
+     
+      const upasuxePdfUrl = document.querySelector('.upasuxe-pdf-link');
+
+      upasuxePdfUrl.href = sections.upasuxe.assignmentPdfUrl;
+       
       let upasuxeQuestions = "";
       sections[section]["li"].forEach((li) => {
         upasuxeQuestions += `<li>${li}</li>`;
@@ -264,6 +247,10 @@ export function showLessonSection(section) {
       break;
 
     case "sheqmeni":
+      const sheqmeniPdfUrl = document.querySelector('.sheqmeni-pdf-link');
+
+      sheqmeniPdfUrl.href = sections.sheqmeni.assignmentPdfUrl;
+       
       lessonSection.innerHTML = `
             <h2>${sections[section]["title"]}:</h2>
             <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
@@ -323,6 +310,9 @@ function didiMogzauriSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
+      const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+      daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
+
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
 
@@ -360,6 +350,9 @@ function didiMogzauriSheavse(e) {
       break;
 
     case "ჩასვი":
+      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+
       section[subsection]["p"].forEach((p) => {
         options += `
             <div class="checkList">
@@ -408,6 +401,9 @@ function didiMogzauriSheavse(e) {
       break;
 
     case "შეავსე":
+      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+      
       lessonSection.innerHTML = `
         <h2>${section[subsection]["title"]}:</h2>
         <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -455,6 +451,10 @@ function pegasiSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
+      const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+
+      daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
+
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
 
@@ -492,6 +492,9 @@ function pegasiSheavse(e) {
       break;
 
     case "ჩასვი":
+      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
       lessonSection.innerHTML = `
             <h2>${section[subsection]["title"]}</h2>
             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -616,6 +619,10 @@ function pegasiSheavse(e) {
       break;
 
     case "შეავსე":
+      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+
       lessonSection.innerHTML = `
         <h2>${section[subsection]["title"]}</h2>
             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -667,6 +674,7 @@ function napoleoniSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
+      
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
 
