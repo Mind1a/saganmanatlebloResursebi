@@ -649,6 +649,7 @@
       }    
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1uDfzGtdkmuaGwv2CVmEXqNE74m-fgn3s/view?usp=drive_link",
       "title": "ვინ არის კოლექციონერი?",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -664,6 +665,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1AAh4r_Z3t87PQCG7-9VEdzpweMq8gcHs/view?usp=drive_link",
       "p1": [
         "თამარამ ბევრი რამ იცოდა, ბევრი ისეთი რამ, რასაც სხვები ვერც კი ხვდებოდნენ, მაგრამ თითქმის არასდროს იცოდა, რაზე ფიქრობდნენ მის გარშემო მყოფი ადამიანები.",
         "თამარას ფიქრზე მეტად ოცნება იტაცებდა, ამიტომ ადამიანები ხშირად ამბობდნენ მასზე ღრუბლებში ცხოვრობსო (თუმცა, შესაძლოა, ამას იმიტომ ამბობდნენ, რომ გოგონა უბრალოდ ძალიან მაღალი იყო).",
@@ -687,6 +689,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1lBQJEKXXKNIlD3q1LLQXVp1fdluJXz0g/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -699,6 +702,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1X8rCtskEx5cGDf1Rcpycth8dvaE93mR3/view?usp=drive_link",
         "title": "მოუძებნეთ ფრაზებს განმარტებები:",
         "description": "მოუძებნეთ ფრაზებს განმარტებები და იმსჯელეთ, რომელი თვისება შეესაბამება თამარას (მოთხრობიდან გამომდინარე):",
         "daakavshire_left_block": [
@@ -724,6 +728,7 @@
         }
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1NRKmpwrVehWq77o8UDKTGfvoss4gGWD_/view?usp=drive_link",
         "title": "შეავსეთ სქემები:",
         "description": "მოუძებნეთ ფრაზებს განმარტებები და იმსჯელეთ, რომელი თვისება შეესაბამება თამარას (მოთხრობიდან გამომდინარე):",
         "img": "./static/images/icons/04_sheavse.svg",
@@ -744,6 +749,7 @@
         ] 
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1rMqTEZErnicPLpipDBh2kFUs94G4RRW3/view?usp=drive_link",
         "img": "./static/images/icons/04_shekmeni.svg",
         "title": "შეავსეთ დიაგრამა:",
         "description": "რა აქვთ საერთო და რით განსხვავდებიან ერთმანეთისგან სანდრო და თამარა?" 
@@ -751,6 +757,7 @@
       
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1xsnSoYjMeHfJ2cJL8_Ru1iODbeAhL_l_/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "დაწერე",
       "p": [
@@ -806,6 +813,7 @@
       }    
     },
     "moemzade": {
+      
       "title": "დაუჯერებელი ამბები:",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
