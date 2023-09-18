@@ -452,7 +452,6 @@ function pegasiSheavse(e) {
   switch (subsection) {
     case "დააკავშირე":
       const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
-
       daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
       const leftBlock = section[subsection]["daakavshire_left_block"];
@@ -493,8 +492,8 @@ function pegasiSheavse(e) {
 
     case "ჩასვი":
       const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
-
       chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+
       lessonSection.innerHTML = `
             <h2>${section[subsection]["title"]}</h2>
             <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -620,7 +619,6 @@ function pegasiSheavse(e) {
 
     case "შეავსე":
       const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
-
       sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
 
       lessonSection.innerHTML = `
@@ -1086,6 +1084,8 @@ function tamaraSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
+      const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+      daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
@@ -1126,6 +1126,9 @@ function tamaraSheavse(e) {
       startCanvas();
       break;
     case "ჩასვი":
+      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+
         lessonSection.innerHTML = `
           <h2>${section[subsection]["title"]}</h2>
           <div class="tamara-sheavse-desc">
@@ -1306,6 +1309,9 @@ function tamaraSheavse(e) {
       }
         break;
     case "შეავსე":
+          const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+          sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+
           const sheavseTitle = section[subsection]["title"];
           const sheavseDesc = section[subsection]["description"];
 
@@ -1366,7 +1372,9 @@ function varskvlaviSheavse(e) {
   const title = section[subsection]["title"];
   switch (subsection) {
     case "დააკავშირე" :
-    
+    const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+    daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
+
     const checkText = section[subsection]["daakavshire_text"];
     const img = section["img"];
 
@@ -1390,6 +1398,9 @@ function varskvlaviSheavse(e) {
 
     break;
     case "ჩასვი":
+    const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+    chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+
     const chasviText = section[subsection]["chasvi_text"];
 
     lessonSection.innerHTML = 
@@ -1409,6 +1420,9 @@ function varskvlaviSheavse(e) {
       .addEventListener('click', resetVarskvlaviSheavse);
     break;
     case "შეავსე":
+      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+
       const sqemaList = section[subsection]["sqema_lines"];
       
       lessonSection.innerHTML = 
