@@ -94,11 +94,27 @@ export function showLesson(lesson) {
 
   showLessonSection("moemzade");
 }
+// change active lesson title opacity
+
+const activeLesson = (lesson) => 
+{
+  const lessons = document.querySelectorAll('.menu li');
+  const currentLesson = document.getElementById(lesson);
+  lessons.forEach((les) => {
+      les.style.opacity = '100%'    
+  });
+  currentLesson.style.opacity = '50%';
+}
+
 
 // show each lesson chosen by header (left nav bar)
+
 export function showLessonSection(section) {
   let sections = booksData[title];
-
+  
+  
+  activeLesson(section);
+  
   switch (section) {
     case "gzamkvlevi":
       lessonSection.innerHTML = `<div class="gzamkvlevi-header">
@@ -125,6 +141,7 @@ export function showLessonSection(section) {
       const moemzadePdfUrl = document.querySelector('.moemzade-pdf-link');
 
       moemzadePdfUrl.href = sections.moemzade.assignmentPdfUrl;
+
 
       sections[section]["p"].forEach((p) => {
         if (typeof p == "string") {
