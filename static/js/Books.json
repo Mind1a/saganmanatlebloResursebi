@@ -649,6 +649,7 @@
       }    
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1uDfzGtdkmuaGwv2CVmEXqNE74m-fgn3s/view?usp=drive_link",
       "title": "ვინ არის კოლექციონერი?",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -664,6 +665,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1AAh4r_Z3t87PQCG7-9VEdzpweMq8gcHs/view?usp=drive_link",
       "p1": [
         "თამარამ ბევრი რამ იცოდა, ბევრი ისეთი რამ, რასაც სხვები ვერც კი ხვდებოდნენ, მაგრამ თითქმის არასდროს იცოდა, რაზე ფიქრობდნენ მის გარშემო მყოფი ადამიანები.",
         "თამარას ფიქრზე მეტად ოცნება იტაცებდა, ამიტომ ადამიანები ხშირად ამბობდნენ მასზე ღრუბლებში ცხოვრობსო (თუმცა, შესაძლოა, ამას იმიტომ ამბობდნენ, რომ გოგონა უბრალოდ ძალიან მაღალი იყო).",
@@ -687,6 +689,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1lBQJEKXXKNIlD3q1LLQXVp1fdluJXz0g/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -699,6 +702,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1X8rCtskEx5cGDf1Rcpycth8dvaE93mR3/view?usp=drive_link",
         "title": "მოუძებნეთ ფრაზებს განმარტებები:",
         "description": "მოუძებნეთ ფრაზებს განმარტებები და იმსჯელეთ, რომელი თვისება შეესაბამება თამარას (მოთხრობიდან გამომდინარე):",
         "daakavshire_left_block": [
@@ -724,6 +728,7 @@
         }
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1NRKmpwrVehWq77o8UDKTGfvoss4gGWD_/view?usp=drive_link",
         "title": "შეავსეთ სქემები:",
         "description": "მოუძებნეთ ფრაზებს განმარტებები და იმსჯელეთ, რომელი თვისება შეესაბამება თამარას (მოთხრობიდან გამომდინარე):",
         "img": "./static/images/icons/04_sheavse.svg",
@@ -744,6 +749,7 @@
         ] 
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1rMqTEZErnicPLpipDBh2kFUs94G4RRW3/view?usp=drive_link",
         "img": "./static/images/icons/04_shekmeni.svg",
         "title": "შეავსეთ დიაგრამა:",
         "description": "რა აქვთ საერთო და რით განსხვავდებიან ერთმანეთისგან სანდრო და თამარა?" 
@@ -751,6 +757,7 @@
       
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1xsnSoYjMeHfJ2cJL8_Ru1iODbeAhL_l_/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "დაწერე",
       "p": [
@@ -806,6 +813,7 @@
       }    
     },
     "moemzade": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1YVqhbfjMknZhEYKZUW5A_aghnF04aGY6/view?usp=drive_link",
       "title": "დაუჯერებელი ამბები:",
       "image": "./static/images/icons/02_moemzade.svg",
       "p": [
@@ -822,6 +830,7 @@
       ]
     },
     "waikitxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1uFo6sV4eQCUDkx9251nhOvunTUliYVTf/view?usp=drive_link",
       "p1": [
         "ერთხელ, ერთი ბიჭი თავის შეყვარებულს შეჰპირდა, რომ ვარსკვლავს აჩუქებდა. მერე დაღონდა, რადგან მშვენივრად იცოდა, რომ როდესაც ვინმეს რამეს აღუთქვამ, აუცილებლად უნდა შეასრულო. პრობლემა კი ის იყო, რომ ჩვენმა პერსონაჟმა არ იცოდა, როგორ შეესრულებინა თავისი დანაპირები.",
         "ბიჭი მთელი ღამე ფიქრობდა, როგორ მისწვდომოდა ვარსკვლავს. თავიდან მას ერთი საინტერესო იდეა მოუვიდა, აეშენებინა პატარა თვითმფრინავი და გაფრენილიყო. მერე გადაიფიქრა. სხვა საინტერესო იდეაც მოუვიდა თავში. გაეკეთებინა ძალიან გრძელი კიბე, მაგრამ ამაზეც უარი თქვა."
@@ -844,6 +853,7 @@
       ]
     },
     "upasuxe": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1IZJxYLZcr_lJ7-OkTmvdvcbKfYCZQ-54/view?usp=drive_link",
       "image": "./static/images/icons/03_upasuxe.svg",
       "title": "უპასუხეთ შეკითხვებს",
       "li": [
@@ -858,6 +868,7 @@
     "sheavse": {
       "img": "./static/images/icons/04_sheavse.svg",
       "დააკავშირე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1FYUdQw2-SROVweFHnvTQdBRnR20tnWY0/view?usp=drive_link",
         "title": "მონიშნე პასუხი, რომელიც არ შეესაბამება სიმართლეს (მონიშნული პასუხი დაასაბუთე):",
         "daakavshire_text": [
           "ბიჭი სახლის სახურავზე ავიდა, ხელები გაიწვდინა და ცას მისწვდა;",
@@ -873,6 +884,7 @@
         }
       },
       "ჩასვი": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/1G7CB4BfuLxVImtcfBHkKe8puJFDqOE_B/view?usp=drive_link",
         "title": "რას გვასწავლის ზღაპარი? (მონიშნული პასუხი დაასაბუთე):",
         "img": "./static/images/icons/04_sheavse.svg",
         "chasvi_text": [
@@ -891,6 +903,7 @@
         }
       },
       "შეავსე": {
+        "assignmentPdfUrl": "https://drive.google.com/file/d/14XpbWYaT8FZFMNrj5ltrOqNtG2TeiHoM/view?usp=drive_link",
         "title": "შეავსეთ სქემა:",
         "sqema_lines": [
           "პერსონაჟი",
@@ -902,6 +915,7 @@
       }
     },
     "sheqmeni": {
+      "assignmentPdfUrl": "https://drive.google.com/file/d/1zsjPg5xAKf2OHrgWjZqciGHLclUQ7iCX/view?usp=drive_link",
       "image": "./static/images/icons/04_shekmeni.svg",
       "title": "გახდი თანაავტორი",
       "p": [
