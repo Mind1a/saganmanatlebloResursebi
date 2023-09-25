@@ -707,6 +707,7 @@ body main .body #lesson .right-block p {
   font-size: 2rem;
   margin-bottom: 2rem;
   max-width: 748px;
+  line-height: 120%;
 }
 body main .body #lesson .right-block ol li,
 body main .body #lesson .right-block ul li {
