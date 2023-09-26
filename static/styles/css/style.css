@@ -721,6 +721,16 @@ body main .body #lesson .right-block ul {
 body main .body #lesson .right-block ul li {
   padding-top: 2rem;
 }
+body main .body #lesson .right-block .sheqmeni-mogzauri span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5890ae;
+}
+body main .body #lesson .right-block .sheqmeni-varskvlavi span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #5890ae;
+}
 body main .body #lesson .right-block .fa-solid {
   width: 100%;
   text-align: center;
@@ -1815,6 +1825,14 @@ body main .body #lesson .waikitxe[class~=ვარსკვლავი] .fa-sol
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
+}
+body main .body #lesson .waikitxe-header {
+  margin-bottom: 1rem;
+}
+body main .body #lesson .waikitxe-header span {
+  font-style: italic;
+  font-size: 1.3rem;
+  letter-spacing: 0.01rem;
 }
 
 @media (max-width: 2700px) and (min-width: 1920px) {

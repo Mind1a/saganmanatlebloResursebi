@@ -448,7 +448,24 @@ body {
                             padding-top: 2rem;
                         }
                     }
-
+                    .sheqmeni-mogzauri
+                    {
+                        span
+                        {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: $textBlue;
+                        }
+                    }
+                    .sheqmeni-varskvlavi
+                    {
+                        span
+                        {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                            color: $textBlue;
+                        }
+                    }
                     .fa-solid {
                         width: 100%;
                         text-align: center;
@@ -1661,6 +1678,16 @@ body {
                             text-align: center;
                             font-size: 3rem;
                             font-weight: 900;
+                        }
+                    }
+                    .waikitxe-header
+                    {
+                        margin-bottom: 1rem;
+                        span {
+                            font-style: italic;
+                            font-size: 1.3rem;
+                            letter-spacing: 0.01rem;
+                            
                         }
                     }
             }
