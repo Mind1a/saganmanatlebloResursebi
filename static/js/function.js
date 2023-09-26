@@ -210,6 +210,10 @@ export function showLessonSection(section) {
 
       lessonSection.innerHTML = `
       <div class="${section} ${title}">
+            <div class="waikitxe-header">
+            <h2>${sections[section].waikitxeTitle}</h2>
+            <span>${sections[section].waikitxeAuthor}</span>
+            </div>
             <div class="part1">
             ${waikitxeParags1}
             </div>
@@ -268,14 +272,63 @@ export function showLessonSection(section) {
 
       sheqmeniPdfUrl.href = sections.sheqmeni.assignmentPdfUrl;
        
+      const sectionTitle = sections[section]["title"];
+
+      let sheqmeniHTML = ``;
+
+      if(sectionTitle === "მითოლოგიური პერსონაჟი")
+      {
+        sheqmeniHTML += `
+         <ul> 
+          <li>${sections[section]["p"][0]}</li>
+          <li>${sections[section]["p"][1]}</li>
+         </ul>
+
+        `
+      }else if(sectionTitle === "შენი მოგზაურობა")
+      {
+        sheqmeniHTML +=
+        `
+          <p>${sections[section]["p"][0]}</p>
+          <div class="sheqmeni-mogzauri">
+            <span>მოყევი:</span>
+            <ul> 
+              <li>${sections[section]["p"][1].questions[0]}</li>
+              <li>${sections[section]["p"][1].questions[1]}</li>
+              <li>${sections[section]["p"][1].questions[2]}</li>
+            </ul>
+          </div>
+        `
+      }else if(sectionTitle === "გახდი თანაავტორი")
+      {
+        sheqmeniHTML += `
+          <div class="sheqmeni-varskvlavi">
+            <span>${sections[section]["p"][0]}</span>
+            <ul>
+              <li>${sections[section]["p"][1].questions[0]}</li>
+              <li>${sections[section]["p"][1].questions[1]}</li>
+              <li>${sections[section]["p"][1].questions[2]}</li>
+            </ul>
+          </div>
+        `
+      }
+      else 
+      {
+        sections[section]["p"].forEach((para) => {
+          sheqmeniHTML +=
+          `
+            <p>${para}</p>
+          `
+        })
+      }
       lessonSection.innerHTML = `
             <h2>${sections[section]["title"]}:</h2>
             <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
             <div class="right-block">
-            <p>${sections[section]["p"]}</p>
+              ${sheqmeniHTML}
             </div>
-            `;
-      break;
+            `
+            break;
 
     default:
       if (title == "პეგასი") {
