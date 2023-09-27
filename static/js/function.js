@@ -241,9 +241,9 @@ export function showLessonSection(section) {
 
       lessonSection.innerHTML = `
       <div class="upasuxe">
-        <h2>${sections[section]["title"]}:</h2>
-        <div class="right-block">
-        <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
+      <h2>${sections[section]["title"]}:</h2>
+      <img src="${sections[section]["image"]}" class="lessonLogo" alt="${sections[section]["title"]}">
+      <div class="right-block">
           <ol>${upasuxeQuestions}</ol>
         </div>
       </div>
