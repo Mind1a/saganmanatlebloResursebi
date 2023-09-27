@@ -111,3 +111,15 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    font-size: 62.5%;
+  }
+}

@@ -43,6 +43,10 @@ header {
         font-size: 1.4rem;
         cursor: pointer;
 
+        @media screen and (max-width: 960px){
+            display: none;
+        }
+
         img {
             padding-right: 1rem;
         }
@@ -51,6 +55,14 @@ header {
     .navigation {
         display: flex;
         flex-direction: column;
+        
+        @media screen and (max-width: 960px){
+            display: none;
+
+            #შეავსე, #ჩასვი, #დააკავშირე, #sheavse {
+                display: none;
+            }
+        }
 
         .lessonMainCont {
             position: relative;
