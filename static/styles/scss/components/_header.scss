@@ -3,11 +3,35 @@ header {
     flex-direction: column;
     grid-row: 1/4;
     width: 16.375rem;
-
+    
+    @media screen and (max-width: 960px) {
+        grid-column: 1;
+        grid-row: 1/2;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 6px;
+    }
+    @media screen and (max-width: 400px) {
+        justify-content: space-between;
+        
+    }
     .mainLogo {
         background-color: $logoBackBlue;
         height: 6rem;
         cursor: pointer;
+        @media screen and (max-width: 960px) {
+            min-width: 317px;
+            height: 70px;
+        }
+        svg{
+
+            @media screen and (max-width: 960px) {
+                width: 160px;
+                max-height: 90%;
+            }
+        }
+            
     }
 
     .tavfurceli {
@@ -85,9 +109,22 @@ header {
         font-size: 1.4rem;
         margin-top: auto;
         cursor: pointer;
-
+        @media screen and (max-width: 960px) {
+            display: none;
+            
+        }
         img {
             padding: 0 1rem;
+        }
+    }
+    .burger-menu
+    {
+        width: 70px;
+        height: 70px;
+        background-color: $backgroundBlue;
+        display: none;
+        @media screen and (max-width: 400px) {
+            display: inline-block;
         }
     }
 }
