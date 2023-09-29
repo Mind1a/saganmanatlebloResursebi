@@ -609,6 +609,11 @@ body main .body #aboutProject p {
 body main .body #aboutProject p strong {
   font-family: "BoldNino";
 }
+@media screen and (max-width: 960px) {
+  body main .body #aboutProject {
+    margin: 0 2.8rem;
+  }
+}
 body main .body #lesson {
   display: grid;
   grid-template-columns: fit-content(150px) auto;
