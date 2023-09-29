@@ -1861,15 +1861,18 @@ function draw() {
 }
 
 function onmousedown(e) {
-  if (e.button === 0 && e.clientX - bounds.left <= 23 && !ended) {
+  if (e.button === 0 && 
+      e.clientX - bounds.left <= 23 &&
+      e.clientX - bounds.left >= 6 &&
+      !ended) {
     bounds = canvas.getBoundingClientRect();
     if (!isDrawing) {
       startX = e.clientX - bounds.left;
       startY = e.clientY - bounds.top;
-      if (startY >= 20 && startY <= 35 && !chosen["1"]) {
+      if (startY >= 10 && startY <= 15 && !chosen["1"]) {
         chosen["1"] = null;
         isDrawing = true;
-      } else if (startY >= 110 && startY <= 125 && !chosen["2"]) {
+      } else if (startY >= 100 && startY <= 110 && !chosen["2"]) {
         chosen["2"] = null;
         isDrawing = true;
       } else if (startY >= 200 && startY <= 215 && !chosen["3"]) {
@@ -1878,10 +1881,10 @@ function onmousedown(e) {
       } else if (startY >= 295 && startY <= 310 && !chosen["4"]) {
         chosen["4"] = null;
         isDrawing = true;
-      } else if (startY >= 380 && startY <= 400 && !chosen["5"]) {
+      } else if (startY >= 400 && startY <= 410 && !chosen["5"]) {
         chosen["5"] = null;
         isDrawing = true;
-      } else if (startY >= 475 && startY <= 490 && !chosen["6"]) {
+      } else if (startY >= 500 && startY <= 510 && !chosen["6"]) {
         chosen["6"] = null;
         isDrawing = true;
       }
@@ -1896,7 +1899,7 @@ function onmouseup(e) {
     bounds = canvas.getBoundingClientRect();
 
     if (isDrawing && e.clientX - bounds.left >= 155) {
-      if (mouseY >= 20 && mouseY <= 35 && !Object.values(chosen).includes(1)) {
+      if (mouseY >= 10 && mouseY <= 15 && !Object.values(chosen).includes(1)) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
             chosen[key] = 1;
@@ -1911,8 +1914,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 110 &&
-        mouseY <= 125 &&
+        mouseY >= 100 &&
+        mouseY <= 110 &&
         !Object.values(chosen).includes(2)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
@@ -1967,8 +1970,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 380 &&
-        mouseY <= 400 &&
+        mouseY >= 400 &&
+        mouseY <= 410 &&
         !Object.values(chosen).includes(5)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
@@ -1986,8 +1989,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 475 &&
-        mouseY <= 490 &&
+        mouseY >= 500 &&
+        mouseY <= 510 &&
         !Object.values(chosen).includes(6)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
