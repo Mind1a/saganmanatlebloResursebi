@@ -67,6 +67,7 @@ body {
         border-radius: 0;
         width: 100%;
         height: 100%;
+        opacity: 1 !important;
 
         &-title {
             text-align: left;
@@ -685,6 +686,10 @@ body {
           h2 {
             margin-left: 2.5rem;
             font-size: 2.125rem;
+
+            @media screen and (max-width: 960px){
+                margin-left: 0;
+            }
           }
         }
 
@@ -729,6 +734,27 @@ body {
               }
             }
           }
+          
+          @media screen and (max-width: 960px){
+            margin: 0 2.8rem;
+
+            .gzamkvlevi-subheading-box {
+                img {
+                    display: none;
+                }
+            }
+
+            .gzamkvlevi-content {
+                .gzamkvlevi-title {
+                    font-size: 2.8rem;
+                }
+
+                .gzamkvlevi-text, 
+                .gzamkvlevi-title {
+                    background-color: #fff;
+                    padding: 0;
+                }
+            } 
         }
 
         #daakavshireWrapper {
@@ -2015,4 +2041,5 @@ body {
             }
         }
     }
+}
 }
