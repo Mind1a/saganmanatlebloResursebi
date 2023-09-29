@@ -848,8 +848,18 @@ body {
                 }
 
                 @media screen and (max-width: 960px){
-                    .waikitxe {
+                    .waikitxe{
                         margin: 0 2.8rem;
+                         
+                        div {
+                            &.hide {
+                                display: flex !important;
+                            }
+                        }
+
+                        i {
+                            display: none;
+                        }
                     }
                 }
 
@@ -863,6 +873,10 @@ body {
                             grid-area: img;
                             width: 100%;
                             height: auto;
+
+                            @media screen and (max-width: 680px){
+                                    width: 80%;
+                            }
                         }
 
                         p {
@@ -915,6 +929,19 @@ body {
                         grid-template-areas: 'p1 p1'
                         'img1 img2'
                         'p2 p2';
+
+                        @media screen and (max-width: 960px){
+                            display: grid !important;
+
+                            img:nth-child(3) {
+                                left: -25%;
+                            }
+
+                            img:nth-child(4) {
+                                position: relative;
+                                right: -25%;
+                            }
+                        }
                     }
 
                     .part3 {
@@ -948,6 +975,18 @@ body {
                         text-align: center;
                         font-size: 3rem;
                         font-weight: 900;
+                    }
+
+                    @media screen and (max-width: 960px){
+                        .part1, .part3 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+        
+                            img:nth-child(3) {
+                                width: 50%;
+                            }
+                        }
                     }
                 }
 
@@ -1086,6 +1125,10 @@ body {
                             grid-area: img;
                             width: 100%;
                             height: fit-content;
+
+                            @media screen and (max-width: 960px){
+                                width: 50%;   
+                            }
                         }
 
                         display: grid;
@@ -1101,6 +1144,14 @@ body {
                         text-align: center;
                         font-size: 3rem;
                         font-weight: 900;
+                    }
+                    
+                    @media screen and (max-width: 960px){
+                        .part1, .part2, .part3 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
                     }
                 }
 
@@ -1266,6 +1317,33 @@ body {
                         text-align: center;
                         font-size: 3rem;
                         font-weight: 900;
+                    }
+
+                    @media screen and (max-width: 960px){
+                        .part1, .part2, .part3 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+        
+                            img {
+                                width: 50%;
+                            }
+                        }
+
+                        .part2 {
+                            img {
+                                transform: translateX(-100%);
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 680px){
+                        .part2 {
+                            img {
+                                width: 80%;
+                                transform: translateX(-70%);
+                            }
+                        }
                     }
                 }
                 .napoleoniSeavse {
@@ -1449,6 +1527,47 @@ body {
                         text-align: center;
                         font-size: 3rem;
                         font-weight: 900;
+                    }
+
+                    @media screen and (max-width: 960px){
+                        .part1, .part2, .part3 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+        
+                            img {
+                                width: 50%;
+                            }
+
+                            img:nth-child(3) {
+                                width: 50%;
+                            }
+
+                            .img-container
+                            {
+                                img:nth-child(1),
+                                img:nth-child(2),
+                                img:nth-child(3)
+                                {
+                                    width: 40%;
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 680px){
+                        .part2 {
+                            .img-container
+                            {
+                                img:nth-child(1),
+                                img:nth-child(2),
+                                img:nth-child(3)
+                                {
+                                    width: 30%;
+                                }
+    
+                            }
+                        }
                     }
                 }
                 .angeloziDaakavshire {
@@ -1706,6 +1825,33 @@ body {
                             font-size: 3rem;
                             font-weight: 900;
                         }
+
+                        @media screen and (max-width: 960px){
+                            .part1, .part2, .part3 {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            .part1 {
+                                img {
+                                    height: 35rem;
+                                }
+                            }
+
+                            .part2 {
+                                img { 
+                                    left: 40%;
+                                    transform: translateX(-50%);
+                                }
+                            }
+
+                            .part3 {
+                                img {
+                                    max-width: 30rem
+                                }
+                            }
+                        }
                     }
                 .waikitxe[class~='ვარსკვლავი'] {
                         margin-top: 1rem;
@@ -1799,7 +1945,6 @@ body {
                             }
     
                             p:nth-child(2) {
-                                // margin: ;
                                 padding-right: 2rem;
                                 grid-area: p2;
                             }
@@ -1820,6 +1965,41 @@ body {
                             text-align: center;
                             font-size: 3rem;
                             font-weight: 900;
+                        }
+
+                        @media screen and (max-width: 960px){
+                            .part1, .part2, .part3 {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            .part1 {
+                                img {
+                                    height: 35rem;
+                                }
+                            }
+
+                            .part2 {
+                                img { 
+                                    left: 0;
+                                    transform: translateX(0);
+                                }
+                            }
+
+                            .part3 {
+                                img {
+                                    max-height: 35rem;
+                                }
+                            }
+                        }
+
+                        @media screen and (max-width: 680px){
+                            .part2 {
+                                img { 
+                                    height: 30rem;
+                                }
+                            }
                         }
                     }
                     .waikitxe-header
