@@ -1253,30 +1253,39 @@ function tamaraSheavse(e) {
           zones.forEach((dropZone) => {
             dropZone.addEventListener("dragover", handleDragOver);
           });
+          // dnt y want somebody
           zones.forEach((dropzone) => {
-            dropzone.addEventListener("drop", handleDrop);
-          });
-        }
-
-        function handleDragStart(e) {
-          e.dataTransfer.setData("text/plain", e.target.textContent);
-        };
-
-        function handleDragOver(e) {
-          e.preventDefault();
-        }
-
+                dropzone.addEventListener("drop", handleDrop);              
+            
+            });
+          }
+          
+          function handleDragStart(e) {
+            e.dataTransfer.setData("text/plain", e.target.textContent);
+          };
+          
+          function handleDragOver(e) {
+            e.preventDefault();
+          }
+          
         function handleDrop(e) {
-          e.preventDefault();
-          const data = e.dataTransfer.getData("text/plain");
-          e.target.getContext = data;
+         if(e.target.nodeName === 'SPAN')
+         {
 
-          const originalWord = document.querySelector(
+           e.preventDefault();
+           
+           const data = e.dataTransfer.getData("text/plain");
+           e.target.getContext = data;
+           
+           const originalWord = document.querySelector(
             `.tamara-word[data-value="${data}"]`
-          );
-          e.target.innerHTML = '';
-          e.target.classList.add('droppedZone');
-          e.target.appendChild(originalWord);
+            );
+
+              e.target.innerHTML = '';
+              e.target.classList.add('droppedZone');
+              
+              e.target.appendChild(originalWord); 
+            }
           
         };
 
