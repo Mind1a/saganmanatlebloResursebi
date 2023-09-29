@@ -1,5 +1,4 @@
-import booksData from './Books.json'; 
-// assert {type: 'json'};
+import booksData from './Books.json' assert {type: 'json'};
 import { ShowBooks, showLesson, showLessonSection, toggleParags } from "./function.js";
 
 ShowBooks(books, booksData);
