@@ -10,3 +10,6 @@ export const logoBtn = document.querySelector('.mainLogo');
 export const gzamkvlevi = document.querySelector(".head-gzamkvlevi");
 export const headContent = document.querySelector(".head-content");
 export const menu = document.querySelector('.menu');
+export const burgerBtn = document.querySelector('.burger-menu');
+export const activeBurger = document.querySelector('.burger-menu_active');
+export const burgBookWrapper = document.querySelector('.burger-book-wrapper');
