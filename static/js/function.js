@@ -12,6 +12,9 @@ import {
   headContent,
   gzamkvlevi,
   menu,
+  burgerBtn,
+  activeBurger,
+  burgBookWrapper
 } from "./variable.js";
 
 let title = ""; // to save title of book
@@ -1791,6 +1794,48 @@ function resetDaakavshire() {
   checkCanvas = false;
 }
 
+burgerBtn.addEventListener('click', () => {
+
+  let burgBookHtml = ``;
+
+  for(let i = 0; i < 6; i++)
+  {
+    let book = Object.keys(booksData)[i];
+    console.log(book)
+
+    burgBookHtml += 
+    `
+       <div class="book-division">
+          <div class="book-about">
+            <img src=${booksData[book].img} alt="">
+            <h3>${booksData[book].burgerTitle}</h3>
+          </div>
+          <div class="book-ready">
+            <img src="static/images/icons/02_moemzade.svg" alt="">
+            <h3>მოემზადე</h3>
+          </div>
+          <div class="book-read">
+            <img src="static/images/icons/02_waikitxe.svg" alt="">
+            <h3>წაიკითხე</h3>
+          </div>
+          <div class="book-answer">
+            <img src="static/images/icons/03_upasuxe.svg" alt="">
+            <h3>უპასუხე</h3>
+          </div>
+          <div class="book-create">
+            <img src="static/images/icons/04_shekmeni.svg" alt="">
+            <h3>შექმენი</h3>
+          </div>
+      </div>
+    `
+  }
+  activeBurger.classList.toggle('active-burger');
+  console.log(burgBookWrapper)
+  burgBookWrapper.innerHTML += burgBookHtml;
+
+
+
+});
 //canvas functions START
 let canvas = null;
 let wrapper = null;
