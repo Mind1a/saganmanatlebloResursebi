@@ -1796,12 +1796,13 @@ function resetDaakavshire() {
 
 burgerBtn.addEventListener('click', () => {
 
+  
+
   let burgBookHtml = ``;
 
   for(let i = 0; i < 6; i++)
   {
     let book = Object.keys(booksData)[i];
-    console.log(book)
 
     burgBookHtml += 
     `
@@ -1830,12 +1831,21 @@ burgerBtn.addEventListener('click', () => {
     `
   }
   activeBurger.classList.toggle('active-burger');
-  console.log(burgBookWrapper)
-  burgBookWrapper.innerHTML += burgBookHtml;
+  burgBookWrapper.innerHTML = burgBookHtml;
 
 
 
 });
+
+export function updateActiveBurgerVisibility()
+{
+  if(window.innerWidth >= 960)
+  {
+    
+    activeBurger.classList.remove('active-burger')
+    
+  }
+}
 //canvas functions START
 let canvas = null;
 let wrapper = null;
