@@ -2319,6 +2319,11 @@ body .burger-menu_active {
     display: none;
   }
 }
+@media screen and (max-width: 960px) {
+  body .burger-menu_active {
+    display: none;
+  }
+}
 body .burger-menu_active h2 {
   font-size: 3rem;
 }
