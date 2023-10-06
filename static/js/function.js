@@ -1813,7 +1813,7 @@ function resetDaakavshire() {
 
 burgerBtn.addEventListener('click', () => {
 
-  
+
 
   let burgBookHtml = ``;
 
@@ -1853,6 +1853,22 @@ burgerBtn.addEventListener('click', () => {
 
 
 });
+
+export function closeBurger(e)
+{
+  if(activeBurger.classList.contains('active-burger')
+      &&
+     !e.target.closest('.active-burger')
+     &&
+     !e.target.closest('.burger-menu')   
+  ){
+    activeBurger.classList.remove('active-burger')
+  }
+}
+
+// document.body.addEventListener('click', closeBurger);
+
+
 
 export function updateActiveBurgerVisibility()
 {
