@@ -4,7 +4,8 @@ import {
     showLesson, 
     showLessonSection, 
     toggleParags,
-    updateActiveBurgerVisibility    
+    updateActiveBurgerVisibility,
+    closeBurger  
     } from "./function.js";
 
 ShowBooks(books, booksData);
@@ -13,4 +14,5 @@ window.showLesson = showLesson;
 window.showLessonSection = showLessonSection;
 window.toggleParags = toggleParags;
 window.addEventListener('resize', updateActiveBurgerVisibility);
+document.body.addEventListener('click', closeBurger);
 
