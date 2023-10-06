@@ -1135,7 +1135,7 @@ body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text spa
     padding: 0;
   }
 }
-body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire {
+body main .body #lesson #daakavshireWrapper .daakavshire {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1146,14 +1146,14 @@ body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire {
   height: -moz-fit-content;
   height: fit-content;
 }
-body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire p {
+body main .body #lesson #daakavshireWrapper .daakavshire p {
   position: relative;
   font-size: 2rem;
   padding: 0.8rem 2rem 0.8rem 0.8rem;
   border: 1px solid #5890ae;
   border-radius: 0.8rem;
 }
-body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire .daakavshire_left_block p::after {
+body main .body #lesson #daakavshireWrapper .daakavshire .daakavshire_left_block p::after {
   content: "•";
   position: absolute;
   right: -1.8rem;
@@ -1162,7 +1162,7 @@ body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire .daakav
   top: 0;
   pointer-events: none;
 }
-body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire .daakavshire_right_block p::before {
+body main .body #lesson #daakavshireWrapper .daakavshire .daakavshire_right_block p::before {
   content: "•";
   position: absolute;
   left: -1.8rem;
@@ -1171,30 +1171,30 @@ body main .body #lesson .gzamkvlevi-box #daakavshireWrapper .daakavshire .daakav
   top: 0;
   pointer-events: none;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences {
+body main .body #lesson .leftSentences {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: #0a2b39;
   font-size: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences ol {
+body main .body #lesson .leftSentences ol {
   max-width: 34rem;
   line-height: 1.5;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences ol li {
+body main .body #lesson .leftSentences ol li {
   margin-bottom: 1.8rem;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences .words {
+body main .body #lesson .leftSentences .words {
   width: 100%;
   margin-left: 2.8rem;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences .words p {
+body main .body #lesson .leftSentences .words p {
   text-align: center;
   background-color: #C1D4D6;
   padding: 0.9rem 0.9rem;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences .words .wordsInner {
+body main .body #lesson .leftSentences .words .wordsInner {
   padding: 2.5rem 0.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1207,7 +1207,7 @@ body main .body #lesson .gzamkvlevi-box .leftSentences .words .wordsInner {
   background-color: #E4EEEF;
   margin-top: 0.625rem;
 }
-body main .body #lesson .gzamkvlevi-box .leftSentences .words .wordsInner .word {
+body main .body #lesson .leftSentences .words .wordsInner .word {
   text-align: center;
   padding: 0.625rem;
   height: 3rem;
@@ -1216,41 +1216,41 @@ body main .body #lesson .gzamkvlevi-box .leftSentences .words .wordsInner .word 
   border: solid 1px #5890AE;
   border-radius: 0.8rem;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 {
+body main .body #lesson .gridRow3 {
   grid-row: 3;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 p {
+body main .body #lesson .gridRow3 p {
   font-size: 2rem;
   color: #0a2b39;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer {
+body main .body #lesson .gridRow3 .tableContainer {
   display: table;
   max-width: 42.5rem;
   width: 100%;
   margin: 1rem auto;
   border: 1px solid #707070;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer .row {
+body main .body #lesson .gridRow3 .tableContainer .row {
   display: table-row;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer .cell {
+body main .body #lesson .gridRow3 .tableContainer .cell {
   display: table-cell;
   padding: 0.625rem;
   vertical-align: middle;
   border: 1px solid #707070;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer .title {
+body main .body #lesson .gridRow3 .tableContainer .title {
   font-weight: bold;
   margin-bottom: 5px;
   text-align: center;
   background-color: #c1d4d6;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer .title h4 {
+body main .body #lesson .gridRow3 .tableContainer .title h4 {
   color: #5890ae;
   font-size: 1.5rem;
 }
-body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer input {
+body main .body #lesson .gridRow3 .tableContainer input {
   background-color: #e4eeef;
   border: none;
   outline: none;
@@ -1261,114 +1261,114 @@ body main .body #lesson .gzamkvlevi-box .gridRow3 .tableContainer input {
   font-size: 2rem;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe {
+  body main .body #lesson .waikitxe {
     margin: 0 2.8rem;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe div.hide {
+  body main .body #lesson .waikitxe div.hide {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe i {
+  body main .body #lesson .waikitxe i {
     display: none;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] {
+body main .body #lesson .waikitxe[class~=პეგასი] {
   margin-top: 1rem;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 {
+body main .body #lesson .waikitxe[class~=პეგასი] .part1 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 img {
+body main .body #lesson .waikitxe[class~=პეგასი] .part1 img {
   grid-area: img;
   width: 100%;
   height: auto;
 }
 @media screen and (max-width: 680px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 img {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part1 img {
     width: 80%;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 p {
+body main .body #lesson .waikitxe[class~=პეგასი] .part1 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part1 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part1 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 {
+body main .body #lesson .waikitxe[class~=პეგასი] .part2 {
   display: grid;
   grid-template-areas: "p1 p1" "img1 img2" "p2 p2";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 p {
+body main .body #lesson .waikitxe[class~=პეგასი] .part2 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part2 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part2 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 img:nth-child(3) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-child(3) {
   position: relative;
   grid-area: img1;
   height: 10rem;
   left: 70%;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 img:nth-child(4) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-child(4) {
   grid-area: img2;
   height: 10rem;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part2 {
     display: grid !important;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 img:nth-child(3) {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-child(3) {
     left: -25%;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part2 img:nth-child(4) {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-child(4) {
     position: relative;
     right: -25%;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 {
+body main .body #lesson .waikitxe[class~=პეგასი] .part3 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 p {
+body main .body #lesson .waikitxe[class~=პეგასი] .part3 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part3 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part3 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 img:nth-child(3) {
+body main .body #lesson .waikitxe[class~=პეგასი] .part3 img:nth-child(3) {
   grid-area: img;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .fa-solid {
+body main .body #lesson .waikitxe[class~=პეგასი] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part1, body main .body #lesson .waikitxe[class~=პეგასი] .part3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1380,21 +1380,21 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .fa
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part1 img:nth-child(3), body main .body #lesson .gzamkvlevi-box .waikitxe[class~=პეგასი] .part3 img:nth-child(3) {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part1 img:nth-child(3), body main .body #lesson .waikitxe[class~=პეგასი] .part3 img:nth-child(3) {
     width: 50%;
   }
 }
-body main .body #lesson .gzamkvlevi-box .upasuxe {
+body main .body #lesson .upasuxe {
   grid-column: 1/3;
   display: grid;
   grid-template-columns: 10rem 1fr;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .upasuxe img {
+  body main .body #lesson .upasuxe img {
     margin-bottom: 2rem;
   }
 }
-body main .body #lesson .gzamkvlevi-box .upasuxe .right-block {
+body main .body #lesson .upasuxe .right-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1402,96 +1402,96 @@ body main .body #lesson .gzamkvlevi-box .upasuxe .right-block {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-body main .body #lesson .gzamkvlevi-box .upasuxe ol {
+body main .body #lesson .upasuxe ol {
   margin-left: 3.25rem;
 }
-body main .body #lesson .gzamkvlevi-box .upasuxe li {
+body main .body #lesson .upasuxe li {
   margin-bottom: 2rem;
   padding-left: 0.8125rem;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .upasuxe li {
+  body main .body #lesson .upasuxe li {
     margin-bottom: 3rem;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] {
+body main .body #lesson .waikitxe[class~=მოგზაური] {
   margin-top: 1rem;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img" "p3 img" "p4 p4";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 img {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 img {
   grid-area: img;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 p {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 p:nth-child(3) {
   grid-area: p3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1 p:nth-child(4) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part1 p:nth-child(4) {
   grid-area: p4;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 p2" "img1 img1" "p3 p3";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 p {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 p:nth-child(3) {
   grid-area: p3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 img:nth-child(4) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 img:nth-child(4) {
   grid-area: img1;
   width: 100%;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2 img:nth-child(5) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part2 img:nth-child(5) {
   display: none;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img" "p3 img" "p4 img" "p5 img";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 p {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 p:nth-child(3) {
   grid-area: p3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 p:nth-child(4) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 p:nth-child(4) {
   grid-area: p4;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 p:nth-child(5) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 p:nth-child(5) {
   grid-area: p5;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 img:nth-child(6) {
+body main .body #lesson .waikitxe[class~=მოგზაური] .part3 img:nth-child(6) {
   grid-area: img;
   width: 100%;
   height: -webkit-fit-content;
@@ -1499,18 +1499,18 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაურ�
   height: fit-content;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 img:nth-child(6) {
+  body main .body #lesson .waikitxe[class~=მოგზაური] .part3 img:nth-child(6) {
     width: 50%;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .fa-solid {
+body main .body #lesson .waikitxe[class~=მოგზაური] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part1, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part2, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაური] .part3 {
+  body main .body #lesson .waikitxe[class~=მოგზაური] .part1, body main .body #lesson .waikitxe[class~=მოგზაური] .part2, body main .body #lesson .waikitxe[class~=მოგზაური] .part3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1523,17 +1523,17 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=მოგზაურ�
             align-items: center;
   }
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse {
+body main .body #lesson .mogzaurisheavse {
   position: relative;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse svg * {
+body main .body #lesson .mogzaurisheavse svg * {
   stroke: #5890ae;
   stroke-width: 6;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse svg polygon {
+body main .body #lesson .mogzaurisheavse svg polygon {
   fill: #c1d4d6;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent {
+body main .body #lesson .mogzaurisheavse .svgContent {
   position: absolute;
   top: 0;
   display: -webkit-box;
@@ -1551,11 +1551,11 @@ body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent {
   height: -moz-fit-content;
   height: fit-content;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent p {
+body main .body #lesson .mogzaurisheavse .svgContent p {
   text-align: center;
   margin: 0;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent input {
+body main .body #lesson .mogzaurisheavse .svgContent input {
   background-color: #e4eeef;
   border: none;
   outline: none;
@@ -1564,32 +1564,32 @@ body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent input {
   padding: 0.8rem;
   font-size: 1rem;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent #sityva {
+body main .body #lesson .mogzaurisheavse .svgContent #sityva {
   margin-top: 6rem;
   width: 29%;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent #ganmarteba {
+body main .body #lesson .mogzaurisheavse .svgContent #ganmarteba {
   margin-top: 1rem;
   width: 55%;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .svgContent #winadadeba {
+body main .body #lesson .mogzaurisheavse .svgContent #winadadeba {
   margin-top: 2rem;
   width: 80%;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .sityvebi {
+body main .body #lesson .mogzaurisheavse .sityvebi {
   position: absolute;
   right: 0;
   top: 0;
 }
-body main .body #lesson .gzamkvlevi-box .mogzaurisheavse .sityvebi ol li {
+body main .body #lesson .mogzaurisheavse .sityvebi ol li {
   color: #5890ae;
   font-weight: 600;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] {
   margin-top: 1rem;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 {
   display: grid;
   margin-bottom: 2rem;
   grid-template-columns: repeat(2, 1fr);
@@ -1598,33 +1598,33 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეო�
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 img {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 img {
   padding-left: 2rem;
   grid-area: img;
   width: 100%;
   height: auto;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 p {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 p:nth-child(3) {
   margin-bottom: 0;
   margin-right: 4rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 {
   margin-bottom: 2rem;
   display: grid;
   grid-template-areas: "p1" "img";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 img {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img {
   grid-area: img;
   width: 80%;
   position: relative;
@@ -1632,15 +1632,15 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეო�
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 p {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 {
   display: grid;
   grid-template-columns: 1fr 240px;
   grid-template-areas: "p1 p1" "p2 img";
@@ -1648,32 +1648,32 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეო�
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 p {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 p {
   color: #0a2b39;
   font-size: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 p:nth-child(2) {
   padding-right: 2rem;
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 img {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 img {
   grid-area: img;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 43rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .fa-solid {
+body main .body #lesson .waikitxe[class~=ნაპოლეონი] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 {
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1685,28 +1685,28 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეო�
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part1 img, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 img, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part3 img {
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 img, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 img {
     width: 50%;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 img {
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
 }
 @media screen and (max-width: 680px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ნაპოლეონი] .part2 img {
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img {
     width: 80%;
     -webkit-transform: translateX(-70%);
             transform: translateX(-70%);
   }
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sub-title {
+body main .body #lesson .napoleoniSeavse .sub-title {
   font-size: 2rem;
   font-family: "BookNino";
   margin-bottom: 2.1 0.3125rem;
   margin-bottom: 1rem;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .wrapper-angelozi {
+body main .body #lesson .napoleoniSeavse .wrapper-angelozi {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1718,11 +1718,11 @@ body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .wrapper-angelozi {
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .wrapper-angelozi #dasrulebaTavidan {
+body main .body #lesson .napoleoniSeavse .wrapper-angelozi #dasrulebaTavidan {
   -webkit-transform: translateX(-12%);
           transform: translateX(-12%);
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper {
   overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1735,10 +1735,10 @@ body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper {
           justify-content: space-between;
   gap: 8rem;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaLeft {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft {
   margin-top: 1rem;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaLeft p {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft p {
   font-style: normal;
   font-weight: normal;
   font-size: 32px;
@@ -1749,10 +1749,10 @@ body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaLef
   width: 17rem;
   margin-bottom: 2.2rem;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaLeft .p-angelozi {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaLeft .p-angelozi {
   width: 21rem;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaRight {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1761,7 +1761,7 @@ body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaRig
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaRight input {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight input {
   background-color: #e4eeef;
   border: none;
   outline: none;
@@ -1778,46 +1778,46 @@ body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaRig
   color: #000000;
   max-width: 415px;
 }
-body main .body #lesson .gzamkvlevi-box .napoleoniSeavse .sqemaWrapper .sqemaRight .input-angelozi {
+body main .body #lesson .napoleoniSeavse .sqemaWrapper .sqemaRight .input-angelozi {
   width: 25.9375rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] {
+body main .body #lesson .waikitxe[class~=დღე] {
   margin-top: 1rem;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 {
+body main .body #lesson .waikitxe[class~=დღე] .part1 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 img {
+body main .body #lesson .waikitxe[class~=დღე] .part1 img {
   grid-area: img;
   width: 100%;
   height: auto;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 p {
+body main .body #lesson .waikitxe[class~=დღე] .part1 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=დღე] .part1 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=დღე] .part1 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 {
+body main .body #lesson .waikitxe[class~=დღე] .part2 {
   display: grid;
   grid-template-areas: "p1 p1" "container container";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 p {
+body main .body #lesson .waikitxe[class~=დღე] .part2 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=დღე] .part2 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container {
+body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container {
   grid-area: container;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1830,51 +1830,51 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-
           justify-content: space-between;
   margin-bottom: 39px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1) {
+body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1) {
   max-width: 265px;
   width: 100%;
   height: 87px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2) {
+body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2) {
   max-width: 150px;
   width: 100%;
   height: 80px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3) {
+body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3) {
   max-width: 369px;
   width: 100%;
   height: 90px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 {
+body main .body #lesson .waikitxe[class~=დღე] .part3 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 p {
+body main .body #lesson .waikitxe[class~=დღე] .part3 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=დღე] .part3 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=დღე] .part3 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 img:nth-child(3) {
+body main .body #lesson .waikitxe[class~=დღე] .part3 img:nth-child(3) {
   grid-area: img;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .fa-solid {
+body main .body #lesson .waikitxe[class~=დღე] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 {
+  body main .body #lesson .waikitxe[class~=დღე] .part1, body main .body #lesson .waikitxe[class~=დღე] .part2, body main .body #lesson .waikitxe[class~=დღე] .part3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1886,30 +1886,30 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .fa-solid {
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 img, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 img, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 img {
+  body main .body #lesson .waikitxe[class~=დღე] .part1 img, body main .body #lesson .waikitxe[class~=დღე] .part2 img, body main .body #lesson .waikitxe[class~=დღე] .part3 img {
     width: 50%;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 img:nth-child(3), body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 img:nth-child(3), body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 img:nth-child(3) {
+  body main .body #lesson .waikitxe[class~=დღე] .part1 img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part2 img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part3 img:nth-child(3) {
     width: 50%;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 .img-container img:nth-child(1),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 .img-container img:nth-child(2),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part1 .img-container img:nth-child(3), body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3), body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 .img-container img:nth-child(1),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 .img-container img:nth-child(2),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part3 .img-container img:nth-child(3) {
+  body main .body #lesson .waikitxe[class~=დღე] .part1 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part1 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part1 .img-container img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part3 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part3 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part3 .img-container img:nth-child(3) {
     width: 40%;
   }
 }
 @media screen and (max-width: 680px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2),
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3) {
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3) {
     width: 30%;
   }
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire {
+body main .body #lesson .angeloziDaakavshire {
   grid-column: 1/3;
   grid-row: 3/4;
   display: grid;
@@ -1919,10 +1919,10 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire {
           column-gap: 1rem;
   margin-top: 50px;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container {
+body main .body #lesson .angeloziDaakavshire .droppable-container {
   grid-column: 2/3;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-top-container {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-top-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1932,7 +1932,7 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-containe
   gap: 14px;
   width: 100%;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-bottom-container {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-bottom-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1943,7 +1943,7 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-containe
   width: 100%;
   margin-top: 71px;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-box .number {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-box .number {
   font-family: boldNino;
   font-size: 32px;
   font-weight: bold;
@@ -1954,7 +1954,7 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-containe
   padding: 16px 18px 9px 19px;
   max-width: 48px;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-box .droppable-top {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-box .droppable-top {
   max-width: 192px;
   width: 192px;
   height: 192px;
@@ -1962,13 +1962,13 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-containe
   background: #e4eeef;
   position: relative;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-box .droppable-top img {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-box .droppable-top img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-box .droppable-bottom {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-box .droppable-bottom {
   margin-top: 9px;
   width: 192px;
   height: 150px;
@@ -1976,7 +1976,7 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-containe
   background: #e4eeef;
   padding: 0.5rem;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-container .droppable-box .droppable-bottom p {
+body main .body #lesson .angeloziDaakavshire .droppable-container .droppable-box .droppable-bottom p {
   font-family: BookNino;
   font-size: 22px;
   font-weight: normal;
@@ -1988,7 +1988,7 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .droppable-containe
   width: 100%;
   cursor: pointer;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .objects-container .object {
+body main .body #lesson .angeloziDaakavshire .objects-container .object {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2002,13 +2002,13 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .objects-container 
   margin-bottom: 1.5rem;
   min-height: 260px;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .objects-container .object img {
+body main .body #lesson .angeloziDaakavshire .objects-container .object img {
   max-width: 172px;
   width: 100%;
   height: 168px;
   cursor: pointer;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .objects-container .object p {
+body main .body #lesson .angeloziDaakavshire .objects-container .object p {
   font-family: BookNino;
   font-size: 22px;
   font-weight: normal;
@@ -2020,10 +2020,10 @@ body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .objects-container 
   width: 100%;
   cursor: pointer;
 }
-body main .body #lesson .gzamkvlevi-box .angeloziDaakavshire .buttons {
+body main .body #lesson .angeloziDaakavshire .buttons {
   grid-column: 2/3;
 }
-body main .body #lesson .gzamkvlevi-box .angelozi-daakavshire-dsc {
+body main .body #lesson .angelozi-daakavshire-dsc {
   grid-column: 2/3;
   grid-row: 2/3;
   font-family: BookNino;
@@ -2035,11 +2035,11 @@ body main .body #lesson .gzamkvlevi-box .angelozi-daakavshire-dsc {
   text-align: left;
   line-height: 3.5rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] {
+body main .body #lesson .waikitxe[class~=წიგნი] {
   margin-top: 1rem;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 {
   display: grid;
   margin-bottom: 2rem;
   grid-template-areas: "p1 p1" "p2 img" "p3 img" "p4 img";
@@ -2047,39 +2047,39 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 img {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 img {
   padding-left: 2rem;
   grid-area: img;
   max-width: 249px;
   width: 100%;
   height: 600px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 p {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 p {
   color: #0a2b39;
   font-size: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 p:nth-child(3) {
   grid-area: p3;
   margin-bottom: 0;
   margin-right: 4rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 p:nth-child(4) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part1 p:nth-child(4) {
   grid-area: p4;
   margin-bottom: 0;
   margin-right: 4rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2 {
+body main .body #lesson .waikitxe[class~=წიგნი] .part2 {
   margin-bottom: 2rem;
   display: grid;
   grid-template-areas: "p1" "img" "p2";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2 img {
+body main .body #lesson .waikitxe[class~=წიგნი] .part2 img {
   grid-area: img;
   width: 80%;
   position: relative;
@@ -2087,19 +2087,19 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2 p {
+body main .body #lesson .waikitxe[class~=წიგნი] .part2 p {
   color: #0a2b39;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part2 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part2 p:nth-child(2) {
   grid-area: p2;
   margin-top: 1rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 {
+body main .body #lesson .waikitxe[class~=წიგნი] .part3 {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas: "p1 p1" "p2 img";
@@ -2107,32 +2107,32 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 p {
+body main .body #lesson .waikitxe[class~=წიგნი] .part3 p {
   color: #0a2b39;
   font-size: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part3 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=წიგნი] .part3 p:nth-child(2) {
   padding-right: 2rem;
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 img {
+body main .body #lesson .waikitxe[class~=წიგნი] .part3 img {
   grid-area: img;
   -o-object-fit: cover;
      object-fit: cover;
   width: 514px;
   max-height: 367px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .fa-solid {
+body main .body #lesson .waikitxe[class~=წიგნი] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 {
+  body main .body #lesson .waikitxe[class~=წიგნი] .part1, body main .body #lesson .waikitxe[class~=წიგნი] .part2, body main .body #lesson .waikitxe[class~=წიგნი] .part3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2144,23 +2144,23 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .fa-so
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part1 img {
+  body main .body #lesson .waikitxe[class~=წიგნი] .part1 img {
     height: 35rem;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part2 img {
+  body main .body #lesson .waikitxe[class~=წიგნი] .part2 img {
     left: 40%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=წიგნი] .part3 img {
+  body main .body #lesson .waikitxe[class~=წიგნი] .part3 img {
     max-width: 30rem;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] {
   margin-top: 1rem;
   grid-column: 1/3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1 {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 {
   display: grid;
   margin-bottom: 2rem;
   grid-template-areas: "p1 img" "p2 img";
@@ -2168,28 +2168,28 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლ�
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1 img {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 img {
   grid-area: img;
   width: 100%;
   height: 600px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1 p {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 p {
   color: #0a2b39;
   font-size: 2rem;
   max-width: 603px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 {
   margin-bottom: 2rem;
   display: grid;
   grid-template-areas: "p1" "p2" "img" "p3";
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 img {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 img {
   grid-area: img;
   max-width: 286px;
   width: 100%;
@@ -2198,23 +2198,23 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლ�
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 p {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 p {
   color: #0a2b39;
   max-width: 918px;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 p:nth-child(2) {
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 p:nth-child(3) {
   grid-area: p3;
   margin-top: 45px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas: "p1 img" "p2 img" "p3 img";
@@ -2223,22 +2223,22 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლ�
       -ms-flex-align: center;
           align-items: center;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 p {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 p {
   color: #0a2b39;
   max-width: 557px;
   font-size: 2rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 p:nth-child(1) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 p:nth-child(1) {
   grid-area: p1;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 p:nth-child(2) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 p:nth-child(2) {
   padding-right: 2rem;
   grid-area: p2;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 p:nth-child(3) {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 p:nth-child(3) {
   grid-area: p3;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 img {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 img {
   grid-area: img;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2246,14 +2246,14 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლ�
   width: 100%;
   max-height: 600px;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .fa-solid {
+body main .body #lesson .waikitxe[class~=ვარსკვლავი] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
 }
 @media screen and (max-width: 960px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2, body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1, body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2, body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2265,27 +2265,27 @@ body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლ�
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part1 img {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 img {
     height: 35rem;
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 img {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 img {
     left: 0;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part3 img {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 img {
     max-height: 35rem;
   }
 }
 @media screen and (max-width: 680px) {
-  body main .body #lesson .gzamkvlevi-box .waikitxe[class~=ვარსკვლავი] .part2 img {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 img {
     height: 30rem;
   }
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe-header {
+body main .body #lesson .waikitxe-header {
   margin-bottom: 1rem;
 }
-body main .body #lesson .gzamkvlevi-box .waikitxe-header span {
+body main .body #lesson .waikitxe-header span {
   font-style: italic;
   font-size: 1.3rem;
   letter-spacing: 0.01rem;
