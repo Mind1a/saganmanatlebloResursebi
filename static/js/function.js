@@ -745,6 +745,8 @@ function napoleoniSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
+       const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+       daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
       
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
@@ -783,6 +785,9 @@ function napoleoniSheavse(e) {
       break;
 
     case "ჩასვი":
+      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+      
       lessonSection.innerHTML = `
       <h2>${section[subsection]["title"]}</h2>
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -840,6 +845,9 @@ function napoleoniSheavse(e) {
       break;
 
     case "შეავსე":
+      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+
       const sqemaBlock = section[subsection]["sqemaLines"];
 
       let sqemaLeftHtml = ``;
