@@ -1,6 +1,6 @@
 export const books = document.getElementById('books');
 export const tavfurcelibtn = document.querySelector('.tavfurceli');
-export const settingsbtn = document.querySelector('.settings');
+export const settingBtns = document.querySelectorAll('.settings');
 export const aboutProject = document.getElementById('aboutProject');
 export const head = document.querySelector('.head');
 export const nav = document.querySelector('.navigation');

@@ -3,7 +3,7 @@ import {
   books,
   tavfurcelibtn,
   logoBtn,
-  settingsbtn,
+  settingBtns,
   aboutProject,
   head,
   nav,
@@ -43,18 +43,20 @@ export function ShowBooks(books, booksData) {
 }
 
 //click on setting button will show about projects and hide everything else
-settingsbtn.addEventListener("click", () => {
-  header.classList.remove("showBgColor");
-  books.classList.add("hide");
-  aboutProject.classList.remove("hide");
-  tavfurcelibtn.classList.remove("hide");
-  nav.classList.add("hide");
-  settingsbtn.classList.add("hide");
-  lessonSection.classList.add("hide");
-  headContent.classList.remove("hide");
-  gzamkvlevi.classList.add("hide");
-  headContent.innerHTML = "<h4>პროექტის შესახებ</h4>";
-});
+for (const settingBtn of settingBtns) {
+  settingBtn.addEventListener("click", () => {
+    header.classList.remove("showBgColor");
+    books.classList.add("hide");
+    aboutProject.classList.remove("hide");
+    tavfurcelibtn.classList.remove("hide");
+    nav.classList.add("hide");
+    settingBtns[0].classList.add("hide");
+    lessonSection.classList.add("hide");
+    headContent.classList.remove("hide");
+    gzamkvlevi.classList.add("hide");
+    headContent.innerHTML = "<h4>პროექტის შესახებ</h4>";
+  });
+}
 
 // shows main page on click function
 function goMainPage() {
@@ -63,7 +65,7 @@ function goMainPage() {
   aboutProject.classList.add("hide");
   tavfurcelibtn.classList.add("hide");
   nav.classList.add("hide");
-  settingsbtn.classList.remove("hide");
+  settingBtns[0].classList.remove("hide");
   lessonSection.classList.add("hide");
   gzamkvlevi.classList.add("hide");
   headContent.classList.add("hide");
