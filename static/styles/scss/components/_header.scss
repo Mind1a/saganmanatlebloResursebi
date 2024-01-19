@@ -135,6 +135,8 @@ header {
         height: 70px;
         background-color: $backgroundBlue;
         display: none;
+        cursor: pointer;
+        user-select: none;
         z-index: 1000;
         @media screen and (max-width: 960px) {
             display: inline-block;
