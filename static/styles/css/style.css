@@ -170,6 +170,12 @@ h6 {
   color: red !important;
 }
 
+.active-burger {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -196,9 +202,9 @@ header {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     gap: 6px;
   }
 }
@@ -216,7 +222,7 @@ header .mainLogo {
 }
 @media screen and (max-width: 960px) {
   header .mainLogo {
-    min-width: 317px;
+    width: 100%;
     height: 70px;
   }
 }
@@ -340,8 +346,14 @@ header .burger-menu {
   height: 70px;
   background-color: #c1d4d6;
   display: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 1000;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 960px) {
   header .burger-menu {
     display: inline-block;
   }
@@ -357,14 +369,12 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   height: 100vh;
+  position: relative;
 }
 @media screen and (max-width: 960px) {
   body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
 }
 body .head {
@@ -421,6 +431,7 @@ body .head-gzamkvlevi {
     border-radius: 0;
     width: 100%;
     height: 100%;
+    opacity: 1 !important;
   }
   body .head-gzamkvlevi-title {
     text-align: left;
@@ -460,6 +471,7 @@ body .head .settings {
             justify-content: center;
     gap: 11px;
     overflow-x: hidden;
+    cursor: pointer;
   }
   body .head .settings h3 {
     max-width: 126px;
@@ -531,7 +543,7 @@ body main .body #books .card-wrapper {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    max-width: 200px;
+    min-width: 20rem;
   }
 }
 body main .body #books .card-wrapper .card {
@@ -558,6 +570,7 @@ body main .body #books .card-wrapper .card {
 @media screen and (max-width: 960px) {
   body main .body #books .card-wrapper .card {
     margin: 0;
+    min-width: 20rem;
   }
 }
 body main .body #books .card-wrapper .card .cover {
@@ -607,6 +620,11 @@ body main .body #aboutProject p {
 }
 body main .body #aboutProject p strong {
   font-family: "BoldNino";
+}
+@media screen and (max-width: 960px) {
+  body main .body #aboutProject {
+    margin: 0 2.8rem;
+  }
 }
 body main .body #lesson {
   display: grid;
@@ -1061,6 +1079,11 @@ body main .body #lesson .gzamkvlevi-header h2 {
   margin-left: 2.5rem;
   font-size: 2.125rem;
 }
+@media screen and (max-width: 960px) {
+  body main .body #lesson .gzamkvlevi-header h2 {
+    margin-left: 0;
+  }
+}
 body main .body #lesson .gzamkvlevi-box {
   grid-column: 1/3;
 }
@@ -1098,6 +1121,22 @@ body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text {
 body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text span {
   display: inline-block;
   margin-top: 2rem;
+}
+@media screen and (max-width: 960px) {
+  body main .body #lesson .gzamkvlevi-box {
+    margin: 0 2.8rem;
+  }
+  body main .body #lesson .gzamkvlevi-box .gzamkvlevi-subheading-box img {
+    display: none;
+  }
+  body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-title {
+    font-size: 2.8rem;
+  }
+  body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-text,
+  body main .body #lesson .gzamkvlevi-box .gzamkvlevi-content .gzamkvlevi-title {
+    background-color: #fff;
+    padding: 0;
+  }
 }
 body main .body #lesson #daakavshireWrapper .daakavshire {
   display: -webkit-box;
@@ -1228,6 +1267,14 @@ body main .body #lesson .gridRow3 .tableContainer input {
   body main .body #lesson .waikitxe {
     margin: 0 2.8rem;
   }
+  body main .body #lesson .waikitxe div.hide {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  body main .body #lesson .waikitxe i {
+    display: none;
+  }
 }
 body main .body #lesson .waikitxe[class~=პეგასი] {
   margin-top: 1rem;
@@ -1241,6 +1288,11 @@ body main .body #lesson .waikitxe[class~=პეგასი] .part1 img {
   grid-area: img;
   width: 100%;
   height: auto;
+}
+@media screen and (max-width: 680px) {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part1 img {
+    width: 80%;
+  }
 }
 body main .body #lesson .waikitxe[class~=პეგასი] .part1 p {
   color: #0a2b39;
@@ -1278,6 +1330,18 @@ body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-chil
   grid-area: img2;
   height: 10rem;
 }
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part2 {
+    display: grid !important;
+  }
+  body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-child(3) {
+    left: -25%;
+  }
+  body main .body #lesson .waikitxe[class~=პეგასი] .part2 img:nth-child(4) {
+    position: relative;
+    right: -25%;
+  }
+}
 body main .body #lesson .waikitxe[class~=პეგასი] .part3 {
   display: grid;
   grid-template-areas: "p1 p1" "p2 img";
@@ -1305,6 +1369,23 @@ body main .body #lesson .waikitxe[class~=პეგასი] .fa-solid {
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
+}
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=პეგასი] .part1, body main .body #lesson .waikitxe[class~=პეგასი] .part3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .body #lesson .waikitxe[class~=პეგასი] .part1 img:nth-child(3), body main .body #lesson .waikitxe[class~=პეგასი] .part3 img:nth-child(3) {
+    width: 50%;
+  }
 }
 body main .body #lesson .upasuxe {
   grid-column: 1/3;
@@ -1420,11 +1501,30 @@ body main .body #lesson .waikitxe[class~=მოგზაური] .part3 img:nt
   height: -moz-fit-content;
   height: fit-content;
 }
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=მოგზაური] .part3 img:nth-child(6) {
+    width: 50%;
+  }
+}
 body main .body #lesson .waikitxe[class~=მოგზაური] .fa-solid {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
+}
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=მოგზაური] .part1, body main .body #lesson .waikitxe[class~=მოგზაური] .part2, body main .body #lesson .waikitxe[class~=მოგზაური] .part3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 body main .body #lesson .mogzaurisheavse {
   position: relative;
@@ -1574,6 +1674,34 @@ body main .body #lesson .waikitxe[class~=ნაპოლეონი] .fa-solid 
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
+}
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part1 img, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img, body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part3 img {
+    width: 50%;
+  }
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 680px) {
+  body main .body #lesson .waikitxe[class~=ნაპოლეონი] .part2 img {
+    width: 80%;
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
 }
 body main .body #lesson .napoleoniSeavse .sub-title {
   font-size: 2rem;
@@ -1747,6 +1875,42 @@ body main .body #lesson .waikitxe[class~=დღე] .fa-solid {
   text-align: center;
   font-size: 3rem;
   font-weight: 900;
+}
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=დღე] .part1, body main .body #lesson .waikitxe[class~=დღე] .part2, body main .body #lesson .waikitxe[class~=დღე] .part3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .body #lesson .waikitxe[class~=დღე] .part1 img, body main .body #lesson .waikitxe[class~=დღე] .part2 img, body main .body #lesson .waikitxe[class~=დღე] .part3 img {
+    width: 50%;
+  }
+  body main .body #lesson .waikitxe[class~=დღე] .part1 img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part2 img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part3 img:nth-child(3) {
+    width: 50%;
+  }
+  body main .body #lesson .waikitxe[class~=დღე] .part1 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part1 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part1 .img-container img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3), body main .body #lesson .waikitxe[class~=დღე] .part3 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part3 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part3 .img-container img:nth-child(3) {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 680px) {
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(1),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(2),
+  body main .body #lesson .waikitxe[class~=დღე] .part2 .img-container img:nth-child(3) {
+    width: 30%;
+  }
 }
 body main .body #lesson .angeloziDaakavshire {
   grid-column: 1/3;
@@ -1970,6 +2134,31 @@ body main .body #lesson .waikitxe[class~=წიგნი] .fa-solid {
   font-size: 3rem;
   font-weight: 900;
 }
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=წიგნი] .part1, body main .body #lesson .waikitxe[class~=წიგნი] .part2, body main .body #lesson .waikitxe[class~=წიგნი] .part3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .body #lesson .waikitxe[class~=წიგნი] .part1 img {
+    height: 35rem;
+  }
+  body main .body #lesson .waikitxe[class~=წიგნი] .part2 img {
+    left: 40%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  body main .body #lesson .waikitxe[class~=წიგნი] .part3 img {
+    max-width: 30rem;
+  }
+}
 body main .body #lesson .waikitxe[class~=ვარსკვლავი] {
   margin-top: 1rem;
   grid-column: 1/3;
@@ -2066,6 +2255,36 @@ body main .body #lesson .waikitxe[class~=ვარსკვლავი] .fa-sol
   font-size: 3rem;
   font-weight: 900;
 }
+@media screen and (max-width: 960px) {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1, body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2, body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part1 img {
+    height: 35rem;
+  }
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 img {
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part3 img {
+    max-height: 35rem;
+  }
+}
+@media screen and (max-width: 680px) {
+  body main .body #lesson .waikitxe[class~=ვარსკვლავი] .part2 img {
+    height: 30rem;
+  }
+}
 body main .body #lesson .waikitxe-header {
   margin-bottom: 1rem;
 }
@@ -2073,6 +2292,81 @@ body main .body #lesson .waikitxe-header span {
   font-style: italic;
   font-size: 1.3rem;
   letter-spacing: 0.01rem;
+}
+body .burger-menu_active {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+  background-color: rgba(88, 144, 174, 0.8);
+  font-family: "Nino_Mtavruli";
+  color: #C1D4D6;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100dvh;
+  height: 100%;
+  overflow-y: auto;
+  grid-row: 1/3;
+  padding-top: 2rem;
+}
+@media screen and (min-width: 960px) {
+  body .burger-menu_active {
+    display: none;
+  }
+}
+@media screen and (max-width: 960px) {
+  body .burger-menu_active {
+    display: none;
+  }
+}
+body .burger-menu_active h2 {
+  font-size: 3rem;
+}
+body .burger-menu_active .book-division {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 4px solid #C1D4D6;
+}
+body .burger-menu_active .book-division div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+body .burger-menu_active .book-division div img {
+  width: 5rem;
+  max-height: 5rem;
+}
+body .burger-menu_active .book-division div h3 {
+  font-size: 2.1rem;
+  text-align: left;
+  max-width: 14rem;
 }
 
 @media (max-width: 2700px) and (min-width: 1920px) {
@@ -2085,7 +2379,6 @@ body main .body #lesson .waikitxe-header span {
     -webkit-column-gap: 11.625rem;
        -moz-column-gap: 11.625rem;
             column-gap: 11.625rem;
-    row-gap: 7.875rem;
   }
   body main .body #books .card {
     width: 14.375rem;
@@ -2175,7 +2468,7 @@ body main .body #lesson .waikitxe-header span {
     font-size: 80%;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 960px) {
   html {
     font-size: 62.5%;
   }

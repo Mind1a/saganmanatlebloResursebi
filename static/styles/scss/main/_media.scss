@@ -7,7 +7,6 @@
 
     .body #books {
       column-gap: 11.625rem;
-      row-gap: 7.875rem;
 
       .card {
         width: 14.375rem;
@@ -118,7 +117,7 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 960px) {
   html {
     font-size: 62.5%;
   }

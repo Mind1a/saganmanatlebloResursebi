@@ -2,6 +2,7 @@
   "პეგასი": {
     "bookPdfUrl": "https://drive.google.com/file/d/1SGFYewaUzfSnRQmchSV3eF2NZXYQDRoO/view?usp=drive_link",
     "img": "./static/images/absolute-icons/01_pegas.svg",
+    "burgerTitle": "პეგასების შესახებ",
     "gzamkvlevi": {
       "aqtivoba1": {
         "id": 1,
@@ -161,6 +162,7 @@
   "დიდი მოგზაური": {
     "bookPdfUrl": "https://drive.google.com/file/d/15bqahEEgZbYKPntBVCyS8u5SCS3Ppgg0/view?usp=drive_link",
     "img": "./static/images/absolute-icons/02_mogzauri.svg",
+    "burgerTitle": "დიდი მოგზაური",
     "gzamkvlevi": {
       "aqtivoba1": {
         "id": 1,
@@ -330,6 +332,7 @@
   "ნაპოლეონი": {
     "bookPdfUrl": "https://drive.google.com/file/d/1OC4vG7fr6A8HAOw3WYLwBux_e40X8JL0/view?usp=drive_link",
     "img": "./static/images/absolute-icons/03_napoleon.svg",
+    "burgerTitle": "ნაპოლეონი",
     "gzamkvlevi": {
       "aqtivoba1": {
         "id": 1,
@@ -482,6 +485,7 @@
   "ანგელოზის ერთი დღე": {
     "bookPdfUrl": "https://drive.google.com/file/d/1_ZwIJZ5RUCAxEpSDilDQhLuPz3mSFUHN/view?usp=drive_link",
     "img": "./static/images/absolute-icons/04_angel.svg",
+    "burgerTitle": "ანგელოზის ერთი დღე",
     "gzamkvlevi": {
       "aqtivoba1": {
         "id": 1,
@@ -632,6 +636,7 @@
   "თამარას წიგნი": {
     "bookPdfUrl": "https://drive.google.com/file/d/1JPRoayL8Hg5MWqd1hL3g264aZrcjceR-/view?usp=drive_link",
     "img": "./static/images/absolute-icons/05_tamara.svg",
+    "burgerTitle": "თამარას წიგნი",
     "gzamkvlevi": {
       "aqtivoba1": {
         "id": 1,
@@ -802,6 +807,7 @@
   "მოპარული ვარსკვლავი": {
     "bookPdfUrl": "https://drive.google.com/file/d/1wVp-kcm-bxXYSTLLk5ETVI5Jjqap4Zwd/view?usp=drive_link",
     "img": "./static/images/absolute-icons/06_varskvlav.svg",
+    "burgerTitle": "მოპარული ვარსკვლავი",
     "gzamkvlevi": {
       "aqtivoba1": {
         "id": 1,

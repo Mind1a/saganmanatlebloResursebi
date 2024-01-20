@@ -3,7 +3,7 @@ import {
   books,
   tavfurcelibtn,
   logoBtn,
-  settingsbtn,
+  settingBtns,
   aboutProject,
   head,
   nav,
@@ -12,22 +12,22 @@ import {
   headContent,
   gzamkvlevi,
   menu,
+  burgerBtn,
+  activeBurger,
+  burgBookWrapper,
 } from "./variable.js";
 
 let title = ""; // to save title of book
 let checkCanvas = false; //to check whether startCanvas() funciton has called
 
-
 export function ShowBooks(books, booksData) {
   for (const [index, [bookname, data]] of Object.entries(
     Object.entries(booksData)
   )) {
-    
     let bookWrapper = document.createElement("div");
-    // 
-    bookWrapper.classList.add("card-wrapper")
-    bookWrapper.innerHTML =
-    `
+    //
+    bookWrapper.classList.add("card-wrapper");
+    bookWrapper.innerHTML = `
     <div class="card" onclick="showLesson(this)">
      <img src="./static/images/book-relative/book.svg" id="${index}" alt="${bookname}">
      <img src="${data.img}" alt="${bookname}" class="cover" id="bookCover${index}">
@@ -42,20 +42,21 @@ export function ShowBooks(books, booksData) {
   }
 }
 
-
 //click on setting button will show about projects and hide everything else
-settingsbtn.addEventListener("click", () => {
-  header.classList.remove("showBgColor");
-  books.classList.add("hide");
-  aboutProject.classList.remove("hide");
-  tavfurcelibtn.classList.remove("hide");
-  nav.classList.add("hide");
-  settingsbtn.classList.add("hide");
-  lessonSection.classList.add("hide");
-  headContent.classList.remove("hide");
-  gzamkvlevi.classList.add("hide");
-  headContent.innerHTML = "<h4>პროექტის შესახებ</h4>";
-});
+for (const settingBtn of settingBtns) {
+  settingBtn.addEventListener("click", () => {
+    header.classList.remove("showBgColor");
+    books.classList.add("hide");
+    aboutProject.classList.remove("hide");
+    tavfurcelibtn.classList.remove("hide");
+    nav.classList.add("hide");
+    settingBtns[0].classList.add("hide");
+    lessonSection.classList.add("hide");
+    headContent.classList.remove("hide");
+    gzamkvlevi.classList.add("hide");
+    headContent.innerHTML = "<h4>პროექტის შესახებ</h4>";
+  });
+}
 
 // shows main page on click function
 function goMainPage() {
@@ -64,7 +65,7 @@ function goMainPage() {
   aboutProject.classList.add("hide");
   tavfurcelibtn.classList.add("hide");
   nav.classList.add("hide");
-  settingsbtn.classList.remove("hide");
+  settingBtns[0].classList.remove("hide");
   lessonSection.classList.add("hide");
   gzamkvlevi.classList.add("hide");
   headContent.classList.add("hide");
@@ -81,7 +82,6 @@ logoBtn.addEventListener("click", goMainPage);
 //shows lessons for each book on click them
 export function showLesson(lesson) {
   title = lesson.children[2].innerText; // get name of book
-
   header.classList.add("showBgColor");
   books.classList.add("hide");
   tavfurcelibtn.classList.remove("hide");
@@ -96,25 +96,22 @@ export function showLesson(lesson) {
 }
 // change active lesson title opacity
 
-const activeLesson = (lesson) => 
-{
-  const lessons = document.querySelectorAll('.menu li');
+const activeLesson = (lesson) => {
+  const lessons = document.querySelectorAll(".menu li");
   const currentLesson = document.getElementById(lesson);
   lessons.forEach((les) => {
-      les.style.opacity = '100%'    
+    les.style.opacity = "100%";
   });
-  currentLesson.style.opacity = '50%';
-}
-
+  currentLesson.style.opacity = "50%";
+};
 
 // show each lesson chosen by header (left nav bar)
 
 export function showLessonSection(section) {
   let sections = booksData[title];
-  
-  
+
   activeLesson(section);
-  
+
   switch (section) {
     case "gzamkvlevi":
       lessonSection.innerHTML = `<div class="gzamkvlevi-header">
@@ -138,10 +135,9 @@ export function showLessonSection(section) {
     case "moemzade":
       let moemzadeParags = "";
       let moemzadeQuestions = "";
-      const moemzadePdfUrl = document.querySelector('.moemzade-pdf-link');
+      const moemzadePdfUrl = document.querySelector(".moemzade-pdf-link");
 
       moemzadePdfUrl.href = sections.moemzade.assignmentPdfUrl;
-
 
       sections[section]["p"].forEach((p) => {
         if (typeof p == "string") {
@@ -171,7 +167,7 @@ export function showLessonSection(section) {
       let waikitxeParags2 = "";
       let waikitxeParags3 = "";
 
-      const waikitxePdfUrl = document.querySelector('.waikitxe-pdf-link');
+      const waikitxePdfUrl = document.querySelector(".waikitxe-pdf-link");
 
       waikitxePdfUrl.href = sections.waikitxe.assignmentPdfUrl;
 
@@ -187,14 +183,15 @@ export function showLessonSection(section) {
         waikitxeParags3 += `<p>${p}</p>`;
       });
 
-      if (title == "ნაპოლეონი"  || title == "თამარას წიგნი" || title == "მოპარული ვარსკვლავი") {
+      if (
+        title == "ნაპოლეონი" ||
+        title == "თამარას წიგნი" ||
+        title == "მოპარული ვარსკვლავი"
+      ) {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
-      }
-      else if (title == "ანგელოზის ერთი დღე")
-      {
-        waikitxeParags2 +=
-        ` 
+      } else if (title == "ანგელოზის ერთი დღე") {
+        waikitxeParags2 += ` 
           <div class="img-container">
             <img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">
             <img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">
@@ -202,7 +199,7 @@ export function showLessonSection(section) {
           </div>
          `;
         waikitxeParags3 += `<img src="${sections[section]["images"][4]}" alt="kitxvistvis mzadeba">`;
-      }else {
+      } else {
         waikitxeParags2 += `<img src="${sections[section]["images"][1]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags2 += `<img src="${sections[section]["images"][2]}" alt="kitxvistvis mzadeba">`;
         waikitxeParags3 += `<img src="${sections[section]["images"][3]}" alt="kitxvistvis mzadeba">`;
@@ -229,11 +226,10 @@ export function showLessonSection(section) {
       break;
 
     case "upasuxe":
-     
-      const upasuxePdfUrl = document.querySelector('.upasuxe-pdf-link');
+      const upasuxePdfUrl = document.querySelector(".upasuxe-pdf-link");
 
       upasuxePdfUrl.href = sections.upasuxe.assignmentPdfUrl;
-       
+
       let upasuxeQuestions = "";
       sections[section]["li"].forEach((li) => {
         upasuxeQuestions += `<li>${li}</li>`;
@@ -259,7 +255,7 @@ export function showLessonSection(section) {
         napoleoniSheavse();
       } else if (title === "ანგელოზის ერთი დღე") {
         angeloziSheavse();
-      } else if (title === "თამარას წიგნი" ) {
+      } else if (title === "თამარას წიგნი") {
         tamaraSheavse();
       } else if (title === "მოპარული ვარსკვლავი") {
         varskvlaviSheavse();
@@ -268,27 +264,24 @@ export function showLessonSection(section) {
       break;
 
     case "sheqmeni":
-      const sheqmeniPdfUrl = document.querySelector('.sheqmeni-pdf-link');
+      const sheqmeniPdfUrl = document.querySelector(".sheqmeni-pdf-link");
 
       sheqmeniPdfUrl.href = sections.sheqmeni.assignmentPdfUrl;
-       
+
       const sectionTitle = sections[section]["title"];
 
       let sheqmeniHTML = ``;
 
-      if(sectionTitle === "მითოლოგიური პერსონაჟი")
-      {
+      if (sectionTitle === "მითოლოგიური პერსონაჟი") {
         sheqmeniHTML += `
          <ul> 
           <li>${sections[section]["p"][0]}</li>
           <li>${sections[section]["p"][1]}</li>
          </ul>
 
-        `
-      }else if(sectionTitle === "შენი მოგზაურობა")
-      {
-        sheqmeniHTML +=
-        `
+        `;
+      } else if (sectionTitle === "შენი მოგზაურობა") {
+        sheqmeniHTML += `
           <p>${sections[section]["p"][0]}</p>
           <div class="sheqmeni-mogzauri">
             <span>მოყევი:</span>
@@ -298,9 +291,8 @@ export function showLessonSection(section) {
               <li>${sections[section]["p"][1].questions[2]}</li>
             </ul>
           </div>
-        `
-      }else if(sectionTitle === "გახდი თანაავტორი")
-      {
+        `;
+      } else if (sectionTitle === "გახდი თანაავტორი") {
         sheqmeniHTML += `
           <div class="sheqmeni-varskvlavi">
             <span>${sections[section]["p"][0]}</span>
@@ -310,16 +302,13 @@ export function showLessonSection(section) {
               <li>${sections[section]["p"][1].questions[2]}</li>
             </ul>
           </div>
-        `
-      }
-      else 
-      {
+        `;
+      } else {
         sections[section]["p"].forEach((para) => {
-          sheqmeniHTML +=
-          `
+          sheqmeniHTML += `
             <p>${para}</p>
-          `
-        })
+          `;
+        });
       }
       lessonSection.innerHTML = `
             <h2>${sections[section]["title"]}:</h2>
@@ -327,8 +316,8 @@ export function showLessonSection(section) {
             <div class="right-block">
               ${sheqmeniHTML}
             </div>
-            `
-            break;
+            `;
+      break;
 
     default:
       if (title == "პეგასი") {
@@ -346,6 +335,8 @@ export function showLessonSection(section) {
       }
       break;
   }
+
+  activeBurger.classList.remove("active-burger");
 }
 
 //for waikitxe section, shows and hide paragraps on click arrow
@@ -380,7 +371,7 @@ function didiMogzauriSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
-      const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+      const daakavshirePdfUrl = document.querySelector(".daakavshire-pdf-link");
       daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
       const leftBlock = section[subsection]["daakavshire_left_block"];
@@ -420,7 +411,7 @@ function didiMogzauriSheavse(e) {
       break;
 
     case "ჩასვი":
-      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+      const chasviPdfUrl = document.querySelector(".chasvi-pdf-link");
       chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
 
       section[subsection]["p"].forEach((p) => {
@@ -471,9 +462,9 @@ function didiMogzauriSheavse(e) {
       break;
 
     case "შეავსე":
-      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+      const sheavsePdfUrl = document.querySelector(".sheavse-pdf-link");
       sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
-      
+
       lessonSection.innerHTML = `
         <h2>${section[subsection]["title"]}:</h2>
         <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -521,7 +512,7 @@ function pegasiSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
-      const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+      const daakavshirePdfUrl = document.querySelector(".daakavshire-pdf-link");
       daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
       const leftBlock = section[subsection]["daakavshire_left_block"];
@@ -561,7 +552,7 @@ function pegasiSheavse(e) {
       break;
 
     case "ჩასვი":
-      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+      const chasviPdfUrl = document.querySelector(".chasvi-pdf-link");
       chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
 
       lessonSection.innerHTML = `
@@ -688,7 +679,7 @@ function pegasiSheavse(e) {
       break;
 
     case "შეავსე":
-      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+      const sheavsePdfUrl = document.querySelector(".sheavse-pdf-link");
       sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
 
       lessonSection.innerHTML = `
@@ -742,7 +733,9 @@ function napoleoniSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
-      
+      const daakavshirePdfUrl = document.querySelector(".daakavshire-pdf-link");
+      daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
+
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
 
@@ -780,6 +773,9 @@ function napoleoniSheavse(e) {
       break;
 
     case "ჩასვი":
+      const chasviPdfUrl = document.querySelector(".chasvi-pdf-link");
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+
       lessonSection.innerHTML = `
       <h2>${section[subsection]["title"]}</h2>
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -837,6 +833,9 @@ function napoleoniSheavse(e) {
       break;
 
     case "შეავსე":
+      const sheavsePdfUrl = document.querySelector(".sheavse-pdf-link");
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+
       const sqemaBlock = section[subsection]["sqemaLines"];
 
       let sqemaLeftHtml = ``;
@@ -888,6 +887,9 @@ function angeloziSheavse(e) {
       const leftBlock = section[subsection]["daakavshire_left_block"];
       const rightBlock = section[subsection]["daakavshire_right_block"];
       const correctMatches = section[subsection]["correct_matches"];
+
+      const daakavshirePdfUrl = document.querySelector(".daakavshire-pdf-link");
+      daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
       lessonSection.innerHTML = `
         <h2>${section[subsection]["title"]}</h2>
@@ -1050,8 +1052,11 @@ function angeloziSheavse(e) {
         attachDragStart();
       }
       break;
-      case "ჩასვი":
+    case "ჩასვი":
       const sqemaBlock = section[subsection]["sqemaLines"];
+
+      const chasviPdfUrl = document.querySelector(".chasvi-pdf-link");
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
 
       let sqemaLeftHtml = ``;
       let sqemaRightHtml = ``;
@@ -1099,6 +1104,9 @@ function angeloziSheavse(e) {
       });
       break;
     case "შეავსე":
+      const sheavsePdfUrl = document.querySelector(".sheavse-pdf-link");
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+
       lessonSection.innerHTML = `
     <h2>${section[subsection]["title"]}</h2>
     <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
@@ -1154,7 +1162,7 @@ function tamaraSheavse(e) {
 
   switch (subsection) {
     case "დააკავშირე":
-      const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
+      const daakavshirePdfUrl = document.querySelector(".daakavshire-pdf-link");
       daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
       const leftBlock = section[subsection]["daakavshire_left_block"];
@@ -1196,13 +1204,15 @@ function tamaraSheavse(e) {
       startCanvas();
       break;
     case "ჩასვი":
-      const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
+      const chasviPdfUrl = document.querySelector(".chasvi-pdf-link");
       chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
 
-        lessonSection.innerHTML = `
+      lessonSection.innerHTML = `
           <h2>${section[subsection]["title"]}</h2>
           <div class="tamara-sheavse-desc">
-            <img src="${section[subsection]["img"]}" class="lessonLogo" alt="sheavse logo">
+            <img src="${
+              section[subsection]["img"]
+            }" class="lessonLogo" alt="sheavse logo">
             <p>${section[subsection]["description"]}</p> 
           </div>
           <div class="t-vocabulary-box">
@@ -1225,180 +1235,178 @@ function tamaraSheavse(e) {
         `;
 
       //Generate vocabulary
-        function getWords(list) {
-          return list.map((word) => 
-                  `<p data-value="${word}" class="tamara-word" draggable="true">${word}</p>`).join("");
-        };
-        //Generate Graph list
-        function dropZonesTamara(words) {
-          return words
-                .map((word) =>
-                `<div>
+      function getWords(list) {
+        return list
+          .map(
+            (word) =>
+              `<p data-value="${word}" class="tamara-word" draggable="true">${word}</p>`
+          )
+          .join("");
+      }
+      //Generate Graph list
+      function dropZonesTamara(words) {
+        return words
+          .map(
+            (word) =>
+              `<div>
                   <span class="key-word">${word}</span>
                   <span class="tamara-drop-zone">${".".repeat(41)}</span>
                 </div>
-                `).join("");
-        };
+                `
+          )
+          .join("");
+      }
 
-        //Logic for dragging
-        attachDragStart();
-        
-        function attachDragStart() {
-          const tamaraWords = document.querySelectorAll(".tamara-word");
-          const zones = document.querySelectorAll(".tamara-drop-zone");
+      //Logic for dragging
+      attachDragStart();
 
-          tamaraWords.forEach((word) => {
-            word.addEventListener("dragstart", handleDragStart);
-          });
-          zones.forEach((dropZone) => {
-            dropZone.addEventListener("dragover", handleDragOver);
-          });
-          // dnt y want somebody
-          zones.forEach((dropzone) => {
-                dropzone.addEventListener("drop", handleDrop);              
-            
-            });
-          }
-          
-          function handleDragStart(e) {
-            e.dataTransfer.setData("text/plain", e.target.textContent);
-          };
-          
-          function handleDragOver(e) {
-            e.preventDefault();
-          }
-          
-        function handleDrop(e) {
-         if(e.target.nodeName === 'SPAN')
-         {
+      function attachDragStart() {
+        const tamaraWords = document.querySelectorAll(".tamara-word");
+        const zones = document.querySelectorAll(".tamara-drop-zone");
 
-           e.preventDefault();
-           
-           const data = e.dataTransfer.getData("text/plain");
-           e.target.getContext = data;
-           
-           const originalWord = document.querySelector(
+        tamaraWords.forEach((word) => {
+          word.addEventListener("dragstart", handleDragStart);
+        });
+        zones.forEach((dropZone) => {
+          dropZone.addEventListener("dragover", handleDragOver);
+        });
+        // dnt y want somebody
+        zones.forEach((dropzone) => {
+          dropzone.addEventListener("drop", handleDrop);
+        });
+      }
+
+      function handleDragStart(e) {
+        e.dataTransfer.setData("text/plain", e.target.textContent);
+      }
+
+      function handleDragOver(e) {
+        e.preventDefault();
+      }
+
+      function handleDrop(e) {
+        if (e.target.nodeName === "SPAN") {
+          e.preventDefault();
+
+          const data = e.dataTransfer.getData("text/plain");
+          e.target.getContext = data;
+
+          const originalWord = document.querySelector(
             `.tamara-word[data-value="${data}"]`
-            );
+          );
 
-              e.target.innerHTML = '';
-              e.target.classList.add('droppedZone');
-              
-              e.target.appendChild(originalWord); 
-            }
-          
-        };
+          e.target.innerHTML = "";
+          e.target.classList.add("droppedZone");
 
-        document
+          e.target.appendChild(originalWord);
+        }
+      }
+
+      document
         .querySelector("#dasruleba")
         .addEventListener("click", handleCheck);
       document.querySelector("#tavidan").addEventListener("click", handleReset);
-      
+
       //Check correct answers
       function handleCheck() {
         const correctLeft = {
           1: "სანდრო",
           2: "მზრუნველი",
-          3: "დაეხმარა თამარას ოცნებების ასრულებაში"
+          3: "დაეხმარა თამარას ოცნებების ასრულებაში",
         };
         const correctRight = {
           1: "თამარა",
           2: "გამჭრიახი",
-          3: "მოიფიქრა, როგორ უნდა შეენახა ოცნებები ყუთში"
+          3: "მოიფიქრა, როგორ უნდა შეენახა ოცნებები ყუთში",
         };
-        const leftList = document.querySelectorAll('.column-left div .tamara-drop-zone');
-        const rightList = document.querySelectorAll('.column-right div .tamara-drop-zone');
+        const leftList = document.querySelectorAll(
+          ".column-left div .tamara-drop-zone"
+        );
+        const rightList = document.querySelectorAll(
+          ".column-right div .tamara-drop-zone"
+        );
 
-  
         // The cas When left column starts with character "Tamara"
-        if(leftList[0].textContent === correctRight[1])
-        {
-          console.log("Tamara-left")
+        if (leftList[0].textContent === correctRight[1]) {
+          console.log("Tamara-left");
 
           leftList.forEach((zone, index) => {
-          if(zone.querySelector('p')){
-          const text = zone.querySelector('p');
-          if(text.textContent === correctRight[index + 1]) {
-            text.classList.add('correct');
-          }else
-          {
-            text.classList.add('wrong')
-          }
-        }
-        });
+            if (zone.querySelector("p")) {
+              const text = zone.querySelector("p");
+              if (text.textContent === correctRight[index + 1]) {
+                text.classList.add("correct");
+              } else {
+                text.classList.add("wrong");
+              }
+            }
+          });
 
-
-        rightList.forEach((zone, index) => {
-          if(zone.querySelector('p')){
-          const text = zone.querySelector('p');
-          if(text.textContent === correctLeft[index + 1]) {
-            text.classList.add('correct');
-          }else
-          {
-            text.classList.add('wrong');
-          }
-        }
-        });
-
-        } 
-        // The case when right column starts with character "Tamara"
-        else if(rightList[0].textContent === correctRight[1])
-        {
           rightList.forEach((zone, index) => {
-          if(zone.querySelector('p')){
-          const text = zone.querySelector('p');
-          if(text.textContent === correctRight[index + 1]) {
-            text.classList.add('correct');
-          }else
-          {
-            text.classList.add('wrong')
-          }
+            if (zone.querySelector("p")) {
+              const text = zone.querySelector("p");
+              if (text.textContent === correctLeft[index + 1]) {
+                text.classList.add("correct");
+              } else {
+                text.classList.add("wrong");
+              }
+            }
+          });
         }
-        });
-
+        // The case when right column starts with character "Tamara"
+        else if (rightList[0].textContent === correctRight[1]) {
+          rightList.forEach((zone, index) => {
+            if (zone.querySelector("p")) {
+              const text = zone.querySelector("p");
+              if (text.textContent === correctRight[index + 1]) {
+                text.classList.add("correct");
+              } else {
+                text.classList.add("wrong");
+              }
+            }
+          });
 
           leftList.forEach((zone, index) => {
-          if(zone.querySelector('p')){
-          const text = zone.querySelector('p');
-          if(text.textContent === correctLeft[index + 1]) {
-            text.classList.add('correct');
-          }else
-          {
-            text.classList.add('wrong');
-          }
+            if (zone.querySelector("p")) {
+              const text = zone.querySelector("p");
+              if (text.textContent === correctLeft[index + 1]) {
+                text.classList.add("correct");
+              } else {
+                text.classList.add("wrong");
+              }
+            }
+          });
         }
-        });
-        }
-
-
-      };
+      }
       //reset words and zones
       function handleReset() {
         const zones = document.querySelectorAll(".tamara-drop-zone");
         zones.forEach((zone) => {
           zone.innerHTML = `${".".repeat(41)}`;
-          zone.classList.remove('droppedZone');
+          zone.classList.remove("droppedZone");
         });
-        const topWords = document.querySelector('.vocabulary-top');
-        const bottomWords = document.querySelector('.vocabulary-bottom');
+        const topWords = document.querySelector(".vocabulary-top");
+        const bottomWords = document.querySelector(".vocabulary-bottom");
 
         topWords.innerHTML = getWords(section[subsection]["vocabulary_top"]);
-        bottomWords.innerHTML = getWords(section[subsection]["vocabulary_bottom"]);
+        bottomWords.innerHTML = getWords(
+          section[subsection]["vocabulary_bottom"]
+        );
         attachDragStart();
       }
-        break;
+      break;
     case "შეავსე":
-          const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
-          sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
+      const sheavsePdfUrl = document.querySelector(".sheavse-pdf-link");
+      sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
 
-          const sheavseTitle = section[subsection]["title"];
-          const sheavseDesc = section[subsection]["description"];
+      const sheavseTitle = section[subsection]["title"];
+      const sheavseDesc = section[subsection]["description"];
 
-          lessonSection.innerHTML = 
-          `
+      lessonSection.innerHTML = `
             <h2>${sheavseTitle}</h2>
             <div class="tamara-sheavse-desc">
-              <img src="${section[subsection]["img"]}" class="lessonLogo" alt="sheavse logo">
+              <img src="${
+                section[subsection]["img"]
+              }" class="lessonLogo" alt="sheavse logo">
               <p>${sheavseDesc}</p>
             </div>
             <div class="tamara-sheavse">
@@ -1411,37 +1419,31 @@ function tamaraSheavse(e) {
               ${addButtons(1)}
           `;
 
-
-            document
-              .querySelector("#tavidan")
-              .addEventListener("click", handleResetSheavse);
-          function genList()
-          {
-            let code = ``;
-            for(let i = 0; i < 3; i++)
-            {
-              code +=
-              `
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", handleResetSheavse);
+      function genList() {
+        let code = ``;
+        for (let i = 0; i < 3; i++) {
+          code += `
               <div class="graph-list">
                   <input type="text" placeholder="ჩაწერე სიტყვა">
                   <input type="text" placeholder="ჩაწერე სიტყვა">
                   <input type="text" placeholder="ჩაწერე სიტყვა">
                 </div>
               `;
-            }
-            return code;
-          };
+        }
+        return code;
+      }
 
-          function handleResetSheavse()
-          {
-            const inputList = document.querySelectorAll(".graph-list input");
-            inputList.forEach((input) => {
-              input.value = "";
-              
-            })
-          }
-        break;
-    }
+      function handleResetSheavse() {
+        const inputList = document.querySelectorAll(".graph-list input");
+        inputList.forEach((input) => {
+          input.value = "";
+        });
+      }
+      break;
+  }
 }
 
 function varskvlaviSheavse(e) {
@@ -1450,16 +1452,14 @@ function varskvlaviSheavse(e) {
 
   const title = section[subsection]["title"];
   switch (subsection) {
-    case "დააკავშირე" :
-    const daakavshirePdfUrl = document.querySelector('.daakavshire-pdf-link');
-    daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
+    case "დააკავშირე":
+      const daakavshirePdfUrl = document.querySelector(".daakavshire-pdf-link");
+      daakavshirePdfUrl.href = section["დააკავშირე"].assignmentPdfUrl;
 
-    const checkText = section[subsection]["daakavshire_text"];
-    const img = section["img"];
+      const checkText = section[subsection]["daakavshire_text"];
+      const img = section["img"];
 
-
-    lessonSection.innerHTML = 
-    `
+      lessonSection.innerHTML = `
       <h2>${title}</h2>
       <img src="${img}" class="lessonLogo" alt="sheavse">
       <div class="varskvlavi-sheavse" >
@@ -1468,22 +1468,21 @@ function varskvlaviSheavse(e) {
       ${addButtons(2)}
     `;
 
-    document
-      .querySelector("#dasruleba")
-      .addEventListener('click', checkVarskvlaviDaakavshire);
-    document
-      .querySelector("#tavidan")
-      .addEventListener('click', resetVarskvlaviSheavse);
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", checkVarskvlaviDaakavshire);
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetVarskvlaviSheavse);
 
-    break;
+      break;
     case "ჩასვი":
-    const chasviPdfUrl = document.querySelector('.chasvi-pdf-link');
-    chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
+      const chasviPdfUrl = document.querySelector(".chasvi-pdf-link");
+      chasviPdfUrl.href = section["ჩასვი"].assignmentPdfUrl;
 
-    const chasviText = section[subsection]["chasvi_text"];
+      const chasviText = section[subsection]["chasvi_text"];
 
-    lessonSection.innerHTML = 
-    `
+      lessonSection.innerHTML = `
       <h2>${title}</h2>
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
       <div class="varskvlavi-sheavse">
@@ -1491,21 +1490,20 @@ function varskvlaviSheavse(e) {
       </div>
       ${addButtons(2)}
     `;
-    document
-      .querySelector("#dasruleba")
-      .addEventListener('click', checkVarskvlaviChasvi);
-    document
-      .querySelector("#tavidan")
-      .addEventListener('click', resetVarskvlaviSheavse);
-    break;
+      document
+        .querySelector("#dasruleba")
+        .addEventListener("click", checkVarskvlaviChasvi);
+      document
+        .querySelector("#tavidan")
+        .addEventListener("click", resetVarskvlaviSheavse);
+      break;
     case "შეავსე":
-      const sheavsePdfUrl = document.querySelector('.sheavse-pdf-link');
+      const sheavsePdfUrl = document.querySelector(".sheavse-pdf-link");
       sheavsePdfUrl.href = section["შეავსე"].assignmentPdfUrl;
 
       const sqemaList = section[subsection]["sqema_lines"];
-      
-      lessonSection.innerHTML = 
-      `
+
+      lessonSection.innerHTML = `
       <h2>${section[subsection]["title"]}</h2>
       <img src="${section["img"]}" class="lessonLogo" alt="sheavse">
       <div class="varskvlavi-sheavse">
@@ -1516,22 +1514,19 @@ function varskvlaviSheavse(e) {
 
       document
         .querySelector("#tavidan")
-        .addEventListener('click', resetVarskSheavse)
+        .addEventListener("click", resetVarskSheavse);
 
-      function resetVarskSheavse()
-      {
+      function resetVarskSheavse() {
         const inputs = document.querySelectorAll(".sqema-line input");
-        
+
         inputs.forEach((line) => {
-          line.value = '';
-        })
+          line.value = "";
+        });
       }
-      function genInputLines()
-      {
+      function genInputLines() {
         let fullList = ``;
         sqemaList.forEach((line) => {
-          fullList +=
-          `
+          fullList += `
             <div class="sqema-line">
               <span>${line}</span>
               <input type="text" placeholder="განმარტება">
@@ -1539,10 +1534,10 @@ function varskvlaviSheavse(e) {
           `;
         });
         return fullList;
-      };
+      }
 
-    break;
-    }
+      break;
+  }
 }
 
 function addButtons(amount) {
@@ -1562,19 +1557,18 @@ function addButtons(amount) {
   }
 }
 
-function genCheckList(checktext)
-    {
-      let fullList = ``;
-      checktext.forEach((text) => {
-        fullList += `
+function genCheckList(checktext) {
+  let fullList = ``;
+  checktext.forEach((text) => {
+    fullList += `
         <div class="check-line">
           <input class="regular-checkbox" type="checkbox">
           <p>${text}</p>
         </div>
         `;
-      });
-      return fullList;
-    };
+  });
+  return fullList;
+}
 
 function checkMogzauriChasvi() {
   let pasuxebi = booksData["დიდი მოგზაური"]["sheavse"]["ჩასვი"]["pasuxebi"];
@@ -1602,23 +1596,18 @@ function resetNapoleoniChasvi() {
   });
 }
 function checkVarskvlaviChasvi() {
-  const checkBoxList = document.querySelectorAll('.regular-checkbox');
-  let answers = booksData["მოპარული ვარსკვლავი"]["sheavse"]["ჩასვი"]["correct_matches"];
+  const checkBoxList = document.querySelectorAll(".regular-checkbox");
+  let answers =
+    booksData["მოპარული ვარსკვლავი"]["sheavse"]["ჩასვი"]["correct_matches"];
   checkBoxList.forEach((box, index) => {
-    if(box.checked)
-    { 
-      if(answers[index + 1])
-      {
-
-        box.classList.add('correct-back');
-
-      }else
-      {
-        box.classList.add('incorrect-back')
+    if (box.checked) {
+      if (answers[index + 1]) {
+        box.classList.add("correct-back");
+      } else {
+        box.classList.add("incorrect-back");
       }
-
     }
-  })
+  });
 }
 function checkPegasiDaakavshire() {
   const daakavshire_left_block = document.querySelector(
@@ -1743,35 +1732,27 @@ function checkTamaraDaakavshire() {
 
   ended = true;
   draw();
-};
-function checkVarskvlaviDaakavshire () {
+}
+function checkVarskvlaviDaakavshire() {
+  const checkBoxList = document.querySelectorAll(".regular-checkbox");
 
-  const checkBoxList = document.querySelectorAll('.regular-checkbox');
-  
   checkBoxList.forEach((box, index) => {
-    if(box.checked)
-    { 
-      if(correctVarskvlaviDaakavshire[index + 1])
-      {
-
-        box.classList.add('correct-back');
-
-      }else
-      {
-        box.classList.add('incorrect-back')
+    if (box.checked) {
+      if (correctVarskvlaviDaakavshire[index + 1]) {
+        box.classList.add("correct-back");
+      } else {
+        box.classList.add("incorrect-back");
       }
-
     }
-})
-
-};
+  });
+}
 function resetVarskvlaviSheavse() {
-  const checkBoxList = document.querySelectorAll('.regular-checkbox');
+  const checkBoxList = document.querySelectorAll(".regular-checkbox");
   checkBoxList.forEach((box) => {
-    box.classList.remove('correct-back', 'incorrect-back');
+    box.classList.remove("correct-back", "incorrect-back");
     box.checked = false;
-  })
-} ; 
+  });
+}
 function resetDaakavshire() {
   existingLines = [];
   chosen = {
@@ -1791,6 +1772,79 @@ function resetDaakavshire() {
   checkCanvas = false;
 }
 
+burgerBtn.addEventListener("click", () => {
+  let burgBookHtml = ``;
+
+  for (let i = 0; i < 6; i++) {
+    let book = Object.keys(booksData)[i];
+    burgBookHtml += `
+       <div class="book-division" id=${i}>
+          <div class="book-about">
+            <img src=${booksData[book].img} alt="">
+            <h3>${booksData[book].burgerTitle}</h3>
+          </div>
+          <div class="book-ready" id="moemzade">
+            <img src="static/images/icons/02_moemzade.svg" alt="">
+            <h3>მოემზადე</h3>
+            </div>
+            <div class="book-read" id="waikitxe">
+            <img src="static/images/icons/02_waikitxe.svg" alt="">
+            <h3>წაიკითხე</h3>
+            </div>
+            <div class="book-answer" id="upasuxe">
+            <img src="static/images/icons/03_upasuxe.svg" alt="">
+            <h3>უპასუხე</h3>
+            </div>
+            <div class="book-create" id="sheqmeni">
+            <img src="static/images/icons/04_shekmeni.svg" alt="">
+            <h3>შექმენი</h3>
+            </div>
+            </div>
+            `;
+  }
+  activeBurger.classList.toggle("active-burger");
+  burgBookWrapper.innerHTML = burgBookHtml;
+
+  const list = document.getElementsByClassName("book-division");
+  const titles = [
+    "პეგასი",
+    "დიდი მოგზაური",
+    "ნაპოლეონი",
+    "ანგელოზის ერთი დღე",
+    "თამარას წიგნი",
+    "მოპარული ვარსკვლავი",
+  ];
+  
+  
+  for (let i = 0; i < list.length; i++) {
+    for (let t = 0; t < 5; t++) {
+      list[i].children[t].addEventListener("click", function () {
+        title = titles[i];
+        books.classList.add("hide");
+        lessonSection.classList.remove("hide");
+        showLessonSection(list[i].children[t].getAttribute('id'));
+      });
+    }
+  }
+});
+
+export function closeBurger(e) {
+  if (
+    activeBurger.classList.contains("active-burger") &&
+    !e.target.closest(".active-burger") &&
+    !e.target.closest(".burger-menu")
+  ) {
+    activeBurger.classList.remove("active-burger");
+  }
+}
+
+// document.body.addEventListener('click', closeBurger);
+
+export function updateActiveBurgerVisibility() {
+  if (window.innerWidth >= 960) {
+    activeBurger.classList.remove("active-burger");
+  }
+}
 //canvas functions START
 let canvas = null;
 let wrapper = null;
@@ -1810,7 +1864,7 @@ let correctNapoleoniDaakavshireAnswers =
 
 let correctTamaraDaakavshireAnswers =
   booksData["თამარას წიგნი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
-let correctVarskvlaviDaakavshire = 
+let correctVarskvlaviDaakavshire =
   booksData["მოპარული ვარსკვლავი"]["sheavse"]["დააკავშირე"]["swori_pasuxebi"];
 let chosen = {
   1: 0,
@@ -1869,31 +1923,32 @@ function draw() {
   }
 }
 
+
 function onmousedown(e) {
   if (e.button === 0 && 
-      e.clientX - bounds.left <= 23 &&
-      e.clientX - bounds.left >= 6 &&
+      e.clientX - bounds.left <= 24 &&
+      e.clientX - bounds.left >= 8 &&
       !ended) {
     bounds = canvas.getBoundingClientRect();
     if (!isDrawing) {
       startX = e.clientX - bounds.left;
       startY = e.clientY - bounds.top;
-      if (startY >= 10 && startY <= 15 && !chosen["1"]) {
+      if (startY >= 6 && startY <= 18 && !chosen["1"]) {
         chosen["1"] = null;
         isDrawing = true;
-      } else if (startY >= 100 && startY <= 110 && !chosen["2"]) {
+      } else if (startY >= 105 && startY <= 117 && !chosen["2"]) {
         chosen["2"] = null;
         isDrawing = true;
-      } else if (startY >= 200 && startY <= 215 && !chosen["3"]) {
+      } else if (startY >= 202 && startY <= 215 && !chosen["3"]) {
         chosen["3"] = null;
         isDrawing = true;
-      } else if (startY >= 295 && startY <= 310 && !chosen["4"]) {
+      } else if (startY >= 300 && startY <= 313 && !chosen["4"]) {
         chosen["4"] = null;
         isDrawing = true;
-      } else if (startY >= 400 && startY <= 410 && !chosen["5"]) {
+      } else if (startY >= 399 && startY <= 412 && !chosen["5"]) {
         chosen["5"] = null;
         isDrawing = true;
-      } else if (startY >= 500 && startY <= 510 && !chosen["6"]) {
+      } else if (startY >= 496 && startY <= 509 && !chosen["6"]) {
         chosen["6"] = null;
         isDrawing = true;
       }
@@ -1907,8 +1962,8 @@ function onmouseup(e) {
   if (e.button === 0) {
     bounds = canvas.getBoundingClientRect();
 
-    if (isDrawing && e.clientX - bounds.left >= 155) {
-      if (mouseY >= 10 && mouseY <= 15 && !Object.values(chosen).includes(1)) {
+    if (isDrawing && e.clientX - bounds.left >= 156 && e.clientX - bounds.left <= 173) {
+      if (mouseY >= 6 && mouseY <= 18 && !Object.values(chosen).includes(1)) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
             chosen[key] = 1;
@@ -1923,8 +1978,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 100 &&
-        mouseY <= 110 &&
+        mouseY >= 105 &&
+        mouseY <= 117 &&
         !Object.values(chosen).includes(2)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
@@ -1942,7 +1997,7 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 200 &&
+        mouseY >= 202 &&
         mouseY <= 215 &&
         !Object.values(chosen).includes(3)
       ) {
@@ -1961,8 +2016,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 295 &&
-        mouseY <= 310 &&
+        mouseY >= 300 &&
+        mouseY <= 313 &&
         !Object.values(chosen).includes(4)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
@@ -1979,8 +2034,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 400 &&
-        mouseY <= 410 &&
+        mouseY >= 399 &&
+        mouseY <= 412 &&
         !Object.values(chosen).includes(5)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
@@ -1998,8 +2053,8 @@ function onmouseup(e) {
         }
         isDrawing = false;
       } else if (
-        mouseY >= 500 &&
-        mouseY <= 510 &&
+        mouseY >= 496 &&
+        mouseY <= 509 &&
         !Object.values(chosen).includes(6)
       ) {
         for (const [key, value] of Object.entries(chosen)) {
