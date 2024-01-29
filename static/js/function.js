@@ -81,13 +81,7 @@ logoBtn.addEventListener("click", goMainPage);
 
 //shows lessons for each book on click them
 export function showLesson(lesson) {
-  for (const child of lesson.children) {
-    if (child.tagName === "H3") {
-      title = child.innerText; // get name of book
-      console.log(title);
-    }
-  }
-
+  title = lesson.children[2].innerText; // get name of book
   header.classList.add("showBgColor");
   books.classList.add("hide");
   tavfurcelibtn.classList.remove("hide");
@@ -1785,7 +1779,7 @@ burgerBtn.addEventListener("click", () => {
     let book = Object.keys(booksData)[i];
     burgBookHtml += `
        <div class="book-division" id=${i}>
-          <div onclick="showLesson(this)" class="book-about">
+          <div class="book-about">
             <img src=${booksData[book].img} alt="">
             <h3>${booksData[book].burgerTitle}</h3>
           </div>
@@ -1820,14 +1814,15 @@ burgerBtn.addEventListener("click", () => {
     "თამარას წიგნი",
     "მოპარული ვარსკვლავი",
   ];
-
+  
+  
   for (let i = 0; i < list.length; i++) {
     for (let t = 0; t < 5; t++) {
       list[i].children[t].addEventListener("click", function () {
         title = titles[i];
         books.classList.add("hide");
         lessonSection.classList.remove("hide");
-        showLessonSection(list[i].children[t].getAttribute("id"));
+        showLessonSection(list[i].children[t].getAttribute('id'));
       });
     }
   }
@@ -1928,13 +1923,12 @@ function draw() {
   }
 }
 
+
 function onmousedown(e) {
-  if (
-    e.button === 0 &&
-    e.clientX - bounds.left <= 24 &&
-    e.clientX - bounds.left >= 8 &&
-    !ended
-  ) {
+  if (e.button === 0 && 
+      e.clientX - bounds.left <= 24 &&
+      e.clientX - bounds.left >= 8 &&
+      !ended) {
     bounds = canvas.getBoundingClientRect();
     if (!isDrawing) {
       startX = e.clientX - bounds.left;
@@ -1968,11 +1962,7 @@ function onmouseup(e) {
   if (e.button === 0) {
     bounds = canvas.getBoundingClientRect();
 
-    if (
-      isDrawing &&
-      e.clientX - bounds.left >= 156 &&
-      e.clientX - bounds.left <= 173
-    ) {
+    if (isDrawing && e.clientX - bounds.left >= 156 && e.clientX - bounds.left <= 173) {
       if (mouseY >= 6 && mouseY <= 18 && !Object.values(chosen).includes(1)) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
