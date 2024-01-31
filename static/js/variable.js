@@ -1,3 +1,4 @@
+export const body = document.querySelector('body');
 export const books = document.getElementById('books');
 export const tavfurcelibtn = document.querySelector('.tavfurceli');
 export const settingBtns = document.querySelectorAll('.settings');
