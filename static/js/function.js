@@ -1,5 +1,6 @@
 import booksData from "./Books.json" assert { type: "json" };
 import {
+  body,
   books,
   tavfurcelibtn,
   logoBtn,
@@ -60,6 +61,7 @@ for (const settingBtn of settingBtns) {
 
 // shows main page on click function
 function goMainPage() {
+  title = ""
   header.classList.remove("showBgColor");
   books.classList.remove("hide");
   aboutProject.classList.add("hide");
@@ -81,7 +83,12 @@ logoBtn.addEventListener("click", goMainPage);
 
 //shows lessons for each book on click them
 export function showLesson(lesson) {
-  title = lesson.children[2].innerText; // get name of book
+  for (const child of lesson.children) {
+    if (child.tagName === "H3") {
+      title = child.innerText; // get name of book
+    }
+  }
+
   header.classList.add("showBgColor");
   books.classList.add("hide");
   tavfurcelibtn.classList.remove("hide");
@@ -108,6 +115,8 @@ const activeLesson = (lesson) => {
 // show each lesson chosen by header (left nav bar)
 
 export function showLessonSection(section) {
+  body.style.overflow = "auto";
+  if(!section) return;
   let sections = booksData[title];
 
   activeLesson(section);
@@ -1774,53 +1783,58 @@ function resetDaakavshire() {
 
 burgerBtn.addEventListener("click", () => {
   let burgBookHtml = ``;
+  const booksNames = Object.keys(booksData)
 
-  for (let i = 0; i < 6; i++) {
-    let book = Object.keys(booksData)[i];
-    burgBookHtml += `
-       <div class="book-division" id=${i}>
-          <div class="book-about">
-            <img src=${booksData[book].img} alt="">
-            <h3>${booksData[book].burgerTitle}</h3>
-          </div>
-          <div class="book-ready" id="moemzade">
-            <img src="static/images/icons/02_moemzade.svg" alt="">
-            <h3>მოემზადე</h3>
-            </div>
-            <div class="book-read" id="waikitxe">
-            <img src="static/images/icons/02_waikitxe.svg" alt="">
-            <h3>წაიკითხე</h3>
-            </div>
-            <div class="book-answer" id="upasuxe">
-            <img src="static/images/icons/03_upasuxe.svg" alt="">
-            <h3>უპასუხე</h3>
-            </div>
-            <div class="book-create" id="sheqmeni">
-            <img src="static/images/icons/04_shekmeni.svg" alt="">
-            <h3>შექმენი</h3>
-            </div>
-            </div>
-            `;
-  }
+  burgBookHtml = booksNames.filter(name => {
+    if(title){
+      return name === title
+    }
+    return name
+  }).map(data => {
+    return `
+    <div class="book-division" id=${booksNames.indexOf(data)}>
+       <div onclick="showLesson(this)" class="book-about">
+         <img src=${booksData[data].img} alt="">
+         <h3>${booksData[data].burgerTitle}</h3>
+       </div>
+       <div class="book-ready" id="moemzade" >
+         <img src="static/images/icons/02_moemzade.svg" alt="">
+         <h3>მოემზადე</h3>
+         </div>
+         <div class="book-read" id="waikitxe">
+         <img src="static/images/icons/02_waikitxe.svg" alt="">
+         <h3>წაიკითხე</h3>
+         </div>
+         <div class="book-answer" id="upasuxe">
+         <img src="static/images/icons/03_upasuxe.svg" alt="">
+         <h3>უპასუხე</h3>
+         </div>
+         <div class="book-create" id="sheqmeni">
+         <img src="static/images/icons/04_shekmeni.svg" alt="">
+         <h3>შექმენი</h3>
+         </div>
+         </div>
+         `;
+  }).join("")
+  
   activeBurger.classList.toggle("active-burger");
+  activeBurger.classList.contains("active-burger") ? body.style.overflow = "hidden" : body.style.overflow = "auto";
   burgBookWrapper.innerHTML = burgBookHtml;
 
   const list = document.getElementsByClassName("book-division");
-  const titles = [
-    "პეგასი",
-    "დიდი მოგზაური",
-    "ნაპოლეონი",
-    "ანგელოზის ერთი დღე",
-    "თამარას წიგნი",
-    "მოპარული ვარსკვლავი",
-  ];
-  
-  
+  const titles = booksNames.filter(name => {
+    if(title){
+      return name === title
+    }
+    return name
+  })
+
   for (let i = 0; i < list.length; i++) {
     for (let t = 0; t < 5; t++) {
       list[i].children[t].addEventListener("click", function () {
         title = titles[i];
         books.classList.add("hide");
+        aboutProject.classList.add("hide");
         lessonSection.classList.remove("hide");
         showLessonSection(list[i].children[t].getAttribute('id'));
       });
