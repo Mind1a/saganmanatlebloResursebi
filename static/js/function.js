@@ -1816,7 +1816,7 @@ burgerBtn.addEventListener("click", () => {
          </div>
          `;
   }).join("")
-
+  
   activeBurger.classList.toggle("active-burger");
   activeBurger.classList.contains("active-burger") ? body.style.overflow = "hidden" : body.style.overflow = "auto";
   burgBookWrapper.innerHTML = burgBookHtml;
@@ -1836,7 +1836,7 @@ burgerBtn.addEventListener("click", () => {
         books.classList.add("hide");
         aboutProject.classList.add("hide");
         lessonSection.classList.remove("hide");
-        showLessonSection(list[i].children[t].getAttribute("id"));
+        showLessonSection(list[i].children[t].getAttribute('id'));
       });
     }
   }
@@ -1937,13 +1937,12 @@ function draw() {
   }
 }
 
+
 function onmousedown(e) {
-  if (
-    e.button === 0 &&
-    e.clientX - bounds.left <= 24 &&
-    e.clientX - bounds.left >= 8 &&
-    !ended
-  ) {
+  if (e.button === 0 && 
+      e.clientX - bounds.left <= 24 &&
+      e.clientX - bounds.left >= 8 &&
+      !ended) {
     bounds = canvas.getBoundingClientRect();
     if (!isDrawing) {
       startX = e.clientX - bounds.left;
@@ -1977,11 +1976,7 @@ function onmouseup(e) {
   if (e.button === 0) {
     bounds = canvas.getBoundingClientRect();
 
-    if (
-      isDrawing &&
-      e.clientX - bounds.left >= 156 &&
-      e.clientX - bounds.left <= 173
-    ) {
+    if (isDrawing && e.clientX - bounds.left >= 156 && e.clientX - bounds.left <= 173) {
       if (mouseY >= 6 && mouseY <= 18 && !Object.values(chosen).includes(1)) {
         for (const [key, value] of Object.entries(chosen)) {
           if (value == null) {
