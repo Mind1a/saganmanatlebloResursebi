@@ -765,6 +765,8 @@ body {
             display: flex;
             width: fit-content;
             height: fit-content;
+            max-height: 556px;
+            overflow: hidden;
 
                         p {
                             position: relative;
