@@ -119,7 +119,9 @@ async function generatePage() {
 
   // show each lesson chosen by header (left nav bar)
 
+  let currentSection;
   function showLessonSection(section) {
+    currentSection = section;
     body.style.overflow = "auto";
     if (!section) return;
     let sections = booksData[title];
@@ -362,18 +364,20 @@ async function generatePage() {
         sheavse_div.classList.add("hide");
 
         if (
-          section === "sheavse" ||
-          section === "დააკავშირე" ||
-          section === "ჩასვი" ||
-          section === "შეავსე"
+          currentSection === "sheavse" ||
+          currentSection === "დააკავშირე" ||
+          currentSection === "ჩასვი" ||
+          currentSection === "შეავსე"
         ) {
+          window.removeEventListener("resize", resizing);
+          currentSection = "";
           showLessonSection("moemzade");
+          return;
         }
       } else {
         sheavse_div.classList.remove("hide");
       }
     };
-    window.removeEventListener("resize", resizing);
     window.addEventListener("resize", resizing);
     resizing();
   }
@@ -1894,6 +1898,7 @@ async function generatePage() {
           books.classList.add("hide");
           aboutProject.classList.add("hide");
           lessonSection.classList.remove("hide");
+          showLesson(list[i].children[t].parentElement);
           showLessonSection(list[i].children[t].getAttribute("id"));
         });
       }
