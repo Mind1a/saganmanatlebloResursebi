@@ -1148,6 +1148,8 @@ body main .body #lesson #daakavshireWrapper .daakavshire {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  max-height: 556px;
+  overflow: hidden;
 }
 body main .body #lesson #daakavshireWrapper .daakavshire p {
   position: relative;
