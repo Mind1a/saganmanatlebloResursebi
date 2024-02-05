@@ -14,3 +14,4 @@ export const menu = document.querySelector('.menu');
 export const burgerBtn = document.querySelector('.burger-menu');
 export const activeBurger = document.querySelector('.burger-menu_active');
 export const burgBookWrapper = document.querySelector('.burger-book-wrapper');
+export const sheavse_div = document.getElementById('sheavse_div')

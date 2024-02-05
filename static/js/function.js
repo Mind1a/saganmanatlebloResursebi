@@ -15,6 +15,7 @@ import {
   burgerBtn,
   activeBurger,
   burgBookWrapper,
+  sheavse_div,
 } from "./variable.js";
 
 async function generatePage() {
@@ -22,6 +23,7 @@ async function generatePage() {
   const booksData = await response.json();
 
   let title = ""; // to save title of book
+  let finished = false;
   let checkCanvas = false; //to check whether startCanvas() funciton has called
 
   function ShowBooks() {
@@ -117,7 +119,9 @@ async function generatePage() {
 
   // show each lesson chosen by header (left nav bar)
 
+  let currentSection;
   function showLessonSection(section) {
+    currentSection = section;
     body.style.overflow = "auto";
     if (!section) return;
     let sections = booksData[title];
@@ -349,6 +353,33 @@ async function generatePage() {
     }
 
     activeBurger.classList.remove("active-burger");
+    // Reeset DaakavshirePage
+    if (finished) {
+      resetDaakavshire();
+      finished = false;
+    }
+
+    const resizing = () => {
+      if (window.innerWidth <= 1260) {
+        sheavse_div.classList.add("hide");
+
+        if (
+          currentSection === "sheavse" ||
+          currentSection === "დააკავშირე" ||
+          currentSection === "ჩასვი" ||
+          currentSection === "შეავსე"
+        ) {
+          window.removeEventListener("resize", resizing);
+          currentSection = "";
+          showLessonSection("moemzade");
+          return;
+        }
+      } else {
+        sheavse_div.classList.remove("hide");
+      }
+    };
+    window.addEventListener("resize", resizing);
+    resizing();
   }
 
   //for waikitxe section, shows and hide paragraps on click arrow
@@ -1653,6 +1684,7 @@ async function generatePage() {
     });
   }
   function checkPegasiDaakavshire() {
+    finished = true;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1684,6 +1716,7 @@ async function generatePage() {
   }
 
   function checkMogzauriDaakavshire() {
+    finished = true;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1715,6 +1748,7 @@ async function generatePage() {
   }
 
   function checkNapoleoniDaakavshire() {
+    finished = true;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1745,6 +1779,7 @@ async function generatePage() {
     draw();
   }
   function checkTamaraDaakavshire() {
+    finished = true;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1805,12 +1840,6 @@ async function generatePage() {
       4: 0,
     };
     ended = false;
-    for (let i of document.querySelector(".daakavshire_left_block").children) {
-      i.style.color = "black";
-    }
-    for (let i of document.querySelector(".daakavshire_right_block").children) {
-      i.style.color = "black";
-    }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     checkCanvas = false;
   }
@@ -1869,6 +1898,7 @@ async function generatePage() {
           books.classList.add("hide");
           aboutProject.classList.add("hide");
           lessonSection.classList.remove("hide");
+          showLesson(list[i].children[t].parentElement);
           showLessonSection(list[i].children[t].getAttribute("id"));
         });
       }

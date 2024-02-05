@@ -247,13 +247,13 @@ body {
                 grid-template-columns: fit-content(150px) auto;
                 justify-content: left;
                 column-gap: 3rem;
-                min-height: 80vh;
 
                 @media screen and (max-width: 960px){
                     grid-template-columns: 10rem 1fr;
                     grid-template-rows: auto 1fr;
                     column-gap: 0rem;
                     row-gap: 2rem;
+                    min-height: calc(100dvh - 166px);
                 }
                 
                 h2 {
@@ -765,6 +765,8 @@ body {
             display: flex;
             width: fit-content;
             height: fit-content;
+            max-height: 556px;
+            overflow: hidden;
 
                         p {
                             position: relative;
