@@ -121,9 +121,12 @@ async function generatePage() {
 
   let currentSection;
   function showLessonSection(section) {
-    currentSection = section;
     body.style.overflow = "auto";
     if (!section) return;
+    currentSection = section;
+    window.scrollTo({
+      top: 0
+    })
     let sections = booksData[title];
 
     activeLesson(section);

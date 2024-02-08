@@ -552,6 +552,7 @@ body main .body #books .card-wrapper .card {
   width: min(13rem, 100%);
   margin: 2rem 0;
   padding: 1rem;
+  height: 18.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,6 +572,7 @@ body main .body #books .card-wrapper .card {
   body main .body #books .card-wrapper .card {
     margin: 0;
     min-width: 20rem;
+    height: auto;
   }
 }
 body main .body #books .card-wrapper .card .cover {
@@ -580,11 +582,25 @@ body main .body #books .card-wrapper .card #bookCover0,
 body main .body #books .card-wrapper .card #bookCover1 {
   margin-top: 4rem;
 }
+@media screen and (max-width: 960px) {
+  body main .body #books .card-wrapper .card #bookCover0,
+  body main .body #books .card-wrapper .card #bookCover1 {
+    margin-top: 6rem;
+  }
+}
 body main .body #books .card-wrapper .card #bookCover2,
 body main .body #books .card-wrapper .card #bookCover3,
 body main .body #books .card-wrapper .card #bookCover4,
 body main .body #books .card-wrapper .card #bookCover5 {
-  margin-top: 3.5rem;
+  margin-top: 3.85rem;
+}
+@media screen and (max-width: 960px) {
+  body main .body #books .card-wrapper .card #bookCover2,
+  body main .body #books .card-wrapper .card #bookCover3,
+  body main .body #books .card-wrapper .card #bookCover4,
+  body main .body #books .card-wrapper .card #bookCover5 {
+    margin-top: 5.5rem;
+  }
 }
 body main .body #books .card-wrapper .card .card-title {
   font-weight: 600;
@@ -612,6 +628,11 @@ body main .body #books .card-wrapper .downloadBtn {
 }
 body main .body #aboutProject {
   color: #0a2b39;
+}
+@media screen and (max-width: 960px) {
+  body main .body #aboutProject {
+    min-height: calc(100lvh - 186px);
+  }
 }
 body main .body #aboutProject p {
   margin: 2rem 0;
@@ -644,7 +665,7 @@ body main .body #lesson {
        -moz-column-gap: 0rem;
             column-gap: 0rem;
     row-gap: 2rem;
-    min-height: calc(100dvh - 166px);
+    min-height: calc(100lvh - 166px);
   }
 }
 body main .body #lesson h2 {
@@ -2383,7 +2404,6 @@ body .burger-menu_active .book-division div h3 {
   }
   body main .body #books .card {
     width: 14.375rem;
-    height: 18.125rem;
   }
   body main .body #books .card #bookCover0 {
     width: 6.125rem;
@@ -2414,54 +2434,6 @@ body .burger-menu_active .book-division div h3 {
   }
   body main .body #books .card img:nth-child(1) {
     width: 160px;
-  }
-}
-@media (min-width: 2700px) {
-  body main {
-    max-width: 132.188rem;
-    grid-column: 2/4;
-    grid-row: 2/3;
-    margin: auto;
-  }
-  body main .body #books {
-    -webkit-column-gap: 30rem;
-       -moz-column-gap: 30rem;
-            column-gap: 30rem;
-    row-gap: 25.625rem;
-  }
-  body main .body #books .card {
-    width: 22.188rem;
-    height: 27.813rem;
-  }
-  body main .body #books .card .card-title {
-    font-size: 2.75rem;
-  }
-  body main .body #books .card #bookCover0 {
-    width: 9.375rem;
-    margin-top: 7rem;
-  }
-  body main .body #books .card #bookCover1 {
-    width: 4.125rem;
-    margin-top: 6.5rem;
-  }
-  body main .body #books .card #bookCover2 {
-    width: 8.5rem;
-    margin-top: 6.2rem;
-  }
-  body main .body #books .card #bookCover3 {
-    width: 9.75rem;
-    margin-top: 6.2rem;
-  }
-  body main .body #books .card #bookCover4 {
-    width: 9.875rem;
-    margin-top: 6.5rem;
-  }
-  body main .body #books .card #bookCover5 {
-    width: 10.125rem;
-    margin-top: 6.5rem;
-  }
-  body main .body #books .card img:nth-child(1) {
-    width: 15.313rem;
   }
 }
 @media (max-width: 960px) {

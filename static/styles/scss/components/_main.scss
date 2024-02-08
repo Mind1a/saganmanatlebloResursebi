@@ -170,6 +170,7 @@ body {
                     width: min(13rem, 100%);
                     margin: 2rem 0;
                     padding: 1rem;
+                    height: 18.125rem;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
@@ -178,7 +179,7 @@ body {
                     @media screen and (max-width: 960px) {
                         margin: 0;
                         min-width: 20rem;
-                        
+                        height: auto;
                     }
                     .cover {
                         position: absolute;
@@ -187,13 +188,21 @@ body {
                     #bookCover0,
                     #bookCover1 {
                         margin-top: 4rem;
+
+                        @media screen and (max-width: 960px) {
+                            margin-top: 6rem;
+                        }
                     }
 
                     #bookCover2,
                     #bookCover3,
                     #bookCover4,
                     #bookCover5 {
-                        margin-top: 3.5rem;
+                        margin-top: 3.85rem;
+
+                        @media screen and (max-width: 960px) {
+                            margin-top: 5.5rem;
+                        }
                     }
 
                     .card-title {
@@ -226,6 +235,9 @@ body {
 
             #aboutProject {
                 color: $textDarkBlue;
+                @media screen and (max-width: 960px){
+                    min-height: calc(100lvh - 186px);
+                }
 
                 p {
                     margin: 2rem 0;
@@ -253,7 +265,7 @@ body {
                     grid-template-rows: auto 1fr;
                     column-gap: 0rem;
                     row-gap: 2rem;
-                    min-height: calc(100dvh - 166px);
+                    min-height: calc(100lvh - 166px);
                 }
                 
                 h2 {
