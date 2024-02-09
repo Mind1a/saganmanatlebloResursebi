@@ -51,6 +51,9 @@ async function generatePage() {
   //click on setting button will show about projects and hide everything else
   for (const settingBtn of settingBtns) {
     settingBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0
+      })
       header.classList.remove("showBgColor");
       books.classList.add("hide");
       aboutProject.classList.remove("hide");
@@ -1835,6 +1838,11 @@ async function generatePage() {
     });
   }
   function resetDaakavshire() {
+    const daakavshirePs = document.querySelectorAll('.daakavshire p')
+    for (const p of daakavshirePs) {
+      p.style.color = "black";
+    }
+
     existingLines = [];
     chosen = {
       1: 0,
