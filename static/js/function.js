@@ -24,6 +24,7 @@ async function generatePage() {
 
   let title = ""; // to save title of book
   let finished = false;
+  let isDrawing = false;
   let checkCanvas = false; //to check whether startCanvas() funciton has called
 
   function ShowBooks() {
@@ -51,6 +52,9 @@ async function generatePage() {
   //click on setting button will show about projects and hide everything else
   for (const settingBtn of settingBtns) {
     settingBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0
+      })
       header.classList.remove("showBgColor");
       books.classList.add("hide");
       aboutProject.classList.remove("hide");
@@ -360,6 +364,13 @@ async function generatePage() {
     if (finished) {
       resetDaakavshire();
       finished = false;
+    }
+
+    if (
+      currentSection !== "sheavse" &&
+      currentSection !== "დააკავშირე"
+    ){
+      isDrawing = false;
     }
 
     const resizing = () => {
@@ -1688,6 +1699,7 @@ async function generatePage() {
   }
   function checkPegasiDaakavshire() {
     finished = true;
+    isDrawing = false;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1720,6 +1732,7 @@ async function generatePage() {
 
   function checkMogzauriDaakavshire() {
     finished = true;
+    isDrawing = false;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1752,6 +1765,7 @@ async function generatePage() {
 
   function checkNapoleoniDaakavshire() {
     finished = true;
+    isDrawing = false;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1783,6 +1797,7 @@ async function generatePage() {
   }
   function checkTamaraDaakavshire() {
     finished = true;
+    isDrawing = false;
     const daakavshire_left_block = document.querySelector(
       ".daakavshire_left_block"
     );
@@ -1835,6 +1850,12 @@ async function generatePage() {
     });
   }
   function resetDaakavshire() {
+    const daakavshirePs = document.querySelectorAll('.daakavshire p')
+    for (const p of daakavshirePs) {
+      p.style.color = "black";
+    }
+    isDrawing = false;
+
     existingLines = [];
     chosen = {
       1: 0,
@@ -1959,7 +1980,6 @@ async function generatePage() {
   let startY = 0;
   let mouseX = 0;
   let mouseY = 0;
-  let isDrawing = false;
   let existingLines = {};
 
   function startCanvas() {
