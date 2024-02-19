@@ -1180,22 +1180,28 @@ body main .body #lesson #daakavshireWrapper .daakavshire p {
   border-radius: 0.8rem;
 }
 body main .body #lesson #daakavshireWrapper .daakavshire .daakavshire_left_block p::after {
-  content: "•";
+  content: "■";
   position: absolute;
-  right: -1.8rem;
+  right: -1.6rem;
   font-size: 2em;
   color: #5890ae;
-  top: 0;
+  top: 1px;
   pointer-events: none;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
 }
 body main .body #lesson #daakavshireWrapper .daakavshire .daakavshire_right_block p::before {
-  content: "•";
+  content: "■";
   position: absolute;
   left: -1.8rem;
   font-size: 2em;
   color: #5890ae;
-  top: 0;
+  top: 1px;
   pointer-events: none;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
 }
 body main .body #lesson .leftSentences {
   display: -webkit-box;
