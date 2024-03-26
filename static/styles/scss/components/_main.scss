@@ -790,25 +790,31 @@ body {
 
                         .daakavshire_left_block {
                             p::after {
-                                content: "\2022";
+                                content: "■";
                                 position: absolute;
-                                right: -1.8rem;
+                                right: -1.6rem;
                                 font-size: 2em;
                                 color: $textBlue;
-                                top: 0;
+                                top: 1px;
                                 pointer-events: none;
+                                width: 20px;
+                                height: 20px;
+                                overflow: hidden;
                             }
                         }
 
                         .daakavshire_right_block {
                             p::before {
-                                content: "\2022";
+                                content: "■";
                                 position: absolute;
                                 left: -1.8rem;
                                 font-size: 2em;
                                 color: $textBlue;
-                                top: 0;
+                                top: 1px;
                                 pointer-events: none;
+                                width: 20px;
+                                height: 20px;
+                                overflow: hidden;
                             }
                         }
                     }
