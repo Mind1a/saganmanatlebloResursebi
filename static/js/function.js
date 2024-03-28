@@ -1414,7 +1414,6 @@ async function generatePage() {
 
           // The cas When left column starts with character "Tamara"
           if (leftList[0].textContent === correctRight[1]) {
-            console.log("Tamara-left");
 
             leftList.forEach((zone, index) => {
               if (zone.querySelector("p")) {
@@ -1815,12 +1814,10 @@ async function generatePage() {
     if (Object.keys(chosen).length) {
       for (const [key, value] of Object.entries(chosen)) {
         if (value == correctTamaraDaakavshireAnswers[key]) {
-          console.log("green");
           existingLines[key].StrokeColor = "green";
           daakavshire_left_block.children[key - 1].style.color = "green";
           daakavshire_right_block.children[value - 1].style.color = "green";
         } else {
-          console.log("red");
           existingLines[key] ? (existingLines[key].StrokeColor = "red") : null;
         }
       }
@@ -2027,29 +2024,35 @@ async function generatePage() {
     if (
       e.button === 0 &&
       e.clientX - bounds.left <= 24 &&
-      e.clientX - bounds.left >= 8 &&
+      e.clientX - bounds.left >= 9 &&
       !ended
     ) {
       bounds = canvas.getBoundingClientRect();
       if (!isDrawing) {
-        startX = e.clientX - bounds.left;
+        startX = 16;
         startY = e.clientY - bounds.top;
-        if (startY >= 6 && startY <= 18 && !chosen["1"]) {
+        if (startY >= 6 && startY <= 21 && !chosen["1"]) {
+          startY = 13;
           chosen["1"] = null;
           isDrawing = true;
-        } else if (startY >= 105 && startY <= 117 && !chosen["2"]) {
+        } else if (startY >= 105 && startY <= 119 && !chosen["2"]) {
+          startY = 112;
           chosen["2"] = null;
           isDrawing = true;
-        } else if (startY >= 202 && startY <= 215 && !chosen["3"]) {
+        } else if (startY >= 202 && startY <= 217 && !chosen["3"]) {
+          startY = 209;
           chosen["3"] = null;
           isDrawing = true;
-        } else if (startY >= 300 && startY <= 313 && !chosen["4"]) {
+        } else if (startY >= 301 && startY <= 315 && !chosen["4"]) {
+          startY = 308;
           chosen["4"] = null;
           isDrawing = true;
-        } else if (startY >= 399 && startY <= 412 && !chosen["5"]) {
+        } else if (startY >= 399 && startY <= 413 && !chosen["5"]) {
+          startY = 406;
           chosen["5"] = null;
           isDrawing = true;
-        } else if (startY >= 496 && startY <= 509 && !chosen["6"]) {
+        } else if (startY >= 496 && startY <= 510 && !chosen["6"]) {
+          startY = 503;
           chosen["6"] = null;
           isDrawing = true;
         }
@@ -2068,15 +2071,15 @@ async function generatePage() {
         e.clientX - bounds.left >= 156 &&
         e.clientX - bounds.left <= 173
       ) {
-        if (mouseY >= 6 && mouseY <= 18 && !Object.values(chosen).includes(1)) {
+        if (mouseY >= 6 && mouseY <= 21 && !Object.values(chosen).includes(1)) {
           for (const [key, value] of Object.entries(chosen)) {
             if (value == null) {
               chosen[key] = 1;
               existingLines[key] = {
                 startX: startX,
                 startY: startY,
-                endX: mouseX,
-                endY: mouseY,
+                endX: 165,
+                endY: 13,
                 StrokeColor: "black",
               };
             }
@@ -2084,7 +2087,7 @@ async function generatePage() {
           isDrawing = false;
         } else if (
           mouseY >= 105 &&
-          mouseY <= 117 &&
+          mouseY <= 119 &&
           !Object.values(chosen).includes(2)
         ) {
           for (const [key, value] of Object.entries(chosen)) {
@@ -2094,8 +2097,8 @@ async function generatePage() {
               existingLines[key] = {
                 startX: startX,
                 startY: startY,
-                endX: mouseX,
-                endY: mouseY,
+                endX: 165,
+                endY: 112,
                 StrokeColor: "black",
               };
             }
@@ -2103,7 +2106,7 @@ async function generatePage() {
           isDrawing = false;
         } else if (
           mouseY >= 202 &&
-          mouseY <= 215 &&
+          mouseY <= 217 &&
           !Object.values(chosen).includes(3)
         ) {
           for (const [key, value] of Object.entries(chosen)) {
@@ -2113,16 +2116,16 @@ async function generatePage() {
               existingLines[key] = {
                 startX: startX,
                 startY: startY,
-                endX: mouseX,
-                endY: mouseY,
+                endX: 165,
+                endY: 210,
                 StrokeColor: "black",
               };
             }
           }
           isDrawing = false;
         } else if (
-          mouseY >= 300 &&
-          mouseY <= 313 &&
+          mouseY >= 301 &&
+          mouseY <= 315 &&
           !Object.values(chosen).includes(4)
         ) {
           for (const [key, value] of Object.entries(chosen)) {
@@ -2131,8 +2134,8 @@ async function generatePage() {
               existingLines[key] = {
                 startX: startX,
                 startY: startY,
-                endX: mouseX,
-                endY: mouseY,
+                endX: 165,
+                endY: 308,
                 StrokeColor: "black",
               };
             }
@@ -2140,7 +2143,7 @@ async function generatePage() {
           isDrawing = false;
         } else if (
           mouseY >= 399 &&
-          mouseY <= 412 &&
+          mouseY <= 413 &&
           !Object.values(chosen).includes(5)
         ) {
           for (const [key, value] of Object.entries(chosen)) {
@@ -2150,8 +2153,8 @@ async function generatePage() {
               existingLines[key] = {
                 startX: startX,
                 startY: startY,
-                endX: mouseX,
-                endY: mouseY,
+                endX: 165,
+                endY: 406,
                 StrokeColor: "black",
               };
             }
@@ -2159,7 +2162,7 @@ async function generatePage() {
           isDrawing = false;
         } else if (
           mouseY >= 496 &&
-          mouseY <= 509 &&
+          mouseY <= 510 &&
           !Object.values(chosen).includes(6)
         ) {
           for (const [key, value] of Object.entries(chosen)) {
@@ -2169,8 +2172,8 @@ async function generatePage() {
               existingLines[key] = {
                 startX: startX,
                 startY: startY,
-                endX: mouseX,
-                endY: mouseY,
+                endX: 165,
+                endY: 503,
                 StrokeColor: "black",
               };
             }
